@@ -10,6 +10,7 @@ def start_game():
     """
     if playing.lower().strip() == "yes":
         print("Starting Game")
+        game_transition()
     elif playing.lower().strip() == "no":
         print("Thanks for visiting, come back soon")
         quit()
@@ -28,6 +29,14 @@ def validation_checking(playing_answer):
             )
     except ValueError as error:
         print(f"Invalid input: {error}, please try again. \n")
+
+
+def game_transition():
+    """
+    Adds a "tranisitional" effect to the game within
+    the terminal (strictly visual)
+    """
+    print(""".\n.\n.\n.\n.\n.\n.\n.\n""")
 
 
 def game_main():
