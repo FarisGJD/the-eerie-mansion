@@ -1,5 +1,6 @@
 """
-THE HAUNED MANSION BY FARIS DHOOT
+The Haunted Mansion
+By: Faris Dhoot
 """
 
 # Document imports
@@ -49,31 +50,31 @@ def third_floor():
     """
     slowprint("There are three doors infront of you, the first is covered in")
     slowprint("cob webs, The second has peculiar markings on it and the third")
-    slowprint("has a strange liquid seeping through the bottom which do you")
-    slowprint("choose")
+    slowprint("has a strange liquid seeping through the bottom, which do you")
+    slowprint("choose to enter?3")
 
+    global user_answer
     user_answer = input("1, 2, 3\n").strip()
-    if int(user_answer) == 1:
-        print("""You enter the room and see several spiders and a door, do you
-        enter?""")
+    if user_answer == 1:
+        print("""You enter the room and see several spiders and a door, do you enter?
+        \rhehehfejafdjaj""")
 
 
+def validation_checking(third_floor_answer):
+    """
+    Checks for errors made by user input and throws
+    relevant warning
+    """
+    try:
+        for num in range(1, 4):
+            if third_floor_answer != num:
+                raise ValueError(
+                    (f"""Your answer should either be the number 1,2,3,
+                    you entered {third_floor_answer}""")
+                )
 
-# def validation_checking(third_floor_answer):
-#     """
-#     Checks for errors made by user input and throws
-#     relevant warning
-#     """
-#     try:
-#         [int(third_floor_answer) for value in third_floor_answer]
-#         if third_floor_answer != 3:
-#             raise ValueError(
-#                 (f"""Your answer should either be yes or no,
-#                  you entered {third_floor_answer}""")
-#             )
-
-#     except ValueError as error:
-#         print(f"Invalid input: {error}, please try again. \n")
+    except ValueError as error:
+        print(f"Invalid input: {error}, please try again. \n")
 
 
 def game_transition():
@@ -91,6 +92,7 @@ def game_main():
     """
     start_game()
     third_floor()
+    validation_checking(user_answer)
 
 
 game_main()
