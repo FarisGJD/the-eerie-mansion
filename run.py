@@ -49,39 +49,53 @@ def third_floor():
     \rin cob webs, the second has odd markings scratched on to it and the
     \rthird has a strange liquid seeping through the bottom, which do you
     \rchoose to enter? """)
+    user_answer = int(input("Choose: | 1 | 2 | 3 |\n").strip())
 
-    global user_answer
-    while True:
-        user_answer = int(input("1, 2, 3\n").strip())
-        if user_answer == 1:
-            print("""You enter the room and see several spiders and a door, do you enter?
-            \rhehehfejafdjaj""")
-            break
-        else:
-            print("You have not entered a number please enter (1,2,3) ")
+    # Main Winning Path
+    if user_answer == 1:
+        slowprint("""You enter and find an empty room with only two doors on
+        \reither side. The first looks normal, but the second has a trail of
+        \rspiders walking towards and underneath the door. They look as if
+        \rthey are heading towards something.""")
+        user_answer = input("Choose: | 1 | 2 |\n")
+
+    # Loosing Path
+    elif user_answer == 2:
+        game_over("""YOU ENTER A ROOM WITH FLICKERING LIGHTING. YOU LOOK
+        \rAROUND AND FIND A DESHEVLED MAN STANDING IN THE CORNER, HAUNTINGLY
+        \rGLARING AT YOU..........OH NO!!! HE STARTS RUNNING TOWARDS YOU WITH A
+        \rKNIFE IN HAND.""")
+
+    # Secondary Winning Path
+    elif user_answer == 3:
+        print()
 
 
-def validation_checking(third_floor_answer):
-    """
-    Checks for errors made by user input and throws
-    relevant warning
-    """
-    try:
-        for num in range(1, 4):
-            if third_floor_answer != num:
-                raise ValueError(
-                    (f"""Your answer should either be the number 1,2,3,
-                    you entered {third_floor_answer}""")
-                )
+# def validation_checking(third_floor_answer):
+#     """
+#     Checks for errors made by user input and throws
+#     relevant warning
+#     """
+#     try:
+#         for num in range(1, 4):
+#             if third_floor_answer != num:
+#                 raise ValueError(
+#                     (f"""Your answer should either be the number 1,2,3,
+#                     you entered {third_floor_answer}""")
+#                 )
 
-    except ValueError as error:
-        print(f"Invalid input: {error}, please try again. \n")
-        return False
-    return True
+#     except ValueError as error:
+#         print(f"Invalid input: {error}, please try again. \n")
+#         return False
+#     return True
 
 
 def game_over(text):
-    print(f"{text}, GAME OVER")
+    """
+    Informs the user that they have lost the game
+    with an appropriate message
+    """
+    slowprint(f" ☠️☠️☠️☠️☠️☠️  {text} GAME OVER ☠️☠️☠️☠️☠️☠️")
     quit()
 
 
