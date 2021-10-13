@@ -19,9 +19,6 @@ def slowprint(slow):
         time.sleep(0.5/10)
 
 
-slowprint("Welcome To The Haunted Mansion, Choose Your Own Adventure!")
-
-
 def start_game():
     """
     Asks the user if they want to play the game,
@@ -48,16 +45,20 @@ def third_floor():
     """"
     Starting game floor
     """
-    slowprint("There are three doors infront of you, the first is covered in")
-    slowprint("cob webs, The second has peculiar markings on it and the third")
-    slowprint("has a strange liquid seeping through the bottom, which do you")
-    slowprint("choose to enter?3")
+    slowprint("""There are three doors in front of you, the first is covered
+    \rin cob webs, the second has odd markings scratched on to it and the
+    \rthird has a strange liquid seeping through the bottom, which do you
+    \rchoose to enter? """)
 
     global user_answer
-    user_answer = input("1, 2, 3\n").strip()
-    if user_answer == 1:
-        print("""You enter the room and see several spiders and a door, do you enter?
-        \rhehehfejafdjaj""")
+    while True:
+        user_answer = int(input("1, 2, 3\n").strip())
+        if user_answer == 1:
+            print("""You enter the room and see several spiders and a door, do you enter?
+            \rhehehfejafdjaj""")
+            break
+        else:
+            print("You have not entered a number please enter (1,2,3) ")
 
 
 def validation_checking(third_floor_answer):
@@ -75,6 +76,13 @@ def validation_checking(third_floor_answer):
 
     except ValueError as error:
         print(f"Invalid input: {error}, please try again. \n")
+        return False
+    return True
+
+
+def game_over(text):
+    print(f"{text}, GAME OVER")
+    quit()
 
 
 def game_transition():
@@ -82,8 +90,8 @@ def game_transition():
     Adds a "tranisitional" effect to the game within
     the terminal (strictly visual)
     """
-    slowprint(""".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
-    slowprint(""".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
+    slowprint(""".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.
+    \r.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
 
 
 def game_main():
@@ -92,7 +100,9 @@ def game_main():
     """
     start_game()
     third_floor()
-    validation_checking(user_answer)
+    # validation_checking(user_answer)
 
+
+slowprint("Welcome To The Haunted Mansion, Choose Your Own Adventure!")
 
 game_main()
