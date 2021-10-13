@@ -1,8 +1,24 @@
-# Document imports
+"""
+THE HAUNED MANSION BY FARIS DHOOT
+"""
 
+# Document imports
+import sys
 import time
 
-print("Welcome To The Haunted Mansion, Choose Your Own Adventure!")
+
+def slowprint(slow):
+    """
+    Function that uses the sys & time modules to
+    print text slow in the terminal
+    """
+    for slw in slow + '\n':
+        sys.stdout.write(slw)
+        sys.stdout.flush()
+        time.sleep(0.5/10)
+
+
+slowprint("Welcome To The Haunted Mansion, Choose Your Own Adventure!")
 
 
 def start_game():
@@ -14,7 +30,7 @@ def start_game():
         playing = input("Would you like to play (yes/no):\n ").lower().strip()
 
         if playing == "yes":
-            print("Initialising Game...")
+            slowprint("Initialising Game...")
             time.sleep(2)
             game_transition()
             break
@@ -48,8 +64,7 @@ def game_transition():
     Adds a "tranisitional" effect to the game within
     the terminal (strictly visual)
     """
-    print(""".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
-    
+    slowprint(""".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
 
 
 def game_main():
