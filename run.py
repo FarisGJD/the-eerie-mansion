@@ -1,3 +1,7 @@
+# Document imports
+
+import time
+
 print("Welcome To The Haunted Mansion, Choose Your Own Adventure!")
 
 
@@ -10,7 +14,8 @@ def start_game():
         playing = input("Would you like to play (yes/no):\n ").lower().strip()
 
         if playing == "yes":
-            print("Starting Game")
+            print("Initialising Game...")
+            time.sleep(2)
             game_transition()
             break
 
@@ -44,6 +49,7 @@ def game_transition():
     the terminal (strictly visual)
     """
     print(""".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
+    
 
 
 def game_main():
