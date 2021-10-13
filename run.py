@@ -27,36 +27,53 @@ def start_game():
     depending on thier answer, game starts or exits
     """
     while True:
-        playing = input("Would you like to play (yes/no):\n ").lower().strip()
+        playing = input("Would you like to play (yes/no):\n").lower().strip()
 
         if playing == "yes":
-            slowprint("Initialising Game...")
+            slowprint("Initialising Game.....................................")
             time.sleep(2)
             game_transition()
             break
 
         elif playing == "no":
-            print("Thanks for visiting, come back soon")
+            slowprint("Thanks for visiting, come back soon")
             quit()
 
         elif playing != "yes":
-            print("Invalid entery, please select yes or no")
+            slowprint("Invalid entery, please select yes or no")
 
 
-def validation_checking(playing_answer):
+def third_floor():
+    """"
+    Starting game floor
     """
-    Checks for errors made by user input and throws
-    relevant warning
-    """
-    try:
-        if playing_answer != "yes":
-            raise ValueError(
-                (f"""Your answer should either be yes or no,
-                 you entered {playing_answer}""")
-            )
+    slowprint("There are three doors infront of you, the first is covered in")
+    slowprint("cob webs, The second has peculiar markings on it and the third")
+    slowprint("has a strange liquid seeping through the bottom which do you")
+    slowprint("choose")
 
-    except ValueError as error:
-        print(f"Invalid input: {error}, please try again. \n")
+    user_answer = input("1, 2, 3\n").strip()
+    if int(user_answer) == 1:
+        print("""You enter the room and see several spiders and a door, do you
+        enter?""")
+
+
+
+# def validation_checking(third_floor_answer):
+#     """
+#     Checks for errors made by user input and throws
+#     relevant warning
+#     """
+#     try:
+#         [int(third_floor_answer) for value in third_floor_answer]
+#         if third_floor_answer != 3:
+#             raise ValueError(
+#                 (f"""Your answer should either be yes or no,
+#                  you entered {third_floor_answer}""")
+#             )
+
+#     except ValueError as error:
+#         print(f"Invalid input: {error}, please try again. \n")
 
 
 def game_transition():
@@ -65,6 +82,7 @@ def game_transition():
     the terminal (strictly visual)
     """
     slowprint(""".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
+    slowprint(""".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
 
 
 def game_main():
@@ -72,6 +90,7 @@ def game_main():
     Implements the games principle functions
     """
     start_game()
+    third_floor()
 
 
 game_main()
