@@ -38,7 +38,7 @@ def start_game():
             quit()
 
         elif playing != "yes":
-            slowprint("Invalid entery, please select yes or no")
+            print("Invalid entery, please select yes or no")
 
 
 def third_floor():
@@ -47,17 +47,43 @@ def third_floor():
     """
     slowprint("""There are three doors in front of you, the first is covered
     \rin cob webs, the second has odd markings scratched on to it and the
-    \rthird has a strange liquid seeping through the bottom, which do you
-    \rchoose to enter? """)
-    user_answer = int(input("Choose: | 1 | 2 | 3 |\n").strip())
+    \rthird has a strange liquid seeping through the bottom.""")
+    user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
 
     # Main Winning Path
     if user_answer == 1:
-        slowprint("""You enter and find an empty room with only two doors on
-        \reither side. The first looks normal, but the second has a trail of
-        \rspiders walking towards and underneath the door. They look as if
-        \rthey are heading towards something.""")
-        user_answer = input("Choose: | 1 | 2 |\n")
+        slowprint("""You enter and find an empty room with two doors on
+        \reither side. The first looks ordinary and unassuming but the second
+        \rhas a trail of tiny spiders walking towards and underneath the door.
+        \rThey look as if they are heading towards something.""")
+        user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
+
+        # Instant Loosing Path
+        if user_answer == 1:
+            game_over("""AS YOU OPEN THE DOOR YOU IMMEDIATELY START FALLING,
+            \rREALISING THE FLOOR WAS COMPLETELY MISSING, PLUMITING TO YOUR
+            \rDEATH.""")
+
+        # Continuing Winning Path
+        elif user_answer == 2:
+            slowprint("""You enter the second door to find a library of books
+            \rcovered in dust and cobwebs. As you search through the
+            \rliterature, you lift a book which is connected to a mechanism,
+            \rrevealing a fake bookcase with three doors behind it.""")
+            user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
+
+            # Continuing Winning Path
+            if user_answer == 1:
+                print(1)
+
+            # Instant Loosing Path
+            elif user_answer == 2:
+                game_over("""INSTANT DEATH!!! YOU TRIGGER ANOTHER MECHANISIM
+                \nTHAT SHOOTS AN ARROW STRAIGHT THROUGH YOUR HEAD. """)
+
+            # Continuing Path
+            elif user_answer == 3:
+                print(3)
 
     # Loosing Path
     elif user_answer == 2:
