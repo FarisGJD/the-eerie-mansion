@@ -163,7 +163,7 @@ def third_floor():
                                 user_answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
                                 # Instant Losing Path
-                                if user_answer == 1 or 2:
+                                if user_answer == 1 or user_answer == 2:
                                     level_restart("""AS YOU WALK INSIDE YOU
                                     \rNOITCE THAT THE FLOOR IS FLOODED AND
                                     \rCONNECTED TO THE NEIGHBOURING ROOM. YOU
@@ -250,7 +250,7 @@ def third_floor():
                 user_answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
                 # Instant Losing Path
-                if user_answer == 1 or 2:
+                if user_answer == 1 or user_answer == 2:
                     level_restart("""AS YOU OPEN THE DOOR YOU FEEL A BREEZE
                     \rEMANATING FROM THE OTHER SIDE. EXITED YOU QUICKLY WALK
                     \rTHROUGH TO FIND THE STAIRCASE WAS A DECOY WITH NO STEPS.
