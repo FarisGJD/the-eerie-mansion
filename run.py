@@ -28,7 +28,7 @@ def start_game():
         playing = input("Would you like to play (yes/no):\n").lower().strip()
 
         if playing == "yes":
-            slowprint("\nInitialising Game...................................")
+            slowprint("\nInitialising Game")
             time.sleep(2)
             game_transition()
             break
@@ -50,15 +50,15 @@ def third_floor():
     slowprint("""\nThere are three doors in front of you, the first is covered
     \rin cob webs, the second has odd markings engraved on to it and the
     \rthird has a strange liquid seeping through the bottom.\n""")
-    user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
+    user_answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
-    # Main Winning Path (Sequence 1|2|1|2|3|2|2|1|3|2)
+    # Main Winning Path (Sequence 1|2|1|2|3|2|2|1|3|1) (1)
     if user_answer == 1:
         slowprint("""\nYou enter and find an empty room with two doors on
         \reither side. The first looks ordinary and unassuming, however the
         \rsecond has a trail of tiny spiders walking towards and underneath
         \rthe door. They look as if they are heading towards something.\n""")
-        user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
+        user_answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
         # Instant Losing Path
         if user_answer == 1:
@@ -66,16 +66,16 @@ def third_floor():
             \rREALISING THE FLOOR WAS COMPLETELY MISSING, PLUMMETING TO YOUR
             \rDEATH.""")
 
-        # Continuing Winning Path
+        # Continuing Winning Path (2)
         elif user_answer == 2:
             slowprint("""\nYou open the second door to find a library filled with
             \rbooks that are covered in dust and cobwebs. As you search
             \rthrough the literature, you lift a novel which triggers a
             \rmechanism, revealing a fake bookcase with three doors behind it.
             """)
-            user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
+            user_answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
-            # Continuing Winning Path
+            # Continuing Winning Path (3)
             if user_answer == 1:
                 slowprint("""\nAs you enter the room part of the celling
                 \rcollapses, trapping you inside. You look around to find a
@@ -87,7 +87,7 @@ def third_floor():
                 \rthere are no bodies to be found. The smell is so intense you
                 \rcannot bare to stay a second longer. Quick there are two
                 \rdoors in front of you\n""")
-                user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
+                user_answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                 # Instant Losing Path
                 if user_answer == 1:
@@ -99,14 +99,14 @@ def third_floor():
                     \rOUT OF CONSCIOUSNESS YOU NOTICE A DARK FIGURE STANDING
                     \rABOVE YOU WITH A NEEDLE IN HAND.""")
 
-                # Continuing Winning Path
+                # Continuing Winning Path (4)
                 elif user_answer == 2:
                     slowprint("""\nYou open the door to find a long hallway
                     \rleading one direction, this looks promising. You start
                     \ryour journey trying to locate the end......It feels like
                     \ryou have been walking for hours. You finally reach a
-                    \rcross roads which departs to three doors\n""")
-                    user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
+                    \rcross roads which departs to three doors.\n""")
+                    user_answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
                     # Instant Losing Path
                     if user_answer == 1:
@@ -122,19 +122,19 @@ def third_floor():
                         \rOBJECT HURTLING TOWARDS YOU. OH NO, IT’S A MASSIVE
                         \rBOULDER.""")
 
-                    # Continuing Winning Path
+                    # Continuing Winning Path (5)
                     elif user_answer == 3:
                         slowprint("""\nAs you open the door you walk through a
                         \rthick layer of cobwebs. You see two doors, the first
                         \rlooks untouched while the second appears to be
                         \rcovered in fang marks.\n""")
-                        user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
+                        user_answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                         # Instant Losing Path
                         if user_answer == 1:
                             level_restart("\nYOU REACH A DEAD END WITH NO WAY OUT.")
 
-                        # Continuing Winning Path
+                        # Continuing Winning Path (6)
                         elif user_answer == 2:
                             slowprint("""\nYou walk into an icy, cold room. As
                             \ryou look around your breath starts to produce
@@ -142,16 +142,94 @@ def third_floor():
                             \rsee two doors both looking ordinary. As you
                             \rclosely inspect them you find the handle of the
                             \rsecond door to be covered in dry blood.\n""")
-                            user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
+                            user_answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
+                            # Instant Losing Path
                             if user_answer == 1:
                                 level_restart("""YOU ENTER A ROOM COVERED IN GREEN
                                 \rSMOKE. AS SOON AS YOU TAKE A BREATH YOU
                                 \rCOLLAPSE AND LOSE CONSCIOUSNESS.""")
 
+                            # Continuing Winning Path (7)
                             elif user_answer == 2:
-                                print("""""")
-                                user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
+                                slowprint("""\nYou enter the room, shocked and
+                                \rhorrified by what you see. Several silk
+                                \rcocoons, blood and human remains are
+                                \rscattered throughout. As you try to exit
+                                \rfrom where you entered, a spider web shoots
+                                \rfrom above you, blocking the door. You look
+                                \rup to see a massive spider. Quick there are
+                                \rthree doors in front of you.\n""")
+                                user_answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
+
+                                # Instant Losing Path
+                                if user_answer == 1 or 2:
+                                    level_restart("""AS YOU WALK INSIDE YOU
+                                    \rNOITCE THAT THE FLOOR IS FLOODED AND
+                                    \rCONNECTED TO THE NEIGHBOURING ROOM. YOU
+                                    \rBEGIN TO WALK TO THE ONLY DOOR INFRONT
+                                    \rOF YOU. ALL THE SUDDEN A LOOSE, ACTIVE
+                                    \rWIRE FALLS TO THE GROUND ELECTROCUTING
+                                    \rYOU.""")
+
+                                # Continuing Winning Path (8)
+                                elif user_answer == 3:
+                                    slowprint("""\nYou enter to see a massive
+                                    \rgreenhouse sheltering large exotic
+                                    \rplants. As you walk through you hear
+                                    \rscuttering all around you.\n""")
+                                    user_answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
+
+                                    if user_answer == 1:
+                                        slowprint("""\nYou enter a room to find
+                                        \rheaps of spider eggs and
+                                        \rexoskeletons bigger than the spider
+                                        \ryou encountered before. You see two
+                                        \rdoors both with a strange clear
+                                        \rsubstance on them. As you touch and
+                                        \rinspect it your hand starts to burn.
+                                        \rCould it be venom?\n""")
+                                        user_answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
+
+                                        if user_answer == 1:
+                                            level_restart("""YOU WALK INTO A DARK ROOM,
+                                            \rBARELY ABLE TO SEE. YOU DELVE
+                                            \rDEEPER INTO THE SPACE, TRYING TO
+                                            \rFEEL FOR ANYTHING FAMILIAR. BY A
+                                            \rSTROKE OF LUCK, YOU FIND A LIGHT
+                                            \rSWITCH ATTACHED TO THE
+                                            \rWALL. YOU TURN ON THE LIGHT......
+                                            \rAND FIND YOURSELF SURROUNDED BY
+                                            \rTHOUSANDS OF TINY SPIDERS,
+                                            \rINSTANTLY ATTACKING YOU.""")
+
+                                        elif user_answer == 1:
+                                            slowprint("""As you walk in you
+                                            \rhear deafening hissing noises
+                                            \rcoming from the only door ahead
+                                            \rof you. Scared, you think of
+                                            \rheading back but realise this is
+                                            \rthe only way out. You take a
+                                            \rdeep breath and open the door.OH
+                                            \rNO!!! IT IS A COLOSSAL TARANTULA
+                                            \rTHE SIZE OF A HOUSE. It notices
+                                            \ryou and heads straight towards
+                                            \rou. Panicked you try to run back
+                                            \rbut it shoots venom outs its
+                                            \rfans, collapsing the entire will
+                                            \rand exit behind you. You brace
+                                            \ryourself, thinking you have met
+                                            \ryour impending doom.
+                                            \rNext door.""")
+
+                                    elif user_answer == 2:
+                                        level_restart("""YOU WALK INTO A TRAP
+                                        \rAND FALL INTO A WATER HOLE. YOU'RE
+                                        \rNOT ALONE. SUDDENLY YOU FEEL
+                                        \rSOMETHING BITING YOUR LEG, DRAGGING
+                                        \rYOU UNDER. IT'S AN ALLIGATOR. YOU TRY
+                                        \rTO ESCAPE ITS GRIP BUT ARE UNABLE TO
+                                        \rMANOEUVRE OUT ITS DEATH ROLL.""")
 
             # Instant Losing Path
             elif user_answer == 2:
@@ -169,7 +247,7 @@ def third_floor():
                 \rare three stories above a garden. You try to look for more
                 \rclues and see what appears to be the beginnings of staircase
                 \rhandle connected to the first door\n""")
-                user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
+                user_answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
                 # Instant Losing Path
                 if user_answer == 1 or 2:
@@ -214,7 +292,10 @@ def level_restart(text):
     Take the user back to the introductory path of
     the third_floor function
     """
-    slowprint(f"\n⛔️⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} LEVEL RESTART ⛔️⛔️⛔️⛔️⛔️⛔️")
+    slowprint(f"\n⛔️⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} RESTARTING LEVEL ⛔️⛔️⛔️⛔️⛔️⛔️")
+    time.sleep(2)
+    game_transition()
+    third_floor()
 
 
 def game_over(text):
