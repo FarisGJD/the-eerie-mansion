@@ -45,33 +45,34 @@ def third_floor():
     """"
     Starting game floor
     """
+
     # Level Introduction
     slowprint("""There are three doors in front of you, the first is covered
     \rin cob webs, the second has odd markings engraved on to it and the
-    \rthird has a strange liquid seeping through the bottom.""")
+    \rthird has a strange liquid seeping through the bottom.\n""")
     user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
 
-    # Main Winning Path
+    # Main Winning Path (Sequence 1|2|1|2|3)
     if user_answer == 1:
         slowprint("""You enter and find an empty room with two doors on
         \reither side. The first looks ordinary and unassuming, however the
         \rsecond has a trail of tiny spiders walking towards and underneath
-        \rthe door. They look as if they are heading towards something.""")
+        \rthe door. They look as if they are heading towards something.\n""")
         user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
 
         # Instant Loosing Path
         if user_answer == 1:
             game_over("""AS YOU OPEN THE DOOR YOU IMMEDIATELY START FALLING,
-            \rREALISING THE FLOOR WAS COMPLETELY MISSING, PLUMITING TO YOUR
+            \rREALISING THE FLOOR WAS COMPLETELY MISSING, PLUMMETING TO YOUR
             \rDEATH.""")
 
         # Continuing Winning Path
         elif user_answer == 2:
             slowprint("""You open the second door to find a library filled with
             \rbooks that are covered in dust and cobwebs. As you search
-            \rthrough the literature, you lift a book which triggers a
+            \rthrough the literature, you lift a novel which triggers a
             \rmechanism, revealing a fake bookcase with three doors behind it.
-            \r""")
+            """)
             user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
 
             # Continuing Winning Path
@@ -83,14 +84,43 @@ def third_floor():
 
                 slowprint("""Amid opening the door, you are stupefied by the
                 \rodour of rotting corpses dissipating from within; though
-                \rthere are no bodies to be found, the smell is so intense you
+                \rthere are no bodies to be found. The smell is so intense you
                 \rcannot bare to stay a second longer. Quick there are two
-                \rdoors in front of you""")
+                \rdoors in front of you\n""")
+                user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
+
+                # Instant Loosing Path
+                if user_answer == 1:
+                    game_over("""YOU WALK INTO A BEDROOM THAT LOOKS RECENTLY
+                    \rLIVED IN. THIS MEANS SOMEONE ELSE MIGHT BE NEARBY AND
+                    \rABLE TO HELP. SUDDENLY YOU HEAR A LOUD THUD AND NOTICE A
+                    \rCHANDELIER ABOVE YOU. IT SWIFTLY BECOMES UNDONE AND
+                    \rFALLS ONTO YOU KNOCKING YOU OUT......AS YOU FALL IN AND
+                    \rOUT OF CONSCIOUSNESS YOU NOTICE A DARK FIGURE STANDING
+                    \rABOVE YOU WITH A NEEDLE IN HAND.""")
+
+                # Continuing Winning Path
+                elif user_answer == 2:
+                    slowprint("""You open the door to find a long hallway
+                    \rleading one direction, this looks promising. You start
+                    \ryour journey trying to locate the end......It feels like
+                    \ryou have been walking for hours. You finally reach a
+                    \rcross roads which departs to three doors\n""")
+                    user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
+
+                    if user_answer == 1:
+                        game_over("")
+
+                    elif user_answer == 2:
+                        game_over("")
+
+                    elif user_answer == 3:
+                        slowprint("")
 
             # Instant Loosing Path
             elif user_answer == 2:
                 game_over("""INSTANT DEATH!! THE PREVIOUS ROOMS MECHANISM
-                \rTRIGGERS AN CROSS BOW AND ARROW, PIRCING STRAIGHT THROUGH
+                \rTRIGGERS AN CROSSBOW AND ARROW, PIERCING STRAIGHT THROUGH
                 \rYOUR SKULL.""")
 
             # Continuing Path
@@ -102,20 +132,20 @@ def third_floor():
                 \rtiny scratched off surface and look through. You realise you
                 \rare three stories above a garden. You try to look for more
                 \rclues and see what appears to be the beginnings of staircase
-                \rhandle connected to the first door""")
-                user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
+                \rhandle connected to the first door\n""")
+                user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
 
                 # Instant Loosing Path
                 if user_answer == 1 or 2:
                     game_over("""AS YOU OPEN THE DOOR YOU FEEL A BREEZE
-                    \rEMINATINMG FROM THE OTHER SIDE. EXITED YOU QUICKLY WALK
+                    \rEMANATING FROM THE OTHER SIDE. EXITED YOU QUICKLY WALK
                     \rTHROUGH TO FIND THE STAIRCASE WAS A DECOY WITH NO STEPS.
                     \rYOU FALL DOWN THREE STOREIS TO YOUR DEATH.""")
 
-    # Loosing Path
+    # Primary Loosing Path
     elif user_answer == 2:
         game_over("""YOU ENTER A ROOM WITH FLICKERING LIGHTING. YOU LOOK
-        \rAROUND AND FIND A DESHEVLED MAN STANDING IN THE CORNER, HAUNTINGLY
+        \rAROUND AND FIND A DISHEVELLED MAN STANDING IN THE CORNER, HAUNTINGLY
         \rGLARING AT YOU..........OH NO!!! HE STARTS RUNNING TOWARDS YOU WITH A
         \rKNIFE IN HAND.""")
 
