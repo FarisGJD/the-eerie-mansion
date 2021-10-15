@@ -3,7 +3,7 @@ The Haunted Mansion
 By: Faris Dhoot
 """
 
-# Document imports
+# Document Imports
 import sys
 import time
 
@@ -16,7 +16,7 @@ def slowprint(slow):
     for slw in slow + '\n':
         sys.stdout.write(slw)
         sys.stdout.flush()
-        time.sleep(0.5/10)
+        time.sleep(0.3/10)
 
 
 def start_game():
@@ -60,7 +60,7 @@ def third_floor():
         \rthe door. They look as if they are heading towards something.\n""")
         user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
 
-        # Instant Loosing Path
+        # Instant Losing Path
         if user_answer == 1:
             level_restart("""AS YOU OPEN THE DOOR YOU IMMEDIATELY START FALLING,
             \rREALISING THE FLOOR WAS COMPLETELY MISSING, PLUMMETING TO YOUR
@@ -82,14 +82,14 @@ def third_floor():
                 \rlone door ahead of you with no alternate path. You have no
                 \rchoice but to enter.\n""")
 
-                slowprint("""\nAmid opening the door, you are stupefied by the
+                slowprint("""Amid opening the door, you are stupefied by the
                 \rodour of rotting corpses dissipating from within; though
                 \rthere are no bodies to be found. The smell is so intense you
                 \rcannot bare to stay a second longer. Quick there are two
                 \rdoors in front of you\n""")
                 user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
 
-                # Instant Loosing Path
+                # Instant Losing Path
                 if user_answer == 1:
                     level_restart("""YOU WALK INTO A BEDROOM THAT LOOKS RECENTLY
                     \rLIVED IN. THIS MEANS SOMEONE ELSE MIGHT BE NEARBY AND
@@ -108,13 +108,13 @@ def third_floor():
                     \rcross roads which departs to three doors\n""")
                     user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
 
-                    # Instant Loosing Path
+                    # Instant Losing Path
                     if user_answer == 1:
                         level_restart("""YOU ENTER A PITCH-BLACK ROOM AND ARE
                         \rUNABLE TO SEE. UNEXPECTEDLY THE LIGHTS TURN ON AND A
                         \rSWINGING GUILLOTINE SLICES YOU IN HALF.""")
 
-                    # Instant Loosing Path
+                    # Instant Losing Path
                     elif user_answer == 2:
                         level_restart("""YOU WALK THROUGH THE DOOR AND ARE GREETED
                         \rWITHIN AN INCLINING PATH. AS YOU MAKE YOUR WAY
@@ -130,7 +130,7 @@ def third_floor():
                         \rcovered in fang marks.\n""")
                         user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
 
-                        # Instant Loosing Path
+                        # Instant Losing Path
                         if user_answer == 1:
                             level_restart("\nYOU REACH A DEAD END WITH NO WAY OUT.")
 
@@ -145,14 +145,15 @@ def third_floor():
                             user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
 
                             if user_answer == 1:
-                                print("")
-
-                            elif user_answer == 2:
-                                level_restart("""\nYOU ENTER A ROOM COVERED IN GREEN
+                                level_restart("""YOU ENTER A ROOM COVERED IN GREEN
                                 \rSMOKE. AS SOON AS YOU TAKE A BREATH YOU
                                 \rCOLLAPSE AND LOSE CONSCIOUSNESS.""")
 
-            # Instant Loosing Path
+                            elif user_answer == 2:
+                                print("""""")
+                                user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
+
+            # Instant Losing Path
             elif user_answer == 2:
                 level_restart("""THE PREVIOUS ROOMS MECHANISM TRIGGERS AN
                 \rCROSSBOW AND ARROW, PIERCING STRAIGHT THROUGH
@@ -170,21 +171,21 @@ def third_floor():
                 \rhandle connected to the first door\n""")
                 user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
 
-                # Instant Loosing Path
+                # Instant Losing Path
                 if user_answer == 1 or 2:
                     level_restart("""AS YOU OPEN THE DOOR YOU FEEL A BREEZE
                     \rEMANATING FROM THE OTHER SIDE. EXITED YOU QUICKLY WALK
                     \rTHROUGH TO FIND THE STAIRCASE WAS A DECOY WITH NO STEPS.
                     \rYOU FALL DOWN THREE STOREIS TO YOUR DEATH.""")
 
-    # Primary Loosing Path
+    # Primary Losing Path
     elif user_answer == 2:
         level_restart("""YOU ENTER A ROOM WITH FLICKERING LIGHTING. YOU LOOK
         \rAROUND AND FIND A DISHEVELLED MAN STANDING IN THE CORNER, HAUNTINGLY
         \rGLARING AT YOU..........OH NO!!! HE STARTS RUNNING TOWARDS YOU WITH A
         \rKNIFE IN HAND.""")
 
-    # Secondary Winning Path
+    # Secondary Losing Path
     elif user_answer == 3:
         print()
 
