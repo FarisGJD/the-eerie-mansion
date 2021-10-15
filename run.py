@@ -52,7 +52,7 @@ def third_floor():
     \rthird has a strange liquid seeping through the bottom.\n""")
     user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
 
-    # Main Winning Path (Sequence 1|2|1|2|3)
+    # Main Winning Path (Sequence 1|2|1|2|3|2|2|1|3|2)
     if user_answer == 1:
         slowprint("""You enter and find an empty room with two doors on
         \reither side. The first looks ordinary and unassuming, however the
@@ -108,14 +108,49 @@ def third_floor():
                     \rcross roads which departs to three doors\n""")
                     user_answer = int(input("Which Door Do You Enter:| 1 | 2 | 3 |\n").strip())
 
+                    # Instant Loosing Path
                     if user_answer == 1:
-                        game_over("")
+                        game_over("""YOU ENTER A PITCH-BLACK ROOM AND ARE
+                        \rUNABLE TO SEE. UNEXPECTEDLY THE LIGHTS TURN ON AND A
+                        \rSWINGING GUILLOTINE SLICES YOU IN HALF.""")
 
+                    # Instant Loosing Path
                     elif user_answer == 2:
-                        game_over("")
+                        game_over("""YOU WALK THROUGH THE DOOR AND ARE GREETED
+                        \rWITHIN AN INCLINING PATH. AS YOU MAKE YOUR WAY
+                        \rTHROUGH YOU HEAR A RUMBLING NOISE. YOU NOTICE AN
+                        \rOBJECT HURTLING TOWARDS YOU. OH NO, IT’S A MASSIVE
+                        \rBOULDER.""")
 
+                    # Continuing Winning Path
                     elif user_answer == 3:
-                        slowprint("")
+                        slowprint("""As you open the door you walk through a
+                        \rthick layer of cobwebs. You see two doors, the first
+                        \rlooks untouched while the second appears to be
+                        \rcovered in fang marks.\n""")
+                        user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
+
+                        # Instant Loosing Path
+                        if user_answer == 1:
+                            game_over("YOU REACH A DEAD END WITH NO WAY OUT.")
+
+                        # Continuing Winning Path
+                        elif user_answer == 2:
+                            slowprint("""You walk into an icy, cold room. As
+                            \ryou look around your breath starts to produce
+                            \rcondensation due to the extreme temperature. You
+                            \rsee two doors both looking ordinary. As you
+                            \rclosely inspect them you find the handle of the
+                            \rfirst door to be covered in dry blood.\n""")
+                            user_answer = int(input("Which Door Do You Enter:| 1 | 2 |\n").strip())
+
+                            if user_answer == 1:
+                                print("")
+
+                            elif user_answer == 2: 
+                                game_over("""YOU ENTER A ROOM COVERED IN GREEN
+                                \rSMOKE. AS SOON AS YOU TAKE A BREATH YOU
+                                \rCOLLAPSE AND LOSE CONSCIOUSNESS.""")
 
             # Instant Loosing Path
             elif user_answer == 2:
