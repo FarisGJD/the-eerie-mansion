@@ -320,23 +320,23 @@ def game_over(text):
     exit()
 
 
-def read_rules_file(rules_file):
+def read_game_files(game_file, text):
     """
-    Accssesses game rules text
+    Reads several different games files,
+    including rules and story
     """
     while True:
-        text_file_answer = input("\nWould you like to read the game rules? Choose: | yes | no |\n").lower().strip()
+        text_file_answer = input(f"\nWould you like to read the {text}? Choose: | yes | no |\n").lower().strip()
 
         if text_file_answer == "yes":
-            g_file = open(rules_file, "r")
-            text = g_file.read()
-            g_file.close()
-            slowprint(text)
-            game_transition()
-            break
+            with open(game_file) as file:
+                file_text = file.read()
+                file.close()
+                slowprint(file_text)
+                game_transition()
+                break
 
         elif text_file_answer == "no":
-            time.sleep(2)
             game_transition()
             third_floor()
 
@@ -344,15 +344,39 @@ def read_rules_file(rules_file):
             slowprint("\nInvalid entery, please select yes or no")
 
 
-def read_plot_files(plot_file):
-    """
-    Accssesses game plot
-    """
+# def read_rules_file(rules_file):
+#     """
+#     Accssesses game rules text
+#     """
+#     while True:
+#         text_file_answer = input("\nWould you like to read the game rules? Choose: | yes | no |\n").lower().strip()
 
-    p_file = open(plot_file, "r")
-    text = p_file.read()
-    p_file.close()
-    slowprint(text)
+#         if text_file_answer == "yes":
+#             g_file = open(rules_file, "r")
+#             text = g_file.read()
+#             g_file.close()
+#             slowprint(text)
+#             game_transition()
+#             break
+
+#         elif text_file_answer == "no":
+#             time.sleep(2)
+#             game_transition()
+#             third_floor()
+
+#         elif text_file_answer != "yes":
+#             slowprint("\nInvalid entery, please select yes or no")
+
+
+# def read_plot_files(plot_file):
+#     """
+#     Accssesses game plot
+#     """
+
+#     p_file = open(plot_file, "r")
+#     text = p_file.read()
+#     p_file.close()
+#     slowprint(text)
 
 
 def game_transition():
@@ -369,8 +393,8 @@ def game_main():
     Implements the games principle functions
     """
     start_game()
-    read_rules_file("assets/game-rules-and-story-files/game-rules.txt")
-    read_plot_files("assets/game-rules-and-story-files/game-plot.txt")
+    read_game_files("assets/game-rules-and-story-files/game-rules.txt", "games rules")
+    read_game_files("assets/game-rules-and-story-files/game-plot.txt", "game plot")
     third_floor()
     # validation_checking(answer)
 
