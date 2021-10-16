@@ -38,7 +38,7 @@ def start_game():
             quit()
 
         elif playing != "yes":
-            print("Invalid entery, please select yes or no")
+            slowprint("Invalid entery, please select yes or no")
 
 
 def third_floor():
@@ -290,12 +290,25 @@ def third_floor():
 def level_restart(text):
     """
     Take the user back to the introductory path of
-    the third_floor function
+    the third_floor function or exits the game.
     """
     slowprint(f"\n⛔️⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} RESTARTING LEVEL ⛔️⛔️⛔️⛔️⛔️⛔️")
+    while True:
+        gameplay_choice = input("Would you like to continue with the adventure? Type: | yes | no |\n").lower().strip()
+
+        if gameplay_choice == "yes":
+            third_floor()
+            break
+
+        elif gameplay_choice == "no":
+            slowprint("Thanks for visiting, come back soon")
+            quit()
+
+        elif gameplay_choice != "yes":
+            slowprint("Invalid entery, please select yes or no")
+
     time.sleep(2)
     game_transition()
-    third_floor()
 
 
 def game_over(text):
