@@ -307,6 +307,16 @@ def game_over(text):
     exit()
 
 
+def read_text_files(game_file):
+    """
+    Accssesses game rules and stories
+    """
+    file = open(game_file, "r")
+    text = file.read()
+    file.close()
+    slowprint(text)
+
+
 def game_transition():
     """
     Adds a "tranisitional" effect to the game within
@@ -321,10 +331,12 @@ def game_main():
     Implements the games principle functions
     """
     start_game()
+    read_text_files("assets/game-rules-and-story-files/game-story.txt")
+    time.sleep(2)
+    game_transition()
     third_floor()
     # validation_checking(user_answer)
 
 
 slowprint("Welcome To The Haunted Mansion, Choose Your Own Adventure!\n")
-
 game_main()
