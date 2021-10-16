@@ -7,7 +7,7 @@ correct values using your keyboard. The game consists of three levels
 played on three different floors respectively. The aim is to escape 
 the mansion unscathed. 
 
-Level 1️⃣ :
+Level ① :
 
 The starting floor requires you to manoeuvre through the mansion, 
 choosing between different doors to enter. Be careful though, 
@@ -16,7 +16,7 @@ In the event of losing, you will be redirected to the start
 of the level. Note there are some clues and easters eggs to 
 help you along your quest. 
 
-Level 2️⃣ : 
+Level ② : 
 
 The second floor consist of more path choice but this time mixed 
 in with a horror quiz. In this floor you will be introduced to your 
@@ -24,7 +24,7 @@ in with a horror quiz. In this floor you will be introduced to your
 deducted. In the event of reaching 0, the game over will initiate, 
 meaning you would need to start from the welcome screen. 
 
-Level 3️⃣ :
+Level ③ :
 
 The final floor includes more path traversing but in addition to 
 random number guessing. This means you will need to guess the number 

@@ -333,7 +333,7 @@ def read_game_files(game_file, text):
                 file_text = file.read()
                 file.close()
                 slowprint(file_text)
-                game_transition()
+                continue_after_game_file()
                 break
 
         elif text_file_answer == "no":
@@ -344,39 +344,20 @@ def read_game_files(game_file, text):
             slowprint("\nInvalid entery, please select yes or no")
 
 
-# def read_rules_file(rules_file):
-#     """
-#     Accssesses game rules text
-#     """
-#     while True:
-#         text_file_answer = input("\nWould you like to read the game rules? Choose: | yes | no |\n").lower().strip()
+def continue_after_game_file():
+    """
+    Allows use time to read game files
+    then gives them the option to continue
+    """
+    while True:
+        progress = input("\nClick 'c' on your kerboard to continue\n").lower().strip()
 
-#         if text_file_answer == "yes":
-#             g_file = open(rules_file, "r")
-#             text = g_file.read()
-#             g_file.close()
-#             slowprint(text)
-#             game_transition()
-#             break
+        if progress == "c":
+            game_transition()
+            break
 
-#         elif text_file_answer == "no":
-#             time.sleep(2)
-#             game_transition()
-#             third_floor()
-
-#         elif text_file_answer != "yes":
-#             slowprint("\nInvalid entery, please select yes or no")
-
-
-# def read_plot_files(plot_file):
-#     """
-#     Accssesses game plot
-#     """
-
-#     p_file = open(plot_file, "r")
-#     text = p_file.read()
-#     p_file.close()
-#     slowprint(text)
+        elif progress != "c":
+            print("Invalid entery, please select the 'c' key")
 
 
 def game_transition():
