@@ -25,7 +25,7 @@ def start_game():
     depending on thier answer, game starts or exits
     """
     while True:
-        playing = input("Would you like to play? Type: | yes | no |\n").lower().strip()
+        playing = input("\nDo you dare to play? Type: | yes | no |\n").lower().strip()
 
         if playing == "yes":
             slowprint("\nInitialising Game")
@@ -34,11 +34,12 @@ def start_game():
             break
 
         elif playing == "no":
-            slowprint("Thanks for visiting, come back soon")
+            slowprint("\nThanks for visiting, come back soon")
             quit()
 
         elif playing != "yes":
-            slowprint("Invalid entery, please select yes or no")
+            slowprint("\nInvalid entery, please select yes or no")
+
 
 def third_floor():
     """"
@@ -288,23 +289,23 @@ def third_floor():
 
 def level_restart(text):
     """
-    Take the user back to the introductory path of
+    Takes the user back to the introductory path of
     the third_floor function or exits the game.
     """
     slowprint(f"\n⛔️⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} RESTARTING LEVEL ⛔️⛔️⛔️⛔️⛔️⛔️")
     while True:
-        gameplay_choice = input("Would you like to continue with the adventure?: | yes | no |\n").lower().strip()
+        gameplay_choice = input("\nWould you like to continue with the adventure?: | yes | no |\n").lower().strip()
 
         if gameplay_choice == "yes":
             third_floor()
             break
 
         elif gameplay_choice == "no":
-            slowprint("Thanks for visiting, come back soon")
+            slowprint("\nThanks for visiting, come back soon")
             quit()
 
         elif gameplay_choice != "yes":
-            slowprint("Invalid entery, please select yes or no")
+            slowprint("\nIncorrect input, please select yes or no")
 
     time.sleep(2)
     game_transition()
@@ -319,17 +320,17 @@ def game_over(text):
     exit()
 
 
-def read_text_files(game_file):
+def read_rules_file(rules_file):
     """
-    Accssesses game rules and stories
+    Accssesses game rules text
     """
     while True:
-        text_file_answer = input("Would you like to read the game rules? Choose: | yes | no |\n").lower().strip()
+        text_file_answer = input("\nWould you like to read the game rules? Choose: | yes | no |\n").lower().strip()
 
         if text_file_answer == "yes":
-            file = open(game_file, "r")
-            text = file.read()
-            file.close()
+            g_file = open(rules_file, "r")
+            text = g_file.read()
+            g_file.close()
             slowprint(text)
             game_transition()
             break
@@ -340,7 +341,18 @@ def read_text_files(game_file):
             third_floor()
 
         elif text_file_answer != "yes":
-            slowprint("Invalid entery, please select yes or no")
+            slowprint("\nInvalid entery, please select yes or no")
+
+
+def read_plot_files(plot_file):
+    """
+    Accssesses game plot
+    """
+
+    p_file = open(plot_file, "r")
+    text = p_file.read()
+    p_file.close()
+    slowprint(text)
 
 
 def game_transition():
@@ -348,7 +360,7 @@ def game_transition():
     Adds a "tranisitional" effect to the game within
     the terminal (strictly visual)
     """
-    slowprint(""".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.
+    slowprint("""\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.
     \r.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
 
 
@@ -357,10 +369,11 @@ def game_main():
     Implements the games principle functions
     """
     start_game()
-    read_text_files("assets/game-rules-and-story-files/game-story.txt")
+    read_rules_file("assets/game-rules-and-story-files/game-rules.txt")
+    read_plot_files("assets/game-rules-and-story-files/game-plot.txt")
     third_floor()
     # validation_checking(answer)
 
 
-slowprint("Welcome To The Haunted Mansion, Choose Your Own Adventure!\n")
+slowprint("\n☠️☠️☠️☠️☠️☠️ WELCOME TO THE HAUNTED MANSION, CHOOSE YOUR OWN ADVENTURE ☠️☠️☠️☠️☠️☠️\n")
 game_main()

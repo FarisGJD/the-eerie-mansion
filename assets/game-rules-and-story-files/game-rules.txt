@@ -1,0 +1,34 @@
+
+The Haunted Mansion is a text based Choose Your Own Adventure Game 
+played directly in the terminal. You, the protagonist need to make 
+predetermined choices that control your actions and the plots outcome. 
+The mechanics are simple, follow the directions given and input the 
+correct values using your keyboard. The game consists of three levels
+played on three different floors respectively. The aim is to escape 
+the mansion unscathed. 
+
+Level 1️⃣ :
+
+The starting floor requires you to manoeuvre through the mansion, 
+choosing between different doors to enter. Be careful though, 
+some paths are misleading and will cause you to die. 
+In the event of losing, you will be redirected to the start 
+of the level. Note there are some clues and easters eggs to 
+help you along your quest. 
+
+Level 2️⃣ : 
+
+The second floor consist of more path choice but this time mixed 
+in with a horror quiz. In this floor you will be introduced to your 
+10 health points. Each question you get wrong means a life will be 
+deducted. In the event of reaching 0, the game over will initiate, 
+meaning you would need to start from the welcome screen. 
+
+Level 3️⃣ :
+
+The final floor includes more path traversing but in addition to 
+random number guessing. This means you will need to guess the number 
+each door requires of you. Again, if you get an answer wrong and 
+reach 0 lives, the game will start from the very begging. 
+
+Good luck adventurer. Be careful and most importantly have fun.
