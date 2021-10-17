@@ -25,7 +25,7 @@ def start_game():
     depending on thier answer, game starts or exits
     """
     while True:
-        playing = input("\nDo you dare to play? Type: | yes | no |\n").lower().strip()
+        playing = input("Do you dare play? Type: | yes | no |\n").lower().strip()
 
         if playing == "yes":
             slowprint("\nInitialising Game")
@@ -263,9 +263,32 @@ def third_floor():
         \rGLARING AT YOU..........OH NO!!! HE STARTS RUNNING TOWARDS YOU WITH A
         \rKNIFE IN HAND.""")
 
-    # Secondary Losing Path
+    # Secondary Losing Path (Sequence | 3 | 2 | 1 | 2)
     elif answer == 3:
-        print()
+        slowprint("""\nAs you enter the room you start to feel your feet
+        \rburning. You look down and see smoke arising from your shoes. You
+        \rrealise the clear liquid is some sort of corrosive substance. You
+        \rquickly take your shoes off before it starts to burn you skin. There
+        \rare three doors in front of you.\n""")
+        answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
+
+        if answer == 1:
+            level_restart("""YOU ENTER THE ROOM AND ARE ATTACKED BY A MURDER
+            \rOF CROWS. THEY START PECKING AT YOUR FLESH AS YOU ARE UNABLE TO
+            \rSTOP THEM.""")
+
+        elif answer == 2:
+            level_restart("""AS YOU OPEN THE DOOR AND ARE BOMBARDED BY A WAVE
+            \rOF THE CARROSIVE SUBSTANCE. AS IT BEGINS TO EAT AT YOUR FLESH, A
+            \rNOTE DRIFTS TOWARDS YOU THAT SAYS “Spider Venom”.""")
+
+        elif answer == 3:
+            slowprint("""\nYou walk into the room and see several pieces of paper
+            \rscattered across the floor. You pick one up titled “Experiment
+            \rNotes”.\n""")
+            read_game_clue_files("assets/game-rules-and-story-files/experiment-notes.txt", "the document")
+            slowprint("\nThere are two doors in front of you\n")
+            answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
 
 # def validation_checking(third_floor_answer):
@@ -320,40 +343,61 @@ def game_over(text):
     exit()
 
 
-def read_game_files(game_file, text):
+def read_game_intro_files(game_file, text):
     """
     Reads several different games files,
     including rules and story
     """
     while True:
-        text_file_answer = input(f"\nWould you like to read the {text}? Choose: | yes | no |\n").lower().strip()
+        rules_file_answer = input(f"\nWould you like to read the {text}? Choose: | yes | no |\n").lower().strip()
 
-        if text_file_answer == "yes":
+        if rules_file_answer == "yes":
             with open(game_file) as file:
-                file_text = file.read()
+                choice_text = file.read()
                 file.close()
-                slowprint(file_text)
-                continue_after_game_file()
+                slowprint(choice_text)
+                continue_after_text()
                 break
 
-        elif text_file_answer == "no":
+        elif rules_file_answer == "no":
             game_transition()
-            third_floor()
+            break
 
-        elif text_file_answer != "yes":
+        elif rules_file_answer != "yes":
             slowprint("\nInvalid entery, please select yes or no")
 
 
-def continue_after_game_file():
+def read_game_clue_files(game_file, text):
     """
-    Allows use time to read game files
+    Opens games files that act as clues
+    to the user
+    """
+    while True:
+        clues = input(f"Would you like to read the {text}? Choose: | yes | no |\n").lower().strip()
+
+        if clues == "yes":
+            with open(game_file) as file:
+                text = file.read()
+                file.close()
+                slowprint(text)
+                continue_after_text()
+                break
+        elif clues == "no":
+            break
+
+        elif clues != "yes":
+            slowprint("\nInvalid entery, please select yes or no")
+
+
+def continue_after_text():
+    """
+    Allows user time to read game files
     then gives them the option to continue
     """
     while True:
         progress = input("\nClick 'c' on your kerboard to continue\n").lower().strip()
 
         if progress == "c":
-            game_transition()
             break
 
         elif progress != "c":
@@ -374,8 +418,10 @@ def game_main():
     Implements the games principle functions
     """
     start_game()
-    read_game_files("assets/game-rules-and-story-files/game-rules.txt", "games rules")
-    read_game_files("assets/game-rules-and-story-files/game-plot.txt", "game plot")
+    read_game_intro_files("assets/game-rules-and-story-files/game-rules.txt", "rules")
+    game_transition()
+    read_game_intro_files("assets/game-rules-and-story-files/game-plot.txt", "plot")
+    game_transition()
     third_floor()
     # validation_checking(answer)
 
