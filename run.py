@@ -263,7 +263,7 @@ def third_floor():
         \rGLARING AT YOU..........OH NO!!! HE STARTS RUNNING TOWARDS YOU WITH A
         \rKNIFE IN HAND.""")
 
-    # Secondary Losing Path (Sequence | 3 | 2 | 1 | 2)
+    # Secondary Losing Path (Sequence | 3 | 2 | 1 | 2 |)
     elif answer == 3:
         slowprint("""\nAs you enter the room you start to feel your feet
         \rburning. You look down and see smoke arising from your shoes. You
@@ -278,7 +278,7 @@ def third_floor():
             \rSTOP THEM.""")
 
         elif answer == 2:
-            level_restart("""AS YOU OPEN THE DOOR AND ARE BOMBARDED BY A WAVE
+            level_restart("""AS YOU OPEN THE DOOR YOU ARE BOMBARDED BY A WAVE
             \rOF THE CARROSIVE SUBSTANCE. AS IT BEGINS TO EAT AT YOUR FLESH, A
             \rNOTE DRIFTS TOWARDS YOU THAT SAYS “Spider Venom”.""")
 
@@ -288,7 +288,41 @@ def third_floor():
             \rNotes”.\n""")
             read_game_clue_files("assets/game-rules-and-story-files/experiment-notes.txt", "the document")
             slowprint("\nThere are two doors in front of you\n")
-            answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
+            answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
+
+            if answer == 1:
+                level_restart("""YOU WALK IN AND ARE IMMEDIATELY INTERCEPTED
+                \rBY AN ABNORMALY LARGE ANACONDA. IT STARTS TO WRAP AROUND YOU,
+                \rENGULFING YOU ITS MOTUH.""")
+
+            elif answer == 2:
+                slowprint("""\nYou walk into a space with a sign that says
+                \r“holding room”. You are surrounded by hazmat suits. There
+                \rare two doors in front of you.\n""")
+                answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
+
+                if answer == 1:
+                    slowprint("""\nYou enter another holding room, but this time
+                    \rsounded by various medical equipment and empty battered
+                    \rcages. You look around and find more of the spider venom
+                    \rin vials labelled “CHEMICAL X”. Things are getting
+                    \rstrange. There are two doors in front of you\n""")
+                    answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
+
+                    if answer == 1: 
+                        level_restart("""""")
+                    
+                    elif answer == 2:
+                        slowprint("""""")
+
+                elif answer == 2:
+                    level_restart("""YOU ENTER THE ROOM AND FIND A TELEPHONE.
+                    \rEXITED, YOU RUN TOWARDS IT AND CALL 999. SUCCESS IT
+                    \rRINGS. YOU BEGIN TO DESCRIBE YOUR CIRCUMSTANCE TO THE
+                    \rOPERATOR WHO REASSURES YOU. THEY ASK FOR YOU TO STAY ON
+                    \rTHE LINE WHILE THEY TRACK YOUR LOCATION. SUDDENLY YOU
+                    \rHEAR A LOUD GROWLING NOISE BEHIND YOU. IT’S A MASSIVE
+                    \rTIGER.""")
 
 
 # def validation_checking(third_floor_answer):
