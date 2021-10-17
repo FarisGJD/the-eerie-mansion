@@ -79,14 +79,14 @@ def third_floor():
             if answer == 1:
                 slowprint("""\nAs you enter the room part of the celling
                 \rcollapses, trapping you inside. You look around to find a
-                \rlone door ahead of you with no alternate path. You have no
-                \rchoice but to enter.\n""")
+                \rlone door ahead of you with no way back or alternate path.
+                \rYou have no choice but to enter.\n""")
 
                 slowprint("""Amid opening the door, you are stupefied by the
                 \rodour of rotting corpses dissipating from within; though
                 \rthere are no bodies to be found. The smell is so intense you
                 \rcannot bare to stay a second longer. Quick there are two
-                \rdoors in front of you\n""")
+                \rdoors in front of you.\n""")
                 answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                 # Instant Losing Path
@@ -208,7 +208,7 @@ def third_floor():
                                         # Continuing Winning Path (10)
                                         elif answer == 1:
                                             slowprint("""As you walk in you
-                                            \rhear deafening hissing noises
+                                            \rhear a deafening hissing noise
                                             \rcoming from the only door ahead
                                             \rof you. Scared, you think of
                                             \rheading back but realise this is
@@ -250,7 +250,7 @@ def third_floor():
                 \rtiny scratched off surface and look through. You realise you
                 \rare three stories above a garden. You try to look for more
                 \rclues and see what appears to be the beginnings of staircase
-                \rhandle connected to the first door\n""")
+                \rhandle connected to the first door.\n""")
                 answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
                 # Instant Losing Path
@@ -265,7 +265,7 @@ def third_floor():
         level_restart("""YOU ENTER A ROOM WITH FLICKERING LIGHTING. YOU LOOK
         \rAROUND AND FIND A DISHEVELLED MAN STANDING IN THE CORNER, HAUNTINGLY
         \rGLARING AT YOU..........OH NO!!! HE STARTS RUNNING TOWARDS YOU WITH A
-        \rKNIFE IN HAND.""")
+        \rKNIFE IN HAND, SCREAMING SPIDERS! SPIDERS!.""")
 
     # Secondary Losing Path (Sequence | 3 | 2 | 1 | 2 |)
     elif answer == 3:
@@ -289,9 +289,8 @@ def third_floor():
         elif answer == 3:
             slowprint("""\nYou walk into the room and see several pieces of paper
             \rscattered across the floor. You pick one up titled “Experiment
-            \rNotes”. You try to read the rest of the document but its
-            \rinstantly burns away due to the liquid\n""")
-            slowprint("There are two doors in front of you\n")
+            \rNotes”. You try to read the rest but cannot make sense of its
+            \rscientific content. There are two doors in front of you.\n""")
             answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
             if answer == 1:
@@ -301,16 +300,18 @@ def third_floor():
 
             elif answer == 2:
                 slowprint("""\nYou walk into a space with a sign that says
-                \r“holding room”. You are surrounded by hazmat suits. There
-                \rare two doors in front of you.\n""")
+                \r“Holding Room”. You are surrounded by hazmat suits. Things
+                \rare getting strange. There are two doors in front of
+                \ryou.\n""")
                 answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                 if answer == 1:
                     slowprint("""\nYou enter another holding room, but this time
-                    \rsounded by various medical equipment and empty battered
-                    \rcages. You look around and find more of the spider venom
-                    \rin vials labelled “CHEMICAL X”. Things are getting
-                    \rstrange. There are two doors in front of you\n""")
+                    \rsurrounded by various medical equipment and empty
+                    \rbattered cages. You look around and find more of the
+                    \rspider venom in vials labelled “CHEMICAL X”. Things are
+                    \rdefinitely getting strange. There are two doors in front
+                    \rof you.\n""")
                     answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                     if answer == 1:
@@ -333,17 +334,19 @@ def third_floor():
                         answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
                         if answer == 1 or answer == 2 or answer == 3:
-                            slowprint("""\nYOU ENTER THE ROOM TO HEAR A
-                            \rROBOTIC VOICE SPEAKING – “ALERT! ALERT! SPECIMEN
-                            \r64 HAS ESCPAED” AND RED FLASHING LIGHTS. AS YOU
-                            \rLOOK AROUND YOU REALSIE YOU ARE IN A LABORATORY.
-                            \rYOU FIND SEVERAL HYBRID CREATURES ATTACHED TO
-                            \rMACHINES SCREAMING IN AGONY. YOU FIND A BOOK.\n
-                            \r""")
+                            slowprint("""\nYou enter the room to hear a
+                            \rrobotic voice speaking – “ALERT! ALERT!
+                            \rEXPERIMENT 626 HAS ESCAPED” and red flashing
+                            \rlights. As you look around you realise you are
+                            \rin a laboratory. You find several Hybrid
+                            \rcreatures attached to machines screaming in
+                            \ragony. You find a book titled “Chimera”.\n""")
                             read_game_clue_files("assets/game-rules-and-story-files/lab-book.txt", "plot")
                             level_restart("""AS YOU PUT THE BOOK DOWN YOU FEEL
                             \rA TAP ON YOUR SHOULDER. YOU LOOK BACK STARTLED
-                            \rAND ARE IMMEDIATELY INJECTED WITH CHEMICAL X.""")
+                            \rTO FIND A HALF MAN HALF SPIDER HYBRID STARING AT
+                            \rYOU WITH GLEE. BEFORE YOU COULD EVEN THINK YOU
+                            \rARE IMMEDIATELY INJECTED WITH CHEMICAL X.""")
 
                 elif answer == 2:
                     level_restart("""YOU ENTER THE ROOM AND FIND A TELEPHONE.
@@ -490,5 +493,5 @@ def game_main():
     # validation_checking(answer)
 
 
-slowprint("\n☠️☠️☠️☠️☠️☠️ WELCOME TO THE HAUNTED MANSION, CHOOSE YOUR OWN ADVENTURE ☠️☠️☠️☠️☠️☠️\n")
+slowprint("\n☠️☠️☠️☠️☠️☠️ WELCOME TO THE EERIE MANSION, CHOOSE YOUR OWN ADVENTURE ☠️☠️☠️☠️☠️☠️\n")
 game_main()
