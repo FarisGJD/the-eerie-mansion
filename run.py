@@ -180,6 +180,7 @@ def third_floor():
                                     \rscuttering all around you.\n""")
                                     answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
+                                    # Continuing Winning Path (9)
                                     if answer == 1:
                                         slowprint("""\nYou enter a room to find
                                         \rheaps of spider eggs and
@@ -191,6 +192,7 @@ def third_floor():
                                         \rCould it be venom?\n""")
                                         answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
+                                        # Instant Losing Path
                                         if answer == 1:
                                             level_restart("""YOU WALK INTO A DARK ROOM,
                                             \rBARELY ABLE TO SEE. YOU DELVE
@@ -203,6 +205,7 @@ def third_floor():
                                             \rTHOUSANDS OF TINY SPIDERS,
                                             \rINSTANTLY ATTACKING YOU.""")
 
+                                        # Continuing Winning Path (10)
                                         elif answer == 1:
                                             slowprint("""As you walk in you
                                             \rhear deafening hissing noises
@@ -222,6 +225,7 @@ def third_floor():
                                             \ryour impending doom.
                                             \rNext door.""")
 
+                                    # Instant Losing Path
                                     elif answer == 2:
                                         level_restart("""YOU WALK INTO A TRAP
                                         \rAND FALL INTO A WATER HOLE. YOU'RE
@@ -233,7 +237,7 @@ def third_floor():
 
             # Instant Losing Path
             elif answer == 2:
-                level_restart("""THE PREVIOUS ROOMS MECHANISM TRIGGERS AN
+                level_restart("""THE PREVIOUS ROOMS MECHANISM TRIGGERS, A
                 \rCROSSBOW AND ARROW, PIERCING STRAIGHT THROUGH
                 \rYOUR SKULL.""")
 
@@ -285,9 +289,9 @@ def third_floor():
         elif answer == 3:
             slowprint("""\nYou walk into the room and see several pieces of paper
             \rscattered across the floor. You pick one up titled “Experiment
-            \rNotes”.\n""")
-            read_game_clue_files("assets/game-rules-and-story-files/experiment-notes.txt", "the document")
-            slowprint("\nThere are two doors in front of you\n")
+            \rNotes”. You try to read the rest of the document but its
+            \rinstantly burns away due to the liquid\n""")
+            slowprint("There are two doors in front of you\n")
             answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
             if answer == 1:
@@ -309,11 +313,37 @@ def third_floor():
                     \rstrange. There are two doors in front of you\n""")
                     answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
-                    if answer == 1: 
-                        level_restart("""""")
-                    
+                    if answer == 1:
+                        level_restart("""YOU ENTER THE ROOM AND FIND SEVERAL
+                        \rMONKYS SCREAMING IN AGONY. THE LONGER YOU LOOK THE
+                        \rMORE YOU REALISE THESE ARENT NORMAL MONKIES.  THEY
+                        \rSEEM TO HAVE BEEN GENETICALLY ENGINEERED WITH SOME
+                        \rOTHER CREATURE. ONE OF THEM NOTICES AND CHARGES AT
+                        \rYOU.""")
+
                     elif answer == 2:
-                        slowprint("""""")
+                        slowprint("""\nAs you attempt to open the door you
+                        \rrealise something is different. The door is
+                        \rextremely heavy. You use all your strength to prize
+                        \rit open. As you walk inside the door swiftly shuts
+                        \rand locks behind you. You look back and realise it
+                        \ris some kind of vault, hooked to a mechanism, making
+                        \rsure nothing inside got out. You see three of the
+                        \rsame doors ahead.\n""")
+                        answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
+
+                        if answer == 1 or answer == 2 or answer == 3:
+                            slowprint("""\nYOU ENTER THE ROOM TO HEAR A
+                            \rROBOTIC VOICE SPEAKING – “ALERT! ALERT! SPECIMEN
+                            \r64 HAS ESCPAED” AND RED FLASHING LIGHTS. AS YOU
+                            \rLOOK AROUND YOU REALSIE YOU ARE IN A LABORATORY.
+                            \rYOU FIND SEVERAL HYBRID CREATURES ATTACHED TO
+                            \rMACHINES SCREAMING IN AGONY. YOU FIND A BOOK.\n
+                            \r""")
+                            read_game_clue_files("assets/game-rules-and-story-files/lab-book.txt", "plot")
+                            level_restart("""AS YOU PUT THE BOOK DOWN YOU FEEL
+                            \rA TAP ON YOUR SHOULDER. YOU LOOK BACK STARTLED
+                            \rAND ARE IMMEDIATELY INJECTED WITH CHEMICAL X.""")
 
                 elif answer == 2:
                     level_restart("""YOU ENTER THE ROOM AND FIND A TELEPHONE.
@@ -444,7 +474,7 @@ def game_transition():
     the terminal (strictly visual)
     """
     slowprint("""\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.
-    \r.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
+    \r\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
 
 
 def game_main():
