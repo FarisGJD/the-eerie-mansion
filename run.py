@@ -16,7 +16,7 @@ def slowprint(slow):
     for slw in slow + '\n':
         sys.stdout.write(slw)
         sys.stdout.flush()
-        time.sleep(0.3/10)
+        time.sleep(0.000000001/10)
 
 
 def start_game():
@@ -52,7 +52,7 @@ def third_floor():
     \rthird has a strange liquid seeping through the bottom.\n""")
     answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
-    # Main Winning Path (Sequence 1|2|1|2|3|2|2|1|3|1) (1)
+    # Main Winning Path (Sequence 1|2|1|2|3|2|2|3|1|2) (1)
     if answer == 1:
         slowprint("""\nYou enter and find an empty room with two doors on
         \reither side. The first looks ordinary and unassuming, however the
@@ -70,9 +70,10 @@ def third_floor():
         elif answer == 2:
             slowprint("""\nYou open the second door to find a library filled with
             \rbooks that are covered in dust and cobwebs. As you search
-            \rthrough the literature, you lift a novel which triggers a
-            \rmechanism, revealing a fake bookcase with three doors behind it.
-            """)
+            \rthrough the literature, you lift a biographic novel\n""")
+            read_game_clue_files("assets/game-rules-and-story-files/novel.txt", "novel")
+            slowprint("""\nLifting the novel triggers a mechanism,
+            \rrevealing a fake bookcase with three doors behind it.\n""")
             answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
             # Continuing Winning Path (3)
@@ -87,7 +88,7 @@ def third_floor():
                 \rthere are no bodies to be found. The smell is so intense you
                 \rcannot bare to stay a second longer. Quick there are two
                 \rdoors in front of you.\n""")
-                answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
+                answer = int(input("\nWhich Door Do You Enter: | 1 | 2 |\n").strip())
 
                 # Instant Losing Path
                 if answer == 1:
@@ -177,7 +178,16 @@ def third_floor():
                                     slowprint("""\nYou enter to see a massive
                                     \rgreenhouse sheltering large exotic
                                     \rplants. As you walk through you hear
-                                    \rscuttering all around you.\n""")
+                                    \rscuttering all around you. You find a 
+                                    \rpeice of paper titled "Experiment Report,
+                                    \rBy Dr. Charles Falken"\n""")
+                                    read_game_clue_files("assets/game-rules-and-story-files/greenhouse-report.txt", "report")
+                                    slowprint("""\nYou finish reading the
+                                    \rreport and realise you are being watched
+                                    \rby hunderds of spiders surrounding you.
+                                    \rDon’t make any sudden movements. Quick
+                                    \rthere are two doors in front of
+                                    \ryou.\n""")
                                     answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                                     # Continuing Winning Path (9)
@@ -206,7 +216,7 @@ def third_floor():
                                             \rINSTANTLY ATTACKING YOU.""")
 
                                         # Continuing Winning Path (10)
-                                        elif answer == 1:
+                                        elif answer == 2:
                                             slowprint("""As you walk in you
                                             \rhear a deafening hissing noise
                                             \rcoming from the only door ahead
@@ -251,7 +261,7 @@ def third_floor():
                 \rare three stories above a garden. You try to look for more
                 \rclues and see what appears to be the beginnings of staircase
                 \rhandle connected to the first door.\n""")
-                answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
+                answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                 # Instant Losing Path
                 if answer == 1 or answer == 2:
@@ -341,7 +351,7 @@ def third_floor():
                             \rin a laboratory. You find several Hybrid
                             \rcreatures attached to machines screaming in
                             \ragony. You find a book titled “Chimera”.\n""")
-                            read_game_clue_files("assets/game-rules-and-story-files/lab-book.txt", "plot")
+                            read_game_clue_files("assets/game-rules-and-story-files/lab-book.txt", "book")
                             level_restart("""AS YOU PUT THE BOOK DOWN YOU FEEL
                             \rA TAP ON YOUR SHOULDER. YOU LOOK BACK STARTLED
                             \rTO FIND A HALF MAN HALF SPIDER HYBRID STARING AT
@@ -421,7 +431,6 @@ def read_game_intro_files(game_file, text):
         if rules_file_answer == "yes":
             with open(game_file) as file:
                 choice_text = file.read()
-                file.close()
                 slowprint(choice_text)
                 continue_after_text()
                 break
@@ -445,10 +454,10 @@ def read_game_clue_files(game_file, text):
         if clues == "yes":
             with open(game_file) as file:
                 text = file.read()
-                file.close()
                 slowprint(text)
                 continue_after_text()
                 break
+
         elif clues == "no":
             break
 
