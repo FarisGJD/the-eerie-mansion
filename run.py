@@ -6,7 +6,7 @@ By: Faris Dhoot
 # Document Imports
 import sys
 import time
-from path import p1_correct_path, p1_correct_path_additions, p1_losing_path
+from path import p1_correct_path, p1_correct_path_additions, p1_losing_path, p2_losing_path 
 
 
 def slowprint(slow):
@@ -76,13 +76,7 @@ def third_floor():
 
                 # Instant Losing Path
                 if answer == 1:
-                    level_restart("""YOU WALK INTO A BEDROOM THAT LOOKS RECENTLY
-                    \rLIVED IN. THIS MEANS SOMEONE ELSE MIGHT BE NEARBY AND
-                    \rABLE TO HELP. SUDDENLY YOU HEAR A LOUD THUD AND NOTICE A
-                    \rCHANDELIER ABOVE YOU. IT SWIFTLY BECOMES UNDONE AND
-                    \rFALLS ONTO YOU KNOCKING YOU OUT......AS YOU FALL IN AND
-                    \rOUT OF CONSCIOUSNESS YOU NOTICE A DARK FIGURE STANDING
-                    \rABOVE YOU WITH A NEEDLE IN HAND.""")
+                    level_restart(p1_losing_path['p2'])
 
                 # Continuing Winning Path (4)
                 elif answer == 2:
@@ -91,17 +85,11 @@ def third_floor():
 
                     # Instant Losing Path
                     if answer == 1:
-                        level_restart("""YOU ENTER A PITCH-BLACK ROOM AND ARE
-                        \rUNABLE TO SEE. UNEXPECTEDLY THE LIGHTS TURN ON AND A
-                        \rSWINGING GUILLOTINE SLICES YOU IN HALF.""")
+                        level_restart(p1_losing_path['p3'])
 
                     # Instant Losing Path
                     elif answer == 2:
-                        level_restart("""YOU WALK THROUGH THE DOOR AND ARE GREETED
-                        \rWITHIN AN INCLINING PATH. AS YOU MAKE YOUR WAY
-                        \rTHROUGH YOU HEAR A RUMBLING NOISE. YOU NOTICE AN
-                        \rOBJECT HURTLING TOWARDS YOU. OH NO, IT’S A MASSIVE
-                        \rBOULDER.""")
+                        level_restart(p1_losing_path['p4'])
 
                     # Continuing Winning Path (5)
                     elif answer == 3:
@@ -110,7 +98,7 @@ def third_floor():
 
                         # Instant Losing Path
                         if answer == 1:
-                            level_restart("\nYOU REACH A DEAD END WITH NO WAY OUT.")
+                            level_restart(p1_losing_path['p5'])
 
                         # Continuing Winning Path (6)
                         elif answer == 2:
@@ -119,9 +107,7 @@ def third_floor():
 
                             # Instant Losing Path
                             if answer == 1:
-                                level_restart("""YOU ENTER A ROOM COVERED IN GREEN
-                                \rSMOKE. AS SOON AS YOU TAKE A BREATH YOU
-                                \rCOLLAPSE AND LOSE CONSCIOUSNESS.""")
+                                level_restart(p1_losing_path['p6'])
 
                             # Continuing Winning Path (7)
                             elif answer == 2:
@@ -132,13 +118,7 @@ def third_floor():
 
                                 # Instant Losing Path
                                 if answer == 1 or answer == 2:
-                                    level_restart("""AS YOU WALK INSIDE YOU
-                                    \rNOITCE THAT THE FLOOR IS FLOODED AND
-                                    \rCONNECTED TO THE NEIGHBOURING ROOM. YOU
-                                    \rBEGIN TO WALK TO THE ONLY DOOR INFRONT
-                                    \rOF YOU. ALL THE SUDDEN A LOOSE, ACTIVE
-                                    \rWIRE FALLS TO THE GROUND ELECTROCUTING
-                                    \rYOU.""")
+                                    level_restart(p1_losing_path['p7'])
 
                                 # Continuing Winning Path (8)
                                 elif answer == 3:
@@ -152,16 +132,7 @@ def third_floor():
 
                                         # Instant Losing Path
                                         if answer == 1:
-                                            level_restart("""YOU WALK INTO A DARK ROOM,
-                                            \rBARELY ABLE TO SEE. YOU DELVE
-                                            \rDEEPER INTO THE SPACE, TRYING TO
-                                            \rFEEL FOR ANYTHING FAMILIAR. BY A
-                                            \rSTROKE OF LUCK, YOU FIND A LIGHT
-                                            \rSWITCH ATTACHED TO THE
-                                            \rWALL. YOU TURN ON THE LIGHT......
-                                            \rAND FIND YOURSELF SURROUNDED BY
-                                            \rTHOUSANDS OF TINY SPIDERS,
-                                            \rINSTANTLY ATTACKING YOU.""")
+                                            level_restart(p1_losing_path['p8'])
 
                                         # Continuing Winning Path (10)
                                         elif answer == 2:
@@ -169,45 +140,24 @@ def third_floor():
 
                                     # Instant Losing Path
                                     elif answer == 2:
-                                        level_restart("""YOU WALK INTO A TRAP
-                                        \rAND FALL INTO A WATER HOLE. YOU'RE
-                                        \rNOT ALONE. SUDDENLY YOU FEEL
-                                        \rSOMETHING BITING YOUR LEG, DRAGGING
-                                        \rYOU UNDER. IT'S AN ALLIGATOR. YOU TRY
-                                        \rTO ESCAPE ITS GRIP BUT ARE UNABLE TO
-                                        \rMANOEUVRE OUT ITS DEATH ROLL.""")
+                                        level_restart(p1_losing_path['p9'])
 
             # Instant Losing Path
             elif answer == 2:
-                level_restart("""THE PREVIOUS ROOMS MECHANISM TRIGGERS, A
-                \rCROSSBOW AND ARROW, PIERCING STRAIGHT THROUGH
-                \rYOUR SKULL.""")
+                level_restart(p1_losing_path['p3ii'])
 
             # Continuing Path
             elif answer == 3:
-                slowprint("""\nYou enter the room and find two doors side by
-                \rside. The first has a blacked-out window next to it. You try
-                \rand look through but cannot discern anything. As you
-                \rscramble, desperate to gather your surroundings you find a
-                \rtiny scratched off surface and look through. You realise you
-                \rare three stories above a garden. You try to look for more
-                \rclues and see what appears to be the beginnings of staircase
-                \rhandle connected to the first door.\n""")
+                slowprint(p1_correct_path['p3i'])
                 answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                 # Instant Losing Path
                 if answer == 1 or answer == 2:
-                    level_restart("""AS YOU OPEN THE DOOR YOU FEEL A BREEZE
-                    \rEMANATING FROM THE OTHER SIDE. EXITED YOU QUICKLY WALK
-                    \rTHROUGH TO FIND THE STAIRCASE WAS A DECOY WITH NO STEPS.
-                    \rYOU FALL DOWN THREE STOREIS TO YOUR DEATH.""")
+                    level_restart(p1_losing_path['p3i'])
 
     # Primary Losing Path
     elif answer == 2:
-        level_restart("""YOU ENTER A ROOM WITH FLICKERING LIGHTING. YOU LOOK
-        \rAROUND AND FIND A DISHEVELLED MAN STANDING IN THE CORNER, HAUNTINGLY
-        \rGLARING AT YOU..........OH NO!!! HE STARTS RUNNING TOWARDS YOU WITH A
-        \rKNIFE IN HAND, SCREAMING SPIDERS! SPIDERS!.""")
+        level_restart(p2_losing_path['p1'])
 
     # Secondary Losing Path (Sequence | 3 | 2 | 1 | 2 |)
     elif answer == 3:
