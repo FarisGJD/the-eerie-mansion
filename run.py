@@ -6,6 +6,7 @@ By: Faris Dhoot
 # Document Imports
 import sys
 import time
+from path import correct_path
 
 
 def slowprint(slow):
@@ -16,7 +17,7 @@ def slowprint(slow):
     for slw in slow + '\n':
         sys.stdout.write(slw)
         sys.stdout.flush()
-        time.sleep(0.000000001/10)
+        time.sleep(0.0000000003/10)
 
 
 def start_game():
@@ -29,7 +30,7 @@ def start_game():
 
         if playing == "yes":
             slowprint("\nInitialising Game")
-            time.sleep(2)
+            # time.sleep(2)
             game_transition()
             break
 
@@ -52,12 +53,9 @@ def third_floor():
     \rthird has a strange liquid seeping through the bottom.\n""")
     answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
-    # Main Winning Path (Sequence 1|2|1|2|3|2|2|3|1|2) (1)
+    # Main Winning Path (Sequence 1|2|1|2|3|2|2|3|1|2)
     if answer == 1:
-        slowprint("""\nYou enter and find an empty room with two doors on
-        \reither side. The first looks ordinary and unassuming, however the
-        \rsecond has a trail of tiny spiders walking towards and underneath
-        \rthe door. They look as if they are heading towards something.\n""")
+        slowprint(correct_path['p1'])
         answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
         # Instant Losing Path
@@ -68,12 +66,13 @@ def third_floor():
 
         # Continuing Winning Path (2)
         elif answer == 2:
-            slowprint("""\nYou open the second door to find a library filled with
-            \rbooks that are covered in dust and cobwebs. As you search
-            \rthrough the literature, you lift a biographic novel\n""")
-            read_game_clue_files("assets/game-rules-and-story-files/novel.txt", "novel")
-            slowprint("""\nLifting the novel triggers a mechanism,
-            \rrevealing a fake bookcase with three doors behind it.\n""")
+            slowprint(correct_path['p2'])
+            # slowprint("""\nYou open the second door to find a library filled with
+            # \rbooks that are covered in dust and cobwebs. As you search
+            # \rthrough the literature, you lift a biographic novel\n""")
+            # read_game_clue_files("assets/game-txt-files/game-clue-files/novel.txt", "novel")
+            # slowprint("""\nLifting the novel triggers a mechanism,
+            # \rrevealing a fake bookcase with three doors behind it.\n""")
             answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
             # Continuing Winning Path (3)
@@ -178,10 +177,10 @@ def third_floor():
                                     slowprint("""\nYou enter to see a massive
                                     \rgreenhouse sheltering large exotic
                                     \rplants. As you walk through you hear
-                                    \rscuttering all around you. You find a 
+                                    \rscuttering all around you. You find a
                                     \rpeice of paper titled "Experiment Report,
                                     \rBy Dr. Charles Falken"\n""")
-                                    read_game_clue_files("assets/game-rules-and-story-files/greenhouse-report.txt", "report")
+                                    read_game_clue_files("assets/game-txt-files/game-clue-files/greenhouse-report.txt", "report")
                                     slowprint("""\nYou finish reading the
                                     \rreport and realise you are being watched
                                     \rby hunderds of spiders surrounding you.
@@ -351,7 +350,7 @@ def third_floor():
                             \rin a laboratory. You find several Hybrid
                             \rcreatures attached to machines screaming in
                             \ragony. You find a book titled “Chimera”.\n""")
-                            read_game_clue_files("assets/game-rules-and-story-files/lab-book.txt", "book")
+                            read_game_clue_files("assets/game-txt-files/game-clue-files/lab-book.txt", "book")
                             level_restart("""AS YOU PUT THE BOOK DOWN YOU FEEL
                             \rA TAP ON YOUR SHOULDER. YOU LOOK BACK STARTLED
                             \rTO FIND A HALF MAN HALF SPIDER HYBRID STARING AT
@@ -390,7 +389,7 @@ def third_floor():
 def level_restart(text):
     """
     Takes the user back to the introductory path of
-    the third_floor function or exits the game.
+    its respective floor or exits the game.
     """
     slowprint(f"\n⛔️⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} RESTARTING LEVEL ⛔️⛔️⛔️⛔️⛔️⛔️")
     while True:
@@ -407,7 +406,7 @@ def level_restart(text):
         elif gameplay_choice != "yes":
             slowprint("\nIncorrect input, please select yes or no")
 
-    time.sleep(2)
+    # time.sleep(2)
     game_transition()
 
 
@@ -420,16 +419,15 @@ def game_over(text):
     exit()
 
 
-def read_game_intro_files(game_file, text):
+def read_game_intro_files(intro_file, text):
     """
-    Reads several different games files,
-    including rules and story
+    Reads game introductory files
     """
     while True:
         rules_file_answer = input(f"\nWould you like to read the {text}? Choose: | yes | no |\n").lower().strip()
 
         if rules_file_answer == "yes":
-            with open(game_file) as file:
+            with open(intro_file) as file:
                 choice_text = file.read()
                 slowprint(choice_text)
                 continue_after_text()
@@ -443,16 +441,16 @@ def read_game_intro_files(game_file, text):
             slowprint("\nInvalid entery, please select yes or no")
 
 
-def read_game_clue_files(game_file, text):
+def read_game_clue_files(clue_file, text):
     """
-    Opens games files that act as clues
-    to the user
+    Reads the games clues and path choice
+    files
     """
     while True:
         clues = input(f"Would you like to read the {text}? Choose: | yes | no |\n").lower().strip()
 
         if clues == "yes":
-            with open(game_file) as file:
+            with open(clue_file) as file:
                 text = file.read()
                 slowprint(text)
                 continue_after_text()
@@ -471,7 +469,7 @@ def continue_after_text():
     then gives them the option to continue
     """
     while True:
-        progress = input("\nClick 'c' on your kerboard to continue\n").lower().strip()
+        progress = input("\nClick 'c' and enter on your kerboard to continue\n").lower().strip()
 
         if progress == "c":
             break
@@ -494,9 +492,9 @@ def game_main():
     Implements the games principle functions
     """
     start_game()
-    read_game_intro_files("assets/game-rules-and-story-files/game-rules.txt", "rules")
+    read_game_intro_files("assets/game-txt-files/game-intro-files/game-rules.txt", "rules")
     game_transition()
-    read_game_intro_files("assets/game-rules-and-story-files/game-plot.txt", "plot")
+    read_game_intro_files("assets/game-txt-files/game-intro-files/game-plot.txt", "plot")
     game_transition()
     third_floor()
     # validation_checking(answer)
