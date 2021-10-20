@@ -6,7 +6,7 @@ By: Faris Dhoot
 # Document Imports
 import sys
 import time
-from path import correct_path
+from path import p1_correct_path, p1_correct_path_additions, p1_losing_path
 
 
 def slowprint(slow):
@@ -55,38 +55,23 @@ def third_floor():
 
     # Main Winning Path (Sequence 1|2|1|2|3|2|2|3|1|2)
     if answer == 1:
-        slowprint(correct_path['p1'])
+        slowprint(p1_correct_path['p1'])
         answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
         # Instant Losing Path
         if answer == 1:
-            level_restart("""AS YOU OPEN THE DOOR YOU IMMEDIATELY START FALLING,
-            \rREALISING THE FLOOR WAS COMPLETELY MISSING, PLUMMETING TO YOUR
-            \rDEATH.""")
+            level_restart(p1_losing_path['p1'])
 
         # Continuing Winning Path (2)
         elif answer == 2:
-            slowprint(correct_path['p2'])
-            # slowprint("""\nYou open the second door to find a library filled with
-            # \rbooks that are covered in dust and cobwebs. As you search
-            # \rthrough the literature, you lift a biographic novel\n""")
-            # read_game_clue_files("assets/game-txt-files/game-clue-files/novel.txt", "novel")
-            # slowprint("""\nLifting the novel triggers a mechanism,
-            # \rrevealing a fake bookcase with three doors behind it.\n""")
+            slowprint(p1_correct_path['p2'])
             answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
             # Continuing Winning Path (3)
             if answer == 1:
-                slowprint("""\nAs you enter the room part of the celling
-                \rcollapses, trapping you inside. You look around to find a
-                \rlone door ahead of you with no way back or alternate path.
-                \rYou have no choice but to enter.\n""")
-
-                slowprint("""Amid opening the door, you are stupefied by the
-                \rodour of rotting corpses dissipating from within; though
-                \rthere are no bodies to be found. The smell is so intense you
-                \rcannot bare to stay a second longer. Quick there are two
-                \rdoors in front of you.\n""")
+                slowprint(p1_correct_path['p3'])
+                read_game_clue_files("assets/game-txt-files/game-clue-files/novel.txt", "novel")
+                slowprint(p1_correct_path_additions['p3a'])
                 answer = int(input("\nWhich Door Do You Enter: | 1 | 2 |\n").strip())
 
                 # Instant Losing Path
@@ -101,11 +86,7 @@ def third_floor():
 
                 # Continuing Winning Path (4)
                 elif answer == 2:
-                    slowprint("""\nYou open the door to find a long hallway
-                    \rleading one direction, this looks promising. You start
-                    \ryour journey trying to locate the end......It feels like
-                    \ryou have been walking for hours. You finally reach a
-                    \rcross roads which departs to three doors.\n""")
+                    slowprint(p1_correct_path['p4'])
                     answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
                     # Instant Losing Path
@@ -124,10 +105,7 @@ def third_floor():
 
                     # Continuing Winning Path (5)
                     elif answer == 3:
-                        slowprint("""\nAs you open the door you walk through a
-                        \rthick layer of cobwebs. You see two doors, the first
-                        \rlooks untouched while the second appears to be
-                        \rcovered in fang marks.\n""")
+                        slowprint(p1_correct_path['p5'])
                         answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                         # Instant Losing Path
@@ -136,12 +114,7 @@ def third_floor():
 
                         # Continuing Winning Path (6)
                         elif answer == 2:
-                            slowprint("""\nYou walk into an icy, cold room. As
-                            \ryou look around your breath starts to produce
-                            \rcondensation due to the extreme temperature. You
-                            \rsee two doors both looking ordinary. As you
-                            \rclosely inspect them you find the handle of the
-                            \rsecond door to be covered in dry blood.\n""")
+                            slowprint(p1_correct_path['p6'])
                             answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                             # Instant Losing Path
@@ -152,14 +125,9 @@ def third_floor():
 
                             # Continuing Winning Path (7)
                             elif answer == 2:
-                                slowprint("""\nYou enter the room, shocked and
-                                \rhorrified by what you see. Several silk
-                                \rcocoons, blood and human remains are
-                                \rscattered throughout. As you try to exit
-                                \rfrom where you entered, a spider web shoots
-                                \rfrom above you, blocking the door. You look
-                                \rup to see a massive spider. Quick there are
-                                \rthree doors in front of you.\n""")
+                                slowprint(p1_correct_path['p7'])
+                                read_game_clue_files("assets/game-txt-files/game-clue-files/greenhouse-report.txt", "report")
+                                slowprint(p1_correct_path_additions['p7a'])
                                 answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
                                 # Instant Losing Path
@@ -174,31 +142,12 @@ def third_floor():
 
                                 # Continuing Winning Path (8)
                                 elif answer == 3:
-                                    slowprint("""\nYou enter to see a massive
-                                    \rgreenhouse sheltering large exotic
-                                    \rplants. As you walk through you hear
-                                    \rscuttering all around you. You find a
-                                    \rpeice of paper titled "Experiment Report,
-                                    \rBy Dr. Charles Falken"\n""")
-                                    read_game_clue_files("assets/game-txt-files/game-clue-files/greenhouse-report.txt", "report")
-                                    slowprint("""\nYou finish reading the
-                                    \rreport and realise you are being watched
-                                    \rby hunderds of spiders surrounding you.
-                                    \rDon’t make any sudden movements. Quick
-                                    \rthere are two doors in front of
-                                    \ryou.\n""")
+                                    slowprint(p1_correct_path['p8'])
                                     answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                                     # Continuing Winning Path (9)
                                     if answer == 1:
-                                        slowprint("""\nYou enter a room to find
-                                        \rheaps of spider eggs and
-                                        \rexoskeletons bigger than the spider
-                                        \ryou encountered before. You see two
-                                        \rdoors both with a strange clear
-                                        \rsubstance on them. As you touch and
-                                        \rinspect it your hand starts to burn.
-                                        \rCould it be venom?\n""")
+                                        slowprint(p1_correct_path['p9'])
                                         answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                                         # Instant Losing Path
@@ -216,23 +165,7 @@ def third_floor():
 
                                         # Continuing Winning Path (10)
                                         elif answer == 2:
-                                            slowprint("""As you walk in you
-                                            \rhear a deafening hissing noise
-                                            \rcoming from the only door ahead
-                                            \rof you. Scared, you think of
-                                            \rheading back but realise this is
-                                            \rthe only way out. You take a
-                                            \rdeep breath and open the door.OH
-                                            \rNO!!! IT IS A COLOSSAL TARANTULA
-                                            \rTHE SIZE OF A HOUSE. It notices
-                                            \ryou and heads straight towards
-                                            \rou. Panicked you try to run back
-                                            \rbut it shoots venom outs its
-                                            \rfans, collapsing the entire will
-                                            \rand exit behind you. You brace
-                                            \ryourself, thinking you have met
-                                            \ryour impending doom.
-                                            \rNext door.""")
+                                            slowprint(p1_correct_path['p10'])
 
                                     # Instant Losing Path
                                     elif answer == 2:
