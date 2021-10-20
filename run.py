@@ -6,7 +6,8 @@ By: Faris Dhoot
 # Document Imports
 import sys
 import time
-from path import p1_correct_path, p1_correct_path_additions, p1_losing_path, p2_losing_path 
+from path import p1_correct_path, p1_correct_path_additions, p1_losing_path, \
+    p2_losing_path, p3_game_path, p3_losing_path
 
 
 def slowprint(slow):
@@ -161,93 +162,44 @@ def third_floor():
 
     # Secondary Losing Path (Sequence | 3 | 2 | 1 | 2 |)
     elif answer == 3:
-        slowprint("""\nAs you enter the room you start to feel your feet
-        \rburning. You look down and see smoke arising from your shoes. You
-        \rrealise the clear liquid is some sort of corrosive substance. You
-        \rquickly take your shoes off before it starts to burn you skin. There
-        \rare three doors in front of you.\n""")
+        slowprint(p3_game_path["p1"])
         answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
         if answer == 1:
-            level_restart("""YOU ENTER THE ROOM AND ARE ATTACKED BY A MURDER
-            \rOF CROWS. THEY START PECKING AT YOUR FLESH AS YOU ARE UNABLE TO
-            \rSTOP THEM.""")
+            level_restart(p3_losing_path["p1"])
 
         elif answer == 2:
-            level_restart("""AS YOU OPEN THE DOOR YOU ARE BOMBARDED BY A WAVE
-            \rOF THE CARROSIVE SUBSTANCE. AS IT BEGINS TO EAT AT YOUR FLESH, A
-            \rNOTE DRIFTS TOWARDS YOU THAT SAYS “Spider Venom”.""")
+            level_restart(p3_losing_path["p1i"])
 
         elif answer == 3:
-            slowprint("""\nYou walk into the room and see several pieces of paper
-            \rscattered across the floor. You pick one up titled “Experiment
-            \rNotes”. You try to read the rest but cannot make sense of its
-            \rscientific content. There are two doors in front of you.\n""")
+            slowprint(p3_game_path["p2"])
             answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
             if answer == 1:
-                level_restart("""YOU WALK IN AND ARE IMMEDIATELY INTERCEPTED
-                \rBY AN ABNORMALY LARGE ANACONDA. IT STARTS TO WRAP AROUND YOU,
-                \rENGULFING YOU ITS MOTUH.""")
+                level_restart(p3_losing_path["p2"])
 
             elif answer == 2:
-                slowprint("""\nYou walk into a space with a sign that says
-                \r“Holding Room”. You are surrounded by hazmat suits. Things
-                \rare getting strange. There are two doors in front of
-                \ryou.\n""")
+                slowprint(p3_game_path["p3"])
                 answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                 if answer == 1:
-                    slowprint("""\nYou enter another holding room, but this time
-                    \rsurrounded by various medical equipment and empty
-                    \rbattered cages. You look around and find more of the
-                    \rspider venom in vials labelled “CHEMICAL X”. Things are
-                    \rdefinitely getting strange. There are two doors in front
-                    \rof you.\n""")
+                    slowprint(p3_game_path["p4"])
                     answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                     if answer == 1:
-                        level_restart("""YOU ENTER THE ROOM AND FIND SEVERAL
-                        \rMONKYS SCREAMING IN AGONY. THE LONGER YOU LOOK THE
-                        \rMORE YOU REALISE THESE ARENT NORMAL MONKIES.  THEY
-                        \rSEEM TO HAVE BEEN GENETICALLY ENGINEERED WITH SOME
-                        \rOTHER CREATURE. ONE OF THEM NOTICES AND CHARGES AT
-                        \rYOU.""")
+                        level_restart(p3_losing_path["p3"])
 
                     elif answer == 2:
-                        slowprint("""\nAs you attempt to open the door you
-                        \rrealise something is different. The door is
-                        \rextremely heavy. You use all your strength to prize
-                        \rit open. As you walk inside the door swiftly shuts
-                        \rand locks behind you. You look back and realise it
-                        \ris some kind of vault, hooked to a mechanism, making
-                        \rsure nothing inside got out. You see three of the
-                        \rsame doors ahead.\n""")
+                        slowprint(p3_game_path["p5"])
                         answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
                         if answer == 1 or answer == 2 or answer == 3:
-                            slowprint("""\nYou enter the room to hear a
-                            \rrobotic voice speaking – “ALERT! ALERT!
-                            \rEXPERIMENT 626 HAS ESCAPED” and red flashing
-                            \rlights. As you look around you realise you are
-                            \rin a laboratory. You find several Hybrid
-                            \rcreatures attached to machines screaming in
-                            \ragony. You find a book titled “Chimera”.\n""")
+                            slowprint(p3_game_path["p6"])
                             read_game_clue_files("assets/game-txt-files/game-clue-files/lab-book.txt", "book")
-                            level_restart("""AS YOU PUT THE BOOK DOWN YOU FEEL
-                            \rA TAP ON YOUR SHOULDER. YOU LOOK BACK STARTLED
-                            \rTO FIND A HALF MAN HALF SPIDER HYBRID STARING AT
-                            \rYOU WITH GLEE. BEFORE YOU COULD EVEN THINK YOU
-                            \rARE IMMEDIATELY INJECTED WITH CHEMICAL X.""")
+                            level_restart(p3_losing_path["p5"])
 
                 elif answer == 2:
-                    level_restart("""YOU ENTER THE ROOM AND FIND A TELEPHONE.
-                    \rEXITED, YOU RUN TOWARDS IT AND CALL 999. SUCCESS IT
-                    \rRINGS. YOU BEGIN TO DESCRIBE YOUR CIRCUMSTANCE TO THE
-                    \rOPERATOR WHO REASSURES YOU. THEY ASK FOR YOU TO STAY ON
-                    \rTHE LINE WHILE THEY TRACK YOUR LOCATION. SUDDENLY YOU
-                    \rHEAR A LOUD GROWLING NOISE BEHIND YOU. IT’S A MASSIVE
-                    \rTIGER.""")
+                    level_restart(p3_losing_path["p4"])
 
 
 # def validation_checking(third_floor_answer):

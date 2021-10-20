@@ -118,7 +118,7 @@ p1_losing_path = {
                 \rOTHER SIDE. EXITED YOU QUICKLY WALK THROUGH TO FIND THE
                 \rSTAIRCASE WAS A DECOY WITH NO STEPS. YOU FALL DOWN THREE
                 \rSTOREIS TO YOUR DEATH.""",
-        
+
         "p3ii": """YOU WALK INTO A BEDROOM THAT LOOKS RECENTLY LIVED IN. THIS
                 \rMEANS SOMEONE ELSE MIGHT BE NEARBY AND ABLE TO HELP.
                 \rSUDDENLY YOU HEAR A LOUD THUD AND NOTICE A CHANDELIER ABOVE
@@ -150,8 +150,6 @@ p1_losing_path = {
         "p9": """YOU WALK INTO A TRAP AND FALL INTO A WATER HOLE. YOU'RE NOT
                 \rALONE. SUDDENLY YOU FEEL SOMETHING BITING YOUR LEG, DRAGGING
                 \rYOU UNDER.""",
-
-        "p10": ""
 }
 
 # Losing Game Path (Path 2)
@@ -167,5 +165,73 @@ p2_losing_path = {
 # Gmae Path (Path 3)
 
 p3_game_path = {
+        "p1": """\nAs you enter the room you start to feel your feet burning.
+                \rYou look down and see smoke arising from your shoes. You
+                \rrealise the clear liquid is some sort of corrosive substance.
+                \rYou quickly take your shoes off before it starts to burn you
+                \rskin. There are three doors in front of you.\n""",
 
+        "p2": """\nYou walk into the room and see several pieces of paper
+                \rscattered across the floor. You pick one up titled
+                \r“Experiment Notes”. You try to read the rest but cannot make
+                \rsense of its scientific content. There are two doors in
+                \rfront of you.\n""",
+
+        "p3": """\nYou walk into a space with a sign that says “Holding Room”.
+                \rYou are surrounded by hazmat suits. Things are getting
+                \rstrange. There are two doors in front of you.\n""",
+
+        "p4": """\nYou enter another holding room, but this time surrounded by
+                \rvarious medical equipment and empty battered cages. You look
+                \raround to find more of the spider venom in vials labelled
+                \r“CHEMICAL X”. Things are definitely getting strange. There
+                \rare two doors in front of you.\n""",
+
+        "p5": """\nAs you attempt to open the door you realise something is
+                \rdifferent. The door is extremely heavy. You use all your
+                \rstrength to prize it open. As you walk inside the door
+                \rswiftly shuts and locks behind you. You look back and
+                \rrealise it is some kind of vault, hooked to a mechanism,
+                \rmaking sure nothing inside got out. You see three of the
+                \rsame doors ahead.\n""",
+
+        "p6": """\nYou enter the room to hear a robotic voice speaking –
+                \r“ALERT! ALERT! EXPERIMENT 626 HAS ESCAPED” and red flashing
+                \rlights. As you look around you realise you are in a
+                \rlaboratory. You find several Hybrid creatures attached to
+                \rmachines screaming in agony. You find a document titled “The
+                \rChimera Project”.\n"""
+}
+
+# Losing Game Path (Path 3)
+p3_losing_path = {
+        "p1": """YOU ENTER THE ROOM AND ARE ATTACKED BY A MURDER OF CROWS.
+                \rTHEY START PECKING AT YOUR FLESH AS YOU ARE UNABLE TO STOP
+                \rTHEM.""",
+
+        "p1i": """AS YOU OPEN THE DOOR YOU ARE BOMBARDED BY A WAVE OF THE
+                \rCARROSIVE SUBSTANCE. AS IT BEGINS TO EAT AT YOUR FLESH, A
+                \rNOTE DRIFTS TOWARDS YOU THAT SAYS “Spider Venom”.""",
+
+        "p2": """YOU WALK IN AND ARE IMMEDIATELY INTERCEPTED BY AN ABNORMALY
+                \rLARGE ANACONDA. IT STARTS TO WRAP AROUND YOU, ENGULFING YOU
+                \rITS MOTUH.""",
+
+        "p3": """YOU ENTER THE ROOM AND FIND SEVERAL MONKIES SCREAMING IN
+                \rAGONY. THE LONGER YOU LOOK THE MORE YOU REALISE THESE ARENT
+                \rNORMAL MONKIES.  THEY SEEM TO HAVE BEEN GENETICALLY
+                \rENGNEERIED WITH SOME OTHER CREATURE. ONE OF THEM NOTICES AND
+                \rCHARGES AT YOU.""", 
+        
+        "p4": """YOU ENTER THE ROOM AND FIND A TELEPHONE. EXITED, YOU RUN
+                \rTOWARDS IT AND CALL 999. SUCCESS IT RINGS. YOU BEGIN TO
+                \rDESCRIBE YOUR CIRCUMSTANCE TO THE OPERATOR WHO REASSURES YOU.
+                \rTHEY ASK FOR YOU TO STAY ON THE LINE WHILE THEY TRACK YOUR
+                \rLOCATION. SUDDENLY YOU HEAR A LOUD GROWLING NOISE BEHINDE
+                \rYOU. IT’S A MASSIVE TIGER.""", 
+        
+        "p5": """AS YOU PUT THE BOOK DOWN YOU FEEL A TAP ON YOUR SHOULDER. YOU
+                \rLOOK BACK STARTLED TO FIND A HALF MAN HALF SPIDER HYBRID
+                \rSTARING AT YOU WITH GLEE. BEFORE YOU COULD EVEN THINK YOU
+                \rARE IMMEDIATELY INJECTED WITH CHEMICAL X."""
 }
