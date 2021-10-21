@@ -22,7 +22,7 @@ p1_correct_path = {
                 \rstroke of luck, you find a flash light. You will finally be
                 \rable to see. There are three doors in front of you.\n""",
 
-        "p3": """\nYou open the second door to find a library filled with books
+        "p3": """\nYou open the first door to find a library filled with books
                 \rthat are covered in dust and cobwebs. As you search through
                 \rthe literature, you lift a biographic novel which triggers a
                 \rmechanism, revealing a fake bookcase with three doors
@@ -97,7 +97,7 @@ p1_correct_path_additions = {
         "p7a": """\nYou finish reading the report and realise you are being
                 \rwatched by hunderds of tarantulas. Their fangs dripping
                 \rwith venom, burning holes in the ground. Quick there are
-                \rtwo doors in front of you.\n""",
+                \rthree doors in front of you.\n""",
 }
 
 # Lossing Game Path (Path 1)

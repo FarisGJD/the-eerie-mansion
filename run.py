@@ -8,6 +8,7 @@ import sys
 import time
 from path import p1_correct_path, p1_correct_path_additions, p1_losing_path, \
     p2_losing_path, p3_game_path, p3_losing_path
+from functions import handel_game, questions_and_answers1
 
 
 def slowprint(slow):
@@ -18,7 +19,7 @@ def slowprint(slow):
     for slw in slow + '\n':
         sys.stdout.write(slw)
         sys.stdout.flush()
-        time.sleep(0.000000000000003/10)
+        time.sleep(0.0000000000003/10)
 
 
 def start_game():
@@ -138,6 +139,7 @@ def third_floor():
                                         # Continuing Winning Path (10)
                                         elif answer == 2:
                                             slowprint(p1_correct_path['p10'])
+                                            continue_after_text()
 
                                     # Instant Losing Path
                                     elif answer == 2:
@@ -206,7 +208,7 @@ def second_floor():
     """
     Second Game Floor
     """
-    slowprint("""\nBefore arriving at the end of the stairs you reach a balcony.
+    slowprint("""\nBefore arriving to the end of the stairs you reach a balcony.
     \rBeneath you is a mind filed of traps and strange doors with markings on
     \rthem. You approach the first set of 3 doors.\n""")
     answer2 = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip())
@@ -215,7 +217,8 @@ def second_floor():
         level_restart2()
 
     elif answer2 == 2:
-        print("")
+        slowprint("You read the strange markings on the door")
+        handel_game(questions_and_answers1)
 
     elif answer2 == 3:
         level_restart2()
