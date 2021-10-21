@@ -18,7 +18,7 @@ def slowprint(slow):
     for slw in slow + '\n':
         sys.stdout.write(slw)
         sys.stdout.flush()
-        time.sleep(0.0000000003/10)
+        time.sleep(0.000000000000003/10)
 
 
 def start_game():
@@ -61,7 +61,7 @@ def third_floor():
 
         # Instant Losing Path
         if answer == 1:
-            level_restart(p1_losing_path['p1'])
+            level_restart3(p1_losing_path['p1'])
 
         # Continuing Winning Path (2)
         elif answer == 2:
@@ -77,7 +77,7 @@ def third_floor():
 
                 # Instant Losing Path
                 if answer == 1:
-                    level_restart(p1_losing_path['p2'])
+                    level_restart3(p1_losing_path['p2'])
 
                 # Continuing Winning Path (4)
                 elif answer == 2:
@@ -86,11 +86,11 @@ def third_floor():
 
                     # Instant Losing Path
                     if answer == 1:
-                        level_restart(p1_losing_path['p3'])
+                        level_restart3(p1_losing_path['p3'])
 
                     # Instant Losing Path
                     elif answer == 2:
-                        level_restart(p1_losing_path['p4'])
+                        level_restart3(p1_losing_path['p4'])
 
                     # Continuing Winning Path (5)
                     elif answer == 3:
@@ -99,7 +99,7 @@ def third_floor():
 
                         # Instant Losing Path
                         if answer == 1:
-                            level_restart(p1_losing_path['p5'])
+                            level_restart3(p1_losing_path['p5'])
 
                         # Continuing Winning Path (6)
                         elif answer == 2:
@@ -108,7 +108,7 @@ def third_floor():
 
                             # Instant Losing Path
                             if answer == 1:
-                                level_restart(p1_losing_path['p6'])
+                                level_restart3(p1_losing_path['p6'])
 
                             # Continuing Winning Path (7)
                             elif answer == 2:
@@ -119,7 +119,7 @@ def third_floor():
 
                                 # Instant Losing Path
                                 if answer == 1 or answer == 2:
-                                    level_restart(p1_losing_path['p7'])
+                                    level_restart3(p1_losing_path['p7'])
 
                                 # Continuing Winning Path (8)
                                 elif answer == 3:
@@ -133,7 +133,7 @@ def third_floor():
 
                                         # Instant Losing Path
                                         if answer == 1:
-                                            level_restart(p1_losing_path['p8'])
+                                            level_restart3(p1_losing_path['p8'])
 
                                         # Continuing Winning Path (10)
                                         elif answer == 2:
@@ -141,11 +141,11 @@ def third_floor():
 
                                     # Instant Losing Path
                                     elif answer == 2:
-                                        level_restart(p1_losing_path['p9'])
+                                        level_restart3(p1_losing_path['p9'])
 
             # Instant Losing Path
             elif answer == 2:
-                level_restart(p1_losing_path['p3ii'])
+                level_restart3(p1_losing_path['p3ii'])
 
             # Continuing Path
             elif answer == 3:
@@ -154,11 +154,11 @@ def third_floor():
 
                 # Instant Losing Path
                 if answer == 1 or answer == 2:
-                    level_restart(p1_losing_path['p3i'])
+                    level_restart3(p1_losing_path['p3i'])
 
     # Primary Losing Path
     elif answer == 2:
-        level_restart(p2_losing_path['p1'])
+        level_restart3(p2_losing_path['p1'])
 
     # Secondary Losing Path (Sequence | 3 | 2 | 1 | 2 |)
     elif answer == 3:
@@ -166,17 +166,17 @@ def third_floor():
         answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
 
         if answer == 1:
-            level_restart(p3_losing_path["p1"])
+            level_restart3(p3_losing_path["p1"])
 
         elif answer == 2:
-            level_restart(p3_losing_path["p1i"])
+            level_restart3(p3_losing_path["p1i"])
 
         elif answer == 3:
             slowprint(p3_game_path["p2"])
             answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
             if answer == 1:
-                level_restart(p3_losing_path["p2"])
+                level_restart3(p3_losing_path["p2"])
 
             elif answer == 2:
                 slowprint(p3_game_path["p3"])
@@ -187,7 +187,7 @@ def third_floor():
                     answer = int(input("Which Door Do You Enter: | 1 | 2 |\n").strip())
 
                     if answer == 1:
-                        level_restart(p3_losing_path["p3"])
+                        level_restart3(p3_losing_path["p3"])
 
                     elif answer == 2:
                         slowprint(p3_game_path["p5"])
@@ -196,10 +196,29 @@ def third_floor():
                         if answer == 1 or answer == 2 or answer == 3:
                             slowprint(p3_game_path["p6"])
                             read_game_clue_files("assets/game-txt-files/game-clue-files/lab-book.txt", "book")
-                            level_restart(p3_losing_path["p5"])
+                            level_restart3(p3_losing_path["p5"])
 
                 elif answer == 2:
-                    level_restart(p3_losing_path["p4"])
+                    level_restart3(p3_losing_path["p4"])
+
+
+def second_floor():
+    """
+    Second Game Floor
+    """
+    slowprint("""\nBefore arriving at the end of the stairs you reach a balcony.
+    \rBeneath you is a mind filed of traps and strange doors with markings on
+    \rthem. You approach the first set of 3 doors.\n""")
+    answer2 = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip())
+
+    if answer2 == 1:
+        level_restart2()
+
+    elif answer2 == 2:
+        print("")
+
+    elif answer2 == 3:
+        level_restart2()
 
 
 # def validation_checking(third_floor_answer):
@@ -221,28 +240,50 @@ def third_floor():
 #     return True
 
 
-def level_restart(text):
+def level_restart3(text):
     """
-    Takes the user back to the introductory path of
-    its respective floor or exits the game.
+    Takes user back to the begning of
+    the third floor
     """
     slowprint(f"\n⛔️⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} RESTARTING LEVEL ⛔️⛔️⛔️⛔️⛔️⛔️")
     while True:
-        gameplay_choice = input("\nWould you like to continue with the adventure?: | yes | no |\n").lower().strip()
+        level3_choice = input("\nWould you like to continue with the adventure?: | yes | no |\n").lower().strip()
 
-        if gameplay_choice == "yes":
+        if level3_choice == "yes":
             third_floor()
             break
 
-        elif gameplay_choice == "no":
+        elif level3_choice == "no":
             slowprint("\nThanks for visiting, come back soon")
+            # time.sleep(2)
+            game_transition()
             quit()
 
-        elif gameplay_choice != "yes":
+        elif level3_choice != "yes":
             slowprint("\nIncorrect input, please select yes or no")
 
-    # time.sleep(2)
-    game_transition()
+
+def level_restart2():
+    """
+    Takes user back to the begning of
+    the second floor
+    """
+    slowprint("\n❌❌❌❌❌❌ INCORECT CHOICE: YOU FALL INTO A PIT OF TARANTULAS. THEY SLOWLY DEVOUR YOU ❌❌❌❌❌❌")
+    while True:
+        level2_choice = input("\nWould you like to continue with the adventure?: | yes | no |\n").lower().strip()
+
+        if level2_choice == "yes":
+            second_floor()
+            break
+
+        elif level2_choice == "no":
+            slowprint("\nThanks for visiting, come back soon")
+            # time.sleep(2)
+            game_transition()
+            quit()
+
+        elif level2_choice != "yes":
+            slowprint("\nIncorrect input, please select yes or no")
 
 
 def game_over(text):
@@ -269,7 +310,6 @@ def read_game_intro_files(intro_file, text):
                 break
 
         elif rules_file_answer == "no":
-            game_transition()
             break
 
         elif rules_file_answer != "yes":
@@ -326,12 +366,15 @@ def game_main():
     """
     Implements the games principle functions
     """
-    start_game()
-    read_game_intro_files("assets/game-txt-files/game-intro-files/game-rules.txt", "rules")
-    game_transition()
-    read_game_intro_files("assets/game-txt-files/game-intro-files/game-plot.txt", "plot")
-    game_transition()
-    third_floor()
+    # start_game()
+    # read_game_intro_files("assets/game-txt-files/game-intro-files/game-rules.txt", "rules")
+    # game_transition()
+    # read_game_intro_files("assets/game-txt-files/game-intro-files/game-plot.txt", "plot")
+    # game_transition()
+    # third_floor()
+    # game_transition()
+    second_floor()
+
     # validation_checking(answer)
 
 
