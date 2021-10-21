@@ -8,7 +8,8 @@ import sys
 import time
 from path import p1_correct_path, p1_correct_path_additions, p1_losing_path, \
     p2_losing_path, p3_game_path, p3_losing_path
-from functions import handel_game, questions_and_answers1
+from functions import handel_game, q_and_a1, q_and_a2, q_and_a3, q_and_a4, \
+    q_and_a5
 
 
 def slowprint(slow):
@@ -208,20 +209,52 @@ def second_floor():
     """
     Second Game Floor
     """
-    slowprint("""\nBefore arriving to the end of the stairs you reach a balcony.
-    \rBeneath you is a mind filed of traps and strange doors with markings on
-    \rthem. You approach the first set of 3 doors.\n""")
+    slowprint("""\nBefore arriving at the end of the stairs you reach a
+    \rbalcony. Beneath you is a mind filed of 3 doors and traps placed
+    \rconsecutively. The doors seem to have strange markings on them. You
+    \rapproach the first set of 3.\n""")
     answer2 = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip())
 
-    if answer2 == 1:
+    # Winning Path  (Sequence 2 | 1 | 3 | 1 | 3)
+
+    if answer2 == 1 or answer2 == 3:
         level_restart2()
 
     elif answer2 == 2:
-        slowprint("You read the strange markings on the door")
-        handel_game(questions_and_answers1)
+        slowprint("\nYou read the strange markings on the door")
+        handel_game(q_and_a1)
+        answer2 = int(input("\nWhich Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip())
 
-    elif answer2 == 3:
-        level_restart2()
+        if answer2 == 1:
+            slowprint("\nYou read the strange markings on the door")
+            handel_game(q_and_a2)
+            answer2 = int(input("\nWhich Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip())
+
+            if answer2 == 1 or answer2 == 2:
+                level_restart2()
+
+            elif answer2 == 3:
+                slowprint("\nYou read the strange markings on the door")
+                handel_game(q_and_a3)
+                answer2 = int(input("\nWhich Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip())
+
+                if answer2 == 1:
+                    slowprint("\nYou read the strange markings on the door")
+                    handel_game(q_and_a4)
+                    answer2 = int(input("\nWhich Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip())
+
+                    if answer2 == 1 or answer2 == 2:
+                        level_restart2()
+
+                    elif answer2 == 3:
+                        slowprint("\nYou read the strange markings on the door")
+                        handel_game(q_and_a5)
+
+                elif answer2 == 2 or answer2 == 3:
+                    level_restart2()
+
+        elif answer2 == 2 or answer2 == 3:
+            level_restart2()
 
 
 # def validation_checking(third_floor_answer):
@@ -241,7 +274,6 @@ def second_floor():
 #         print(f"Invalid input: {error}, please try again. \n")
 #         return False
 #     return True
-
 
 def level_restart3(text):
     """
@@ -369,13 +401,13 @@ def game_main():
     """
     Implements the games principle functions
     """
-    # start_game()
-    # read_game_intro_files("assets/game-txt-files/game-intro-files/game-rules.txt", "rules")
-    # game_transition()
-    # read_game_intro_files("assets/game-txt-files/game-intro-files/game-plot.txt", "plot")
-    # game_transition()
-    # third_floor()
-    # game_transition()
+    start_game()
+    read_game_intro_files("assets/game-txt-files/game-intro-files/game-rules.txt", "rules")
+    game_transition()
+    read_game_intro_files("assets/game-txt-files/game-intro-files/game-plot.txt", "plot")
+    game_transition()
+    third_floor()
+    game_transition()
     second_floor()
 
     # validation_checking(answer)

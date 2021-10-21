@@ -50,23 +50,23 @@ questions_cues = [
     \n(d) Females Only\n\n"""
 ]
 
-questions_and_answers1 = [
+q_and_a1 = [
     Question(questions_cues[0], "c")
 ]
 
-questions_and_answers2 = [
+q_and_a2 = [
     Question(questions_cues[1], "a")
 ]
 
-questions_and_answers3 = [
+q_and_a3 = [
     Question(questions_cues[2], "d")
 ]
 
-questions_and_answers4 = [
+q_and_a4 = [
     Question(questions_cues[3], "b")
 ]
 
-questions_and_answers5 = [
+q_and_a5 = [
     Question(questions_cues[4], "a")
 ]
 
@@ -82,7 +82,6 @@ def handel_game(questions):
         user_answer = input(que.cue)
         if user_answer == que.answers:
             print("\nCorrect! You Successfully Pass Through")
-
-        elif user_answer != que.answers:
+        else:
             score -= 1
-            print(f"Inncorect Answer Your Life Points Is:{score}")
+            print(f"\nInncorect Answer You Have {score} Life Points Left")
