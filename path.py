@@ -28,14 +28,14 @@ p1_correct_path = {
                 \rmechanism, revealing a fake bookcase with three doors
                 \rbehind it.\n""",
 
-        "p3i": """You enter the room and find two doors side by side. The
+        "p3i": """\nYou enter the room and find two doors side by side. The
                 \rfirst has a blacked-out window next to it. You try and look
                 \rthrough but cannot discern anything. As you scramble,
                 \rdesperate to gather your surroundings you find a tiny
                 \rscratched off surface and look through. You realise you ares
                 \rthree stories above a garden. You try to look for more clues
                 \rand see what appears to be the beginnings of staircase
-                \rhandle connected to the first door.""",
+                \rhandle connected to the first door.\n""",
 
         "p4": """\nYou open the door to find a long hallway leading one direction,
                 \rthis looks promising. You start your journey trying to
@@ -60,7 +60,7 @@ p1_correct_path = {
 
         "p8": """\nYou enter a room to find heaps of spider eggs and
                 \rexoskeletons the size of cars. You see two doors both with a
-                \rstrange clear substance on them. As you touch an inspect it
+                \rstrange clear substance on them. As you touch and inspect it
                 \ryour hand starts to burn. Could it be venom?\n""",
 
         "p9": """\nAmid opening the door you are stupefied by the odour of
@@ -104,20 +104,19 @@ p1_correct_path_additions = {
 
 p1_losing_path = {
         "p1": """AS YOU OPEN THE DOOR YOU IMMEDIATELY START FALLING,
-                \rREALISING THE FLOOR WAS COMPLETELY MISSING, PLUMMETING TO
-                \rYOUR DEATH.""",
+                \rREALISING THE FLOOR WAS COMPLETELY MISSING""",
 
-        "p2": """INSTANT DEATH!! THE PREVIOUS ROOMS MECHANISM TRIGGERS AN
-                \rCROSSBOW AND ARROW, PIERCING STRAIGHT THROUGH YOUR SKULL.""",
+        "p2": """THE PREVIOUS ROOMS MECHANISM TRIGGERS AN CROSSBOW AND ARROW,
+                \rPIERCING STRAIGHT THROUGH YOUR TORSO.""",
 
         "p3": """YOU ENTER A PITCH-BLACK ROOM AND ARE UNABLE TO SEE.
                 \rUNEXPECTEDLY THE LIGHTS TURN ON AND A SWINGING GUILLOTINE
-                \rSLICES YOU IN HALF.""",
+                \rSLICES YOUR LEGS STRAIGHT OFF.""",
 
         "p3i": """AS YOU OPEN THE DOOR YOU FEEL A BREEZE EMANATING FROM THE
                 \rOTHER SIDE. EXITED YOU QUICKLY WALK THROUGH TO FIND THE
                 \rSTAIRCASE WAS A DECOY WITH NO STEPS. YOU FALL DOWN THREE
-                \rSTOREIS TO YOUR DEATH.""",
+                \rSTOREIS""",
 
         "p3ii": """YOU WALK INTO A BEDROOM THAT LOOKS RECENTLY LIVED IN. THIS
                 \rMEANS SOMEONE ELSE MIGHT BE NEARBY AND ABLE TO HELP.
@@ -209,13 +208,11 @@ p3_losing_path = {
                 \rTHEY START PECKING AT YOUR FLESH AS YOU ARE UNABLE TO STOP
                 \rTHEM.""",
 
-        "p1i": """AS YOU OPEN THE DOOR YOU ARE BOMBARDED BY A WAVE OF THE
-                \rCARROSIVE SUBSTANCE. AS IT BEGINS TO EAT AT YOUR FLESH, A
-                \rNOTE DRIFTS TOWARDS YOU THAT SAYS “Spider Venom”.""",
+        "p1i": """AS YOU OPEN THE DOOR YOU ARE BOMBARDED BY A WAVE OF STAGNANT
+                \rWATER, DROWNING YOU.""",
 
         "p2": """YOU WALK IN AND ARE IMMEDIATELY INTERCEPTED BY AN ABNORMALY
-                \rLARGE ANACONDA. IT STARTS TO WRAP AROUND YOU, ENGULFING YOU
-                \rITS MOTUH.""",
+                \rLARGE ANACONDA.""",
 
         "p3": """YOU ENTER THE ROOM AND FIND SEVERAL MONKIES SCREAMING IN
                 \rAGONY. THE LONGER YOU LOOK THE MORE YOU REALISE THESE ARENT
@@ -234,4 +231,11 @@ p3_losing_path = {
                 \rLOOK BACK STARTLED TO FIND A HALF MAN HALF SPIDER HYBRID
                 \rSTARING AT YOU WITH GLEE. BEFORE YOU COULD EVEN THINK YOU
                 \rARE IMMEDIATELY INJECTED WITH CHEMICAL X."""
+}
+
+# Instant Death (Paths 1 & 3)
+game_over_p = {
+        "go": """YOU FALL INTO A PIT OF A CORROSIVE SUBSTANCE. IT SLOWLY
+                \rSTARTS EATING AWAY AT YOUR FLESH, BEFORE YOU DIE A NOTE
+                \rDRIFTS TOWARDS YOU TITLED “Chemical X”."""
 }

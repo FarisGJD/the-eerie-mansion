@@ -4,10 +4,12 @@ Level 2
 & Level 3
 """
 
-# Level 2 Questions
+import random
+
+# Level 2 Questions Game
 
 
-class Question:
+class Question(object):
     """
     Stores Questions Cue
     & Answers
@@ -84,4 +86,10 @@ def handel_game(questions):
             print("\nCorrect! You Successfully Pass Through")
         else:
             score -= 1
-            print(f"\nInncorect Answer You Have {score} Life Points Left")
+            print(f"\nIncorrect answer, you have {score} lives left")
+
+
+# Level 1 Random Number Guessing Game
+
+random_num = random.randint(1, 9)
+print(random_num)
