@@ -12,6 +12,9 @@ from functions import handel_game, q_and_a1, q_and_a2, q_and_a3, q_and_a4, \
     q_and_a5
 
 
+answer = None
+
+
 def slow_print(slow):
     """
     Function that uses the sys & time modules to
@@ -63,11 +66,11 @@ def user_validation():
         answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
         if answer not in range(1, 4):
             raise ValueError(
-                f""" Your answer should either be,
-                you entered {answer}"""
+                f""" Your answer should either be | 1 | 2 | 3 |
+                \ryou entered {answer}"""
             )
-    except ValueError:
-        print("\nInvalid input, please follow the prompt!\n")
+    except ValueError as error:
+        print(f"\nInvalid input: {error} please follow the prompt!\n")
 
         return user_validation()
 

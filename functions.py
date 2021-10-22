@@ -91,5 +91,38 @@ def handel_game(questions):
 
 # Level 1 Random Number Guessing Game
 
-random_num = random.randint(1, 9)
-print(random_num)
+def random_number_generator():
+    """
+    Generates Random Number
+    For First Floor
+    """
+    random_num = random.randint(0, 10)
+    score = 5
+
+    while True:
+        guess = input("The computer needs a numbe between 0 - 10\n")
+        if guess.isdigit():
+            guess = int(guess)
+
+        else:
+            print("Input number")
+            continue
+
+        if guess == random_num:
+            print("Correct")
+            break
+
+        elif guess > random_num:
+            print("above")
+
+        elif guess < random_num:
+            print("below")
+
+        elif guess != random_num:
+            score -= 1
+            print(f"You have {score} remaining")
+            if score == 0:
+                quit()
+
+
+random_number_generator()
