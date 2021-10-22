@@ -7,7 +7,7 @@ By: Faris Dhoot
 import sys
 import time
 from path import p1_correct_path, p1_correct_path_additions, p1_losing_path, \
-    p2_losing_path, p3_game_path, p3_losing_path, game_over_p
+    p2_losing_path, p3_game_path, p3_losing_path, game_over_p, second_floorp
 from functions import handel_game, q_and_a1, q_and_a2, q_and_a3, q_and_a4, \
     q_and_a5
 
@@ -20,7 +20,7 @@ def slow_print(slow):
     for slw in slow + '\n':
         sys.stdout.write(slw)
         sys.stdout.flush()
-        time.sleep(0.00000000000000003/10)
+        time.sleep(0.000000000000000003/10)
 
 
 def start_game():
@@ -67,7 +67,7 @@ def user_validation():
                 you entered {answer}"""
             )
     except ValueError:
-        print("\nInvalid input, please follow the prompt\n")
+        print("\nInvalid input, please follow the prompt!\n")
 
         return user_validation()
 
@@ -311,7 +311,7 @@ def second_floor():
                         slow_print(
                             "\nYou read the strange markings on the door.")
                         handel_game(q_and_a5)
-                        slow_print("")
+                        slow_print(second_floorp["outro"])
                         game_transition()
 
                 elif answer == 2 or answer == 3:
@@ -326,6 +326,15 @@ def first_floor():
     Function that plays the
     final game floor
     """
+    slow_print("""\nYou reach the end of the stairs and are enthralled by what
+    \ryou see. A giant metallic, cybernated door with two glass screens on
+    \reither side.  The screen seems to have been smeared with some type of
+    \rblack paint. You use your flashlight to scrape off the matter blocking
+    \ryour view and begin to holler. Behind the glass screen is the exit from
+    \rthe mansion. Freedom at last.\n
+    \rAs you begin to inspect the door, trying to figure how to operate it you
+    \rnotice a computer screen to its side. Upon reading what it says you
+    \rrealise you need to provide it a pass code.\n""")
 
 
 def restart3(text):
@@ -337,7 +346,7 @@ def restart3(text):
     while True:
         choice = input(
             "\nWould you like to continue with the adventure?:"
-            + "| yes | no |\n").lower().strip()
+            + " | yes | no |\n").lower().strip()
 
         if choice == "yes":
             third_floor()
@@ -365,7 +374,7 @@ def level_restart2():
     while True:
         choice = input(
             "\nWould you like to continue with the adventure?:"
-            + "| yes | no |\n").lower().strip()
+            + " | yes | no |\n").lower().strip()
 
         if choice == "yes":
             second_floor()
@@ -468,9 +477,10 @@ def game_main():
     """
     Implements the games principle functions
     """
-    # start_game()
-    # third_floor()
+    start_game()
+    third_floor()
     second_floor()
+    first_floor()
 
 
 slow_print("""\n☠️☠️☠️☠️☠️☠️ WELCOME TO THE EERIE MANSION, CHOOSE YOUR OWN \

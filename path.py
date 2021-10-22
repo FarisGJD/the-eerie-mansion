@@ -2,7 +2,7 @@
 Game Paths
 """
 
-# Winning Game Path (Path 1)
+# Third Floor Winning Game Path (Path 1)
 
 p1_correct_path = {
         "p1": """\nYou enter and find an empty room with three doors, side
@@ -89,7 +89,7 @@ p1_correct_path = {
                 \ra flight of stairs. Is this the end?\n"""
 }
 
-# Winning Game Path, Additions (Path 1)
+# Third Floor Winning Game Path, Additions (Path 1)
 
 p1_correct_path_additions = {
         "p3a": """\nLifting the novel triggers a mechanism, revealing a fake
@@ -101,7 +101,7 @@ p1_correct_path_additions = {
                 \rthree doors in front of you.\n""",
 }
 
-# Losing Game Path (Path 1)
+# Third Floor Losing Game Path (Path 1)
 
 p1_losing_path = {
         "p1": """AS YOU OPEN THE DOOR YOU IMMEDIATELY START FALLING,
@@ -152,7 +152,7 @@ p1_losing_path = {
                 \rYOU UNDER.""",
 }
 
-# Losing Game Path (Path 2)
+# Third Floor Losing Game Path (Path 2)
 
 p2_losing_path = {
         "p1": """YOU ENTER A ROOM WITH FLICKERING LIGHTING. YOU LOOK AROUND
@@ -162,7 +162,7 @@ p2_losing_path = {
                 \rSPIDERS!."""
 }
 
-# Gmae Path (Path 3)
+# Third Floor Gmae Path (Path 3)
 
 p3_game_path = {
         "p1": """\nAs you enter the room you start to feel your feet burning.
@@ -203,7 +203,7 @@ p3_game_path = {
                 \rChimera Project”.\n"""
 }
 
-# Losing Game Path (Path 3)
+# Third Floor Losing Game Path (Path 3)
 p3_losing_path = {
         "p1": """YOU ENTER THE ROOM AND ARE ATTACKED BY A MURDER OF CROWS.
                 \rTHEY START PECKING AT YOUR FLESH AS YOU ARE UNABLE TO STOP
@@ -239,4 +239,13 @@ game_over_p = {
         "go": """YOU FALL INTO A PIT OF A CORROSIVE SUBSTANCE. IT SLOWLY
                 \rSTARTS EATING AWAY AT YOUR FLESH, BEFORE YOU DIE A NOTE
                 \rDRIFTS TOWARDS YOU TITLED “Chemical X”."""
+}
+
+# Second Floor
+second_floorp = {
+        "outro": """You successfully make it through the mind field of doors
+                \rand traps. As you exit the final door you find yourself in
+                \rfront of another flight of stairs. Exhausted you start to
+                \rbreakdown, worried if more obstacles await. You quickly snap
+                \rout of it, reminding yourself of how far you’ve come."""
 }
