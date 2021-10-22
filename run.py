@@ -29,17 +29,20 @@ def start_game():
     depending on thier answer, game starts or exits
     """
     while True:
-        playing = input("Do you dare play? Type: | yes | no |\n").lower().strip() # noqa
+        playing = input(
+            "Do you dare play? "
+            + "Type: | yes | no |\n").lower().strip()
 
         if playing == "yes":
             slow_print("\nInitialising Game")
             # time.sleep(2)
             game_transition()
-            read_game_intro_files( \
-                "assets/game-txt-files/game-intro-files/game-rules.txt", "rules") # noqa
+            read_game_intro_files(
+                "assets/game-txt-files/game-intro-files/"
+                + "game-rules.txt", "rules")
             game_transition()
-            read_game_intro_files( \
-                "assets/game-txt-files/game-intro-files/game-plot.txt", "plot") # noqa
+            read_game_intro_files(
+                "assets/game-txt-files/game-intro-files/game-plot.txt", "plot")
             game_transition()
             break
 
@@ -51,13 +54,13 @@ def start_game():
             slow_print("\nInvalid entery, please select yes or no")
 
 
-def user_validation(text):
+def user_validation():
     """
     Validates User Input
     """
     global answer
     try:
-        answer = int(input(f"{text}\n").strip())
+        answer = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").strip())
         if answer not in range(1, 4):
             raise ValueError(
                 f""" Your answer should either be,
@@ -66,7 +69,7 @@ def user_validation(text):
     except ValueError:
         print("\nInvalid input, please follow the prompt\n")
 
-        return user_validation(text), answer
+        return user_validation()
 
 
 def third_floor():
@@ -77,21 +80,21 @@ def third_floor():
     slow_print("""\nThere are three doors in front of you, the first is covered
     \rin cob webs, the second has odd markings engraved on to it and the
     \rthird has a strange liquid seeping through the bottom.\n""")
-    user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
+    user_validation()
 
     # Main Winning Path (Sequence 1|2|1|2|3|2|2|3|1|2)
     if answer == 1:
         slow_print(p1_correct_path['p1'])
-        user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
+        user_validation()
 
         # Instant Losing Path
         if answer == 1:
-            level_restart3(p1_losing_path['p1'])
+            restart3(p1_losing_path['p1'])
 
         # Continuing Winning Path (2)
         elif answer == 2:
             slow_print(p1_correct_path['p2'])
-            user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
+            user_validation()
 
             # Continuing Winning Path (3)
             if answer == 1:
@@ -100,72 +103,73 @@ def third_floor():
                     "assets/game-txt-files"
                     + "/game-clue-files/novel.txt", "novel")
                 slow_print(p1_correct_path_additions['p3a'])
-                user_validation("\nWhich Door Do You Enter: | 1 | 2 | 3 |")
+                user_validation()
 
                 # Instant Losing Path
                 if answer == 1:
-                    level_restart3(p1_losing_path['p2'])
+                    restart3(p1_losing_path['p2'])
 
                 # Continuing Winning Path (4)
                 elif answer == 2:
                     slow_print(p1_correct_path['p4'])
-                    user_validation("Which Door Do You Enter:| 1 | 2 | 3 |")
+                    user_validation()
 
                     # Instant Losing Path
                     if answer == 1:
-                        level_restart3(p1_losing_path['p3'])
+                        restart3(p1_losing_path['p3'])
 
                     # Instant Losing Path
                     elif answer == 2:
-                        level_restart3(p1_losing_path['p4'])
+                        restart3(p1_losing_path['p4'])
 
                     # Continuing Winning Path (5)
                     elif answer == 3:
                         slow_print(p1_correct_path['p5'])
-                        user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
+                        user_validation()
 
                         # Instant Losing Path
                         if answer == 1:
-                            level_restart3(p1_losing_path['p5'])
+                            restart3(p1_losing_path['p5'])
 
                         # Continuing Winning Path (6)
                         elif answer == 2:
                             slow_print(p1_correct_path['p6'])
-                            user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
+                            user_validation()
 
                             # Instant Losing Path
                             if answer == 1:
-                                level_restart3(p1_losing_path['p6'])
+                                restart3(p1_losing_path['p6'])
 
                             # Continuing Winning Path (7)
                             elif answer == 2:
                                 slow_print(p1_correct_path['p7'])
-                                read_game_clue_files( \
-                                    "assets/game-txt-files/game-clue-files/greenhouse-report.txt", "report") # noqa
+                                read_game_clue_files(
+                                    "assets/game-txt-files/game-clue-files/"
+                                    + "greenhouse-report.txt", "report")
                                 slow_print(p1_correct_path_additions['p7a'])
-                                user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
+                                user_validation()
 
                                 # Instant Losing Path
                                 if answer == 1 or answer == 2:
-                                    level_restart3(p1_losing_path['p7'])
+                                    restart3(p1_losing_path['p7'])
 
                                 # Continuing Winning Path (8)
                                 elif answer == 3:
                                     slow_print(p1_correct_path['p8'])
-                                    user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
+                                    user_validation()
 
                                     # Continuing Winning Path (9)
                                     if answer == 1:
                                         slow_print(p1_correct_path['p9'])
-                                        user_validation("Which Door Do You Enter: | 1 | 2 |")
+                                        user_validation()
 
                                         # Instant Losing Path
                                         if answer == 1:
-                                            level_restart3(p1_losing_path['p8']) # noqa
+                                            restart3(p1_losing_path['p8'])
 
                                         # Continuing Winning Path (10)
                                         elif answer == 2:
-                                            slow_print(p1_correct_path['p10']) # noqa
+                                            slow_print(p1_correct_path['p10'])
                                             continue_after_text()
                                             game_transition()
 
@@ -174,14 +178,14 @@ def third_floor():
 
                                     # Instant Losing Path
                                     elif answer == 2:
-                                        level_restart3(p1_losing_path['p9']) # noqa
+                                        restart3(p1_losing_path['p9'])
 
                                     elif answer == 3:
                                         game_over(game_over_p["go"])
 
                             # Game Over Path
                             elif answer == 3:
-                                game_over(game_over_p["go"])             
+                                game_over(game_over_p["go"])
 
                         # Game Over Path
                         elif answer == 3:
@@ -193,16 +197,16 @@ def third_floor():
 
             # Instant Losing Path
             elif answer == 2:
-                level_restart3(p1_losing_path['p3ii'])
+                restart3(p1_losing_path['p3ii'])
 
             # Instant Losing Path
             elif answer == 3:
                 slow_print(p1_correct_path['p3i'])
-                user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
+                user_validation()
 
                 # Instant Losing Path
                 if answer == 1 or answer == 2 or answer == 3:
-                    level_restart3(p1_losing_path['p3i'])
+                    restart3(p1_losing_path['p3i'])
 
         # Game Over Path
         elif answer == 3:
@@ -210,48 +214,56 @@ def third_floor():
 
     # Primary Losing Path
     elif answer == 2:
-        level_restart3(p2_losing_path['p1'])
+        restart3(p2_losing_path['p1'])
 
     # Secondary Losing Path (Sequence | 3 | 2 | 1 | 2 |)
     elif answer == 3:
         slow_print(p3_game_path["p1"])
-        user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
+        user_validation()
 
         if answer == 1:
-            level_restart3(p3_losing_path["p1"])
+            restart3(p3_losing_path["p1"])
 
         elif answer == 2:
-            level_restart3(p3_losing_path["p1i"])
+            restart3(p3_losing_path["p1i"])
 
         elif answer == 3:
             slow_print(p3_game_path["p2"])
-            user_validation("Which Door Do You Enter: | 1 | 2 |")
+            user_validation()
 
             if answer == 1:
-                level_restart3(p3_losing_path["p2"])
+                restart3(p3_losing_path["p2"])
 
             elif answer == 2:
                 slow_print(p3_game_path["p3"])
-                user_validation("Which Door Do You Enter: | 1 | 2 |")
+                user_validation()
 
                 if answer == 1:
                     slow_print(p3_game_path["p4"])
-                    user_validation("Which Door Do You Enter: | 1 | 2 |")
+                    user_validation()
 
                     if answer == 1:
-                        level_restart3(p3_losing_path["p3"])
+                        restart3(p3_losing_path["p3"])
 
                     elif answer == 2:
                         slow_print(p3_game_path["p5"])
-                        user_validation("Which Door Do You Enter: | 1 | 2 | 3 |\n")
+                        user_validation()
 
                         if answer == 1 or answer == 2 or answer == 3:
                             slow_print(p3_game_path["p6"])
-                            read_game_clue_files("assets/game-txt-files/game-clue-files/lab-book.txt", "book") # noqa
-                            level_restart3(p3_losing_path["p5"])
+                            read_game_clue_files(
+                                "assets/game-txt-files/game-clue-files/"
+                                + "lab-book.txt", "book")
+                            restart3(p3_losing_path["p5"])
 
                 elif answer == 2:
-                    level_restart3(p3_losing_path["p4"])
+                    restart3(p3_losing_path["p4"])
+
+                elif answer == 3:
+                    game_over(game_over_p["go"])
+
+            elif answer == 3:
+                game_over(game_over_p["go"])
 
 
 def second_floor():
@@ -262,52 +274,50 @@ def second_floor():
     \rbalcony. Beneath you is a mind filed of 3 doors and traps placed
     \rconsecutively. The doors seem to have strange markings on them. You
     \rapproach the first set of 3.\n""")
-    answer2 = int(input("Which Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip()) # noqa
+    user_validation()
 
     # Winning Path  (Sequence 2 | 1 | 3 | 1 | 3)
 
-    if answer2 == 1 or answer2 == 3:
+    if answer == 1 or answer == 3:
         level_restart2()
 
-    elif answer2 == 2:
+    elif answer == 2:
         slow_print("\nYou read the strange markings on the door.")
         handel_game(q_and_a1)
-        answer2 = int(input("\nWhich Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip()) # noqa
+        user_validation()
 
-        if answer2 == 1:
+        if answer == 1:
             slow_print("\nYou read the strange markings on the door.")
             handel_game(q_and_a2)
-            answer2 = int(input( \
-                "\nWhich Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip()) # noqa
+            user_validation()
 
-            if answer2 == 1 or answer2 == 2:
+            if answer == 1 or answer == 2:
                 level_restart2()
 
-            elif answer2 == 3:
+            elif answer == 3:
                 slow_print("\nYou read the strange markings on the door.")
                 handel_game(q_and_a3)
-                answer2 = int(input( \
-                    "\nWhich Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip()) # noqa
+                user_validation()
 
-                if answer2 == 1:
+                if answer == 1:
                     slow_print("\nYou read the strange markings on the door.")
                     handel_game(q_and_a4)
-                    answer2 = int(input( \
-                        "\nWhich Door Do You Enter: | 1 | 2 | 3 |\n").lower().strip()) # noqa
+                    user_validation()
 
-                    if answer2 == 1 or answer2 == 2:
+                    if answer == 1 or answer == 2:
                         level_restart2()
 
-                    elif answer2 == 3:
-                        slow_print("\nYou read the strange markings on the door.") # noqa
+                    elif answer == 3:
+                        slow_print(
+                            "\nYou read the strange markings on the door.")
                         handel_game(q_and_a5)
-                        slow_print("DONT FORGET TO WRITE A STORY TRANISITON HERE") # noqa
+                        slow_print("")
                         game_transition()
 
-                elif answer2 == 2 or answer2 == 3:
+                elif answer == 2 or answer == 3:
                     level_restart2()
 
-        elif answer2 == 2 or answer2 == 3:
+        elif answer == 2 or answer == 3:
             level_restart2()
 
 
@@ -318,26 +328,28 @@ def first_floor():
     """
 
 
-def level_restart3(text):
+def restart3(text):
     """
     Takes user back to the begning of
     the third floor
     """
     slow_print(f"\n⛔️⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} RESTARTING LEVEL ⛔️⛔️⛔️⛔️⛔️⛔️") # noqa
     while True:
-        level3_choice = input("\nWould you like to continue with the adventure?: | yes | no |\n").lower().strip() # noqa
+        choice = input(
+            "\nWould you like to continue with the adventure?:"
+            + "| yes | no |\n").lower().strip()
 
-        if level3_choice == "yes":
+        if choice == "yes":
             third_floor()
             break
 
-        elif level3_choice == "no":
+        elif choice == "no":
             slow_print("\nThanks for visiting, come back soon")
             # time.sleep(2)
             game_transition()
             quit()
 
-        elif level3_choice != "yes":
+        elif choice != "yes":
             slow_print("\nIncorrect input, please select yes or no")
 
 
@@ -346,21 +358,26 @@ def level_restart2():
     Takes user back to the begning of
     the second floor
     """
-    slow_print("\n❌❌❌❌❌❌ INCORECT CHOICE: YOU FALL INTO A PIT OF TARANTULAS. THEY SLOWLY DEVOUR YOU ❌❌❌❌❌❌") # noqa
-    while True:
-        level2_choice = input( "\nWould you like to continue with the adventure?: | yes | no |\n").lower().strip() # noqa
+    slow_print(
+        "\n❌❌❌❌❌❌ INCORECT CHOICE: YOU FALL INTO A PIT OF TARANTULAS."
+        + "THEY SLOWLY DEVOUR YOU ❌❌❌❌❌❌")
 
-        if level2_choice == "yes":
+    while True:
+        choice = input(
+            "\nWould you like to continue with the adventure?:"
+            + "| yes | no |\n").lower().strip()
+
+        if choice == "yes":
             second_floor()
             break
 
-        elif level2_choice == "no":
+        elif choice == "no":
             slow_print("\nThanks for visiting, come back soon")
             # time.sleep(2)
             game_transition()
             quit()
 
-        elif level2_choice != "yes":
+        elif choice != "yes":
             slow_print("\nIncorrect input, please select yes or no")
 
 
@@ -452,8 +469,10 @@ def game_main():
     Implements the games principle functions
     """
     # start_game()
-    third_floor()
-    # second_floor()
+    # third_floor()
+    second_floor()
 
-slow_print("\n☠️☠️☠️☠️☠️☠️ WELCOME TO THE EERIE MANSION, CHOOSE YOUR OWN ADVENTURE ☠️☠️☠️☠️☠️☠️\n") # noqa
+
+slow_print("""\n☠️☠️☠️☠️☠️☠️ WELCOME TO THE EERIE MANSION, CHOOSE YOUR OWN \
+ADVENTURE ☠️☠️☠️☠️☠️☠️\n""")
 game_main()

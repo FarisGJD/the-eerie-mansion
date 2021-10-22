@@ -10,12 +10,12 @@ unscathed.
 
 Level 1️⃣ :
 
-The starting floor requires you to manoeuvre through the mansion 
-by choosing different doors. Be careful though, some paths are 
-misleading and will cause you to die. In the event of losing, you 
-will be redirected to the start of the level. The same door rules 
-apply to the next two levels. Note there are some clues to help you 
-along your quest.
+The starting floor requires you to manoeuvre through the mansion by 
+choosing different doors. Be careful though, some paths are misleading 
+and will either case you to restart or die. In the event of restarting, 
+you will be redirected to the start of the level. If you die, a game over
+will initiate meaning you will start from the welcome screen. Note there 
+are some clues to help you along your quest.
 
 Level 2️⃣ : 
 

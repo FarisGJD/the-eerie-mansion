@@ -83,7 +83,7 @@ def handel_game(questions):
     for que in questions:
         user_answer = input(que.cue)
         if user_answer == que.answers:
-            print("\nCorrect! You Successfully Pass Through")
+            print("\nCorrect! You Successfully Pass Through\n")
         else:
             score -= 1
             print(f"\nIncorrect answer, you have {score} lives left")

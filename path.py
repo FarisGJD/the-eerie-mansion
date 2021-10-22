@@ -5,10 +5,11 @@ Game Paths
 # Winning Game Path (Path 1)
 
 p1_correct_path = {
-        "p1": """\nYou enter and find an empty room with two doors on either side.
-                \rThe first looks ordinary and unassuming, however the second
-                \rhas a trail of tiny spiders walking towards and underneath
-                \rit. They look as if they are fleeing from something.\n""",
+        "p1": """\nYou enter and find an empty room with three doors, side
+                \rby side. The first and third look ordinary and unassuming,
+                \rhowever the second has a trail of tiny spiders walking
+                \rtowards and underneath it. They look as if they are fleeing
+                \rfrom something.\n""",
 
         "p2": """\nYou enter into a dimly lit room illuminated by a crack in the
                 \rroof. As you close the door the ceiling collapses, trapping
@@ -24,9 +25,7 @@ p1_correct_path = {
 
         "p3": """\nYou open the first door to find a library filled with books
                 \rthat are covered in dust and cobwebs. As you search through
-                \rthe literature, you lift a biographic novel which triggers a
-                \rmechanism, revealing a fake bookcase with three doors
-                \rbehind it.\n""",
+                \rthe literature, you lift a biographic novel.\n""",
 
         "p3i": """\nYou enter the room and find three doors side by side. The
                 \rfirst has a blacked-out window next to it. You try and look
@@ -44,13 +43,14 @@ p1_correct_path = {
                 \rthree doors.\n""",
 
         "p5": """\nAs you open the door you walk through a thick layer of cobwebs.
-                \rYou see two doors, the first looks untouched while the second
-                \rappears to be covered in fang marks.\n""",
+                \rYou see three doors, the first looks untouched, the second
+                \rappears to be covered in fang marks and the third has a
+                \rstrange light beaming underneath it.\n""",
 
         "p6": """\nYou walk into an icy, cold room. As you look around your breath
                 \rstarts to produce condensation due to the extreme
-                \rtemperature. You see two doors both looking ordinary. As you
-                \rclosely inspect them you find the handle of the second door
+                \rtemperature. You see three doors all looking ordinary. As you
+                \rclosely inspect them you find the handle on the second door
                 \rto be covered in dry blood.\n""",
 
         "p7": """\nYou enter to see a massive greenhouse sheltering large exotic
@@ -59,16 +59,17 @@ p1_correct_path = {
                 \rDr. Charles Falken”.\n""",
 
         "p8": """\nYou enter a room to find heaps of spider eggs and
-                \rexoskeletons the size of cars. You see two doors both with a
-                \rstrange clear substance on them. As you touch and inspect it
-                \ryour hand starts to burn. Could it be venom?\n""",
+                \rexoskeletons the size of cars. You see three doors each with
+                \ra strange clear substance on them. As you touch and inspect
+                \rit your hand starts to burn. Could it be venom?\n""",
 
         "p9": """\nAmid opening the door you are stupefied by the odour of
                 \rrotting matter dissipating within, though there is nothing
                 \rproducing it. As you walk around you hear a deafening
-                \rhissing noise coming from the only two doors in front of you.
-                \rScared you think of heading back but realise this is the
-                \ronly way out.\n""",
+                \rhissing noise coming from the first two doors in front of
+                \ryou while the third seems to be eminating the smell. Scared
+                \ryou think of heading back but realise this is the only way
+                \rout.\n""",
 
         "p10": """\nYou enter the room, shocked and horrified by what you see.
                 \rSeveral silk cocoons, blood and human remains are scattered
@@ -92,7 +93,7 @@ p1_correct_path = {
 
 p1_correct_path_additions = {
         "p3a": """\nLifting the novel triggers a mechanism, revealing a fake
-                \rbookcase with two doors behind it.\n""",
+                \rbookcase with three doors behind it.\n""",
 
         "p7a": """\nYou finish reading the report and realise you are being
                 \rwatched by hunderds of tarantulas. Their fangs dripping
@@ -100,7 +101,7 @@ p1_correct_path_additions = {
                 \rthree doors in front of you.\n""",
 }
 
-# Lossing Game Path (Path 1)
+# Losing Game Path (Path 1)
 
 p1_losing_path = {
         "p1": """AS YOU OPEN THE DOOR YOU IMMEDIATELY START FALLING,
@@ -173,18 +174,18 @@ p3_game_path = {
         "p2": """\nYou walk into the room and see several pieces of paper
                 \rscattered across the floor. You pick one up titled
                 \r“Experiment Notes”. You try to read the rest but cannot make
-                \rsense of its scientific content. There are two doors in
+                \rsense of its scientific content. There are three doors in
                 \rfront of you.\n""",
 
         "p3": """\nYou walk into a space with a sign that says “Holding Room”.
                 \rYou are surrounded by hazmat suits. Things are getting
-                \rstrange. There are two doors in front of you.\n""",
+                \rstrange. There are three doors in front of you.\n""",
 
         "p4": """\nYou enter another holding room, but this time surrounded by
                 \rvarious medical equipment and empty battered cages. You look
                 \raround to find more of the spider venom in vials labelled
                 \r“CHEMICAL X”. Things are definitely getting strange. There
-                \rare two doors in front of you.\n""",
+                \rare three doors in front of you.\n""",
 
         "p5": """\nAs you attempt to open the door you realise something is
                 \rdifferent. The door is extremely heavy. You use all your
