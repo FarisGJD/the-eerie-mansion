@@ -82,7 +82,7 @@ def third_floor():
     # Main Winning Path (Sequence 1|2|1|2|3|2|2|3|1|2)
     if answer == 1:
         slow_print(p1_correct_path['p1'])
-        user_validation("Which Door Do You Enter: | 1 | 2 |")
+        user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
 
         # Instant Losing Path
         if answer == 1:
@@ -100,7 +100,7 @@ def third_floor():
                     "assets/game-txt-files"
                     + "/game-clue-files/novel.txt", "novel")
                 slow_print(p1_correct_path_additions['p3a'])
-                user_validation("\nWhich Door Do You Enter: | 1 | 2 |")
+                user_validation("\nWhich Door Do You Enter: | 1 | 2 | 3 |")
 
                 # Instant Losing Path
                 if answer == 1:
@@ -122,7 +122,7 @@ def third_floor():
                     # Continuing Winning Path (5)
                     elif answer == 3:
                         slow_print(p1_correct_path['p5'])
-                        user_validation("Which Door Do You Enter: | 1 | 2 |")
+                        user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
 
                         # Instant Losing Path
                         if answer == 1:
@@ -131,7 +131,7 @@ def third_floor():
                         # Continuing Winning Path (6)
                         elif answer == 2:
                             slow_print(p1_correct_path['p6'])
-                            user_validation("Which Door Do You Enter: | 1 | 2 |")
+                            user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
 
                             # Instant Losing Path
                             if answer == 1:
@@ -152,7 +152,7 @@ def third_floor():
                                 # Continuing Winning Path (8)
                                 elif answer == 3:
                                     slow_print(p1_correct_path['p8'])
-                                    user_validation("Which Door Do You Enter: | 1 | 2 |")
+                                    user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
 
                                     # Continuing Winning Path (9)
                                     if answer == 1:
@@ -169,29 +169,48 @@ def third_floor():
                                             continue_after_text()
                                             game_transition()
 
-                                        # Instant Losing Path
-                                        elif answer == 2:
-                                            level_restart3(p1_losing_path['p9']) # noqa
+                                        elif answer == 3:
+                                            game_over(game_over_p["go"])
+
+                                    # Instant Losing Path
+                                    elif answer == 2:
+                                        level_restart3(p1_losing_path['p9']) # noqa
+
+                                    elif answer == 3:
+                                        game_over(game_over_p["go"])
+
+                            # Game Over Path
+                            elif answer == 3:
+                                game_over(game_over_p["go"])             
+
+                        # Game Over Path
+                        elif answer == 3:
+                            game_over(game_over_p["go"])
+
+                # Game Over Path
+                elif answer == 3:
+                    game_over(game_over_p["go"])
+
+            # Instant Losing Path
+            elif answer == 2:
+                level_restart3(p1_losing_path['p3ii'])
+
+            # Instant Losing Path
+            elif answer == 3:
+                slow_print(p1_correct_path['p3i'])
+                user_validation("Which Door Do You Enter: | 1 | 2 | 3 |")
 
                 # Instant Losing Path
-                elif answer == 2:
-                    level_restart3(p1_losing_path['p3ii'])
+                if answer == 1 or answer == 2 or answer == 3:
+                    level_restart3(p1_losing_path['p3i'])
 
-                # Continuing Path
-                elif answer == 3:
-                    slow_print(p1_correct_path['p3i'])
-                    user_validation("Which Door Do You Enter: | 1 | 2 |")
-
-                    # Instant Losing Path
-                    if answer == 1 or answer == 2:
-                        level_restart3(p1_losing_path['p3i'])
+        # Game Over Path
+        elif answer == 3:
+            game_over(game_over_p["go"])
 
     # Primary Losing Path
     elif answer == 2:
         level_restart3(p2_losing_path['p1'])
-
-    elif answer == 3:
-        game_over(game_over_p["go"])
 
     # Secondary Losing Path (Sequence | 3 | 2 | 1 | 2 |)
     elif answer == 3:
@@ -351,6 +370,10 @@ def game_over(text):
     restarting the programme.
     """
     slow_print(f"\n☠️☠️☠️☠️☠️☠️{text} GAME OVER☠️☠️☠️☠️☠️☠️")
+    game_transition()
+    slow_print("""\nThanks for playing, next time  keep the game over paths in
+    \rmind.\n""")
+
     exit()
 
 
@@ -428,12 +451,9 @@ def game_main():
     """
     Implements the games principle functions
     """
-    start_game()
+    # start_game()
     third_floor()
-    second_floor()
-
-    # validation_checking(answer)
-
+    # second_floor()
 
 slow_print("\n☠️☠️☠️☠️☠️☠️ WELCOME TO THE EERIE MANSION, CHOOSE YOUR OWN ADVENTURE ☠️☠️☠️☠️☠️☠️\n") # noqa
 game_main()

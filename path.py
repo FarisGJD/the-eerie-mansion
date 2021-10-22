@@ -28,7 +28,7 @@ p1_correct_path = {
                 \rmechanism, revealing a fake bookcase with three doors
                 \rbehind it.\n""",
 
-        "p3i": """\nYou enter the room and find two doors side by side. The
+        "p3i": """\nYou enter the room and find three doors side by side. The
                 \rfirst has a blacked-out window next to it. You try and look
                 \rthrough but cannot discern anything. As you scramble,
                 \rdesperate to gather your surroundings you find a tiny
@@ -156,7 +156,7 @@ p1_losing_path = {
 p2_losing_path = {
         "p1": """YOU ENTER A ROOM WITH FLICKERING LIGHTING. YOU LOOK AROUND
                 \rAND FIND A DISHEVELLED MAN STANDING IN THE CORNER,
-                \rHAUNTINGLY GLARING AT YOU……, OH NO!!! HE STARTS RUNNING
+                \rHAUNTINGLY GLARING AT YOU......OH NO!!! HE STARTS RUNNING
                 \rTOWARDS YOU WITH A KNIFE IN HAND SCREAMING SPIDERS!
                 \rSPIDERS!."""
 }
