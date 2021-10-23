@@ -395,7 +395,7 @@ def read_game_intro_files(intro_file, text):
     while True:
         rules_file_answer = input(
             f"\nWould you like to read the {text}?"
-            + "Choose: | yes | no |\n").lower().strip()
+            + " Choose: | yes | no |\n").lower().strip()
 
         if rules_file_answer == "yes":
             with open(intro_file) as file:
