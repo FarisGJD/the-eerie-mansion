@@ -386,7 +386,7 @@ def restart2():
     """
     slowp(
         "\n❌❌❌❌❌❌ INCORECT CHOICE: YOU FALL INTO A PIT OF TARANTULAS."
-        + " ❌❌❌❌❌❌")
+        + "❌❌❌❌❌❌")
 
     while True:
         choice = input(

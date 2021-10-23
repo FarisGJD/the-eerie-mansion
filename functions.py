@@ -112,15 +112,15 @@ def random_number_generator():
             slowp("\nCorrect!!!\n")
             break
 
-        elif guess > random_num:
-            slowp("\nGuess too high, try a lower integer.\n")
+        elif guess != random_num:
+            score -= 1
+            slowp(f"\nYou have {score} lives remaining")
 
-        elif guess < random_num:
-            slowp("\nGuess too low, try a higher integer.\n")
+            if guess > random_num:
+                slowp("\nGuess too high, try a lower integer.")
 
-            if guess != random_num:
-                score -= 1
-                slowp(f"\nYou have {score} lives remaining\n")
+            elif guess < random_num:
+                slowp("\nGuess too low, try a higher integer.\n")
 
                 if score == 0:
                     game_over("""YOU ARE OUT OF LIVES, THE COMPUTER EXPLODES,
@@ -154,6 +154,5 @@ def game_over(text):
     """
     slowp(f"\n🕷🕷🕷🕷🕷🕷 {text} GAME OVER 🕷🕷🕷🕷🕷🕷")
     game_transition()
-    slowp("""\nThanks for playing, please come again.
-    \rmind.\n""")
+    slowp("""\nThanks for playing, please come again.\n""")
     exit()
