@@ -209,8 +209,8 @@ p3_losing_path = {
                 \rTHEY START PECKING AT YOUR FLESH AS YOU ARE UNABLE TO STOP
                 \rTHEM.""",
 
-        "p1i": """AS YOU OPEN THE DOOR YOU ARE BOMBARDED BY A WAVE OF STAGNANT
-                \rWATER, DROWNING YOU.""",
+        "p1i": """AS YOU OPEN THE DOOR YOU ARE BOMBARDED BY A WAVE OF WATER,
+                \rDROWNING YOU.""",
 
         "p2": """YOU WALK IN AND ARE IMMEDIATELY INTERCEPTED BY AN ABNORMALY
                 \rLARGE ANACONDA.""",

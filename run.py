@@ -7,7 +7,7 @@ By: Faris Dhoot
 from path import p1_correct_path, p1_correct_path_additions, p1_losing_path, \
     p2_losing_path, p3_game_path, p3_losing_path, losing_p, second_floorp
 from functions import handel_game, q_and_a1, q_and_a2, q_and_a3, q_and_a4, \
-    q_and_a5, random_number_generator, slow_print, game_transition, time
+    q_and_a5, random_number_generator, slowp, game_transition, time
 
 answer = None
 
@@ -23,7 +23,7 @@ def start_game():
             + "Type: | yes | no |\n").lower().strip()
 
         if playing == "yes":
-            slow_print("\nInitialising Game")
+            slowp("\nInitialising Game")
             time.sleep(2)
             game_transition()
             read_game_intro_files(
@@ -36,11 +36,11 @@ def start_game():
             break
 
         elif playing == "no":
-            slow_print("\nThanks for visiting, come back soon")
+            slowp("\nThanks for visiting, come back soon")
             quit()
 
         elif playing != "yes":
-            slow_print("\nInvalid entery, please select yes or no")
+            slowp("\nInvalid entery, please select yes or no")
 
 
 def user_validation():
@@ -66,14 +66,14 @@ def third_floor():
     Starting game floor
     """
     # Level Introduction
-    slow_print("""\nThere are three doors in front of you, the first is covered
+    slowp("""\nThere are three doors in front of you, the first is covered
     \rin cob webs, the second has odd markings engraved on to it and the
     \rthird has a strange liquid seeping through the bottom.\n""")
     user_validation()
 
     # Main Winning Path (Sequence 1|2|1|2|3|2|2|3|1|2)
     if answer == 1:
-        slow_print(p1_correct_path['p1'])
+        slowp(p1_correct_path['p1'])
         user_validation()
 
         # Instant Losing Path
@@ -82,16 +82,16 @@ def third_floor():
 
         # Continuing Winning Path (2)
         elif answer == 2:
-            slow_print(p1_correct_path['p2'])
+            slowp(p1_correct_path['p2'])
             user_validation()
 
             # Continuing Winning Path (3)
             if answer == 1:
-                slow_print(p1_correct_path['p3'])
+                slowp(p1_correct_path['p3'])
                 read_game_clue_files(
                     "assets/game-txt-files"
                     + "/game-clue-files/novel.txt", "novel")
-                slow_print(p1_correct_path_additions['p3a'])
+                slowp(p1_correct_path_additions['p3a'])
                 user_validation()
 
                 # Instant Losing Path
@@ -100,7 +100,7 @@ def third_floor():
 
                 # Continuing Winning Path (4)
                 elif answer == 2:
-                    slow_print(p1_correct_path['p4'])
+                    slowp(p1_correct_path['p4'])
                     user_validation()
 
                     # Instant Losing Path
@@ -113,7 +113,7 @@ def third_floor():
 
                     # Continuing Winning Path (5)
                     elif answer == 3:
-                        slow_print(p1_correct_path['p5'])
+                        slowp(p1_correct_path['p5'])
                         user_validation()
 
                         # Instant Losing Path
@@ -122,7 +122,7 @@ def third_floor():
 
                         # Continuing Winning Path (6)
                         elif answer == 2:
-                            slow_print(p1_correct_path['p6'])
+                            slowp(p1_correct_path['p6'])
                             user_validation()
 
                             # Instant Losing Path
@@ -131,11 +131,11 @@ def third_floor():
 
                             # Continuing Winning Path (7)
                             elif answer == 2:
-                                slow_print(p1_correct_path['p7'])
+                                slowp(p1_correct_path['p7'])
                                 read_game_clue_files(
                                     "assets/game-txt-files/game-clue-files/"
                                     + "greenhouse-report.txt", "report")
-                                slow_print(p1_correct_path_additions['p7a'])
+                                slowp(p1_correct_path_additions['p7a'])
                                 user_validation()
 
                                 # Instant Losing Path
@@ -144,12 +144,12 @@ def third_floor():
 
                                 # Continuing Winning Path (8)
                                 elif answer == 3:
-                                    slow_print(p1_correct_path['p8'])
+                                    slowp(p1_correct_path['p8'])
                                     user_validation()
 
                                     # Continuing Winning Path (9)
                                     if answer == 1:
-                                        slow_print(p1_correct_path['p9'])
+                                        slowp(p1_correct_path['p9'])
                                         user_validation()
 
                                         # Instant Losing Path
@@ -158,7 +158,7 @@ def third_floor():
 
                                         # Continuing Winning Path (10)
                                         elif answer == 2:
-                                            slow_print(p1_correct_path['p10'])
+                                            slowp(p1_correct_path['p10'])
                                             continue_after_text()
                                             game_transition()
 
@@ -190,7 +190,7 @@ def third_floor():
 
             # Instant Losing Path
             elif answer == 3:
-                slow_print(p1_correct_path['p3i'])
+                slowp(p1_correct_path['p3i'])
                 user_validation()
 
                 # Instant Losing Path
@@ -207,7 +207,7 @@ def third_floor():
 
     # Secondary Losing Path (Sequence | 3 | 2 | 1 | 2 |)
     elif answer == 3:
-        slow_print(p3_game_path["p1"])
+        slowp(p3_game_path["p1"])
         user_validation()
 
         if answer == 1:
@@ -217,29 +217,29 @@ def third_floor():
             restart3(p3_losing_path["p1i"])
 
         elif answer == 3:
-            slow_print(p3_game_path["p2"])
+            slowp(p3_game_path["p2"])
             user_validation()
 
             if answer == 1:
                 restart3(p3_losing_path["p2"])
 
             elif answer == 2:
-                slow_print(p3_game_path["p3"])
+                slowp(p3_game_path["p3"])
                 user_validation()
 
                 if answer == 1:
-                    slow_print(p3_game_path["p4"])
+                    slowp(p3_game_path["p4"])
                     user_validation()
 
                     if answer == 1:
                         restart3(p3_losing_path["p3"])
 
                     elif answer == 2:
-                        slow_print(p3_game_path["p5"])
+                        slowp(p3_game_path["p5"])
                         user_validation()
 
                         if answer == 1 or answer == 2 or answer == 3:
-                            slow_print(p3_game_path["p6"])
+                            slowp(p3_game_path["p6"])
                             read_game_clue_files(
                                 "assets/game-txt-files/game-clue-files/"
                                 + "lab-book.txt", "book")
@@ -259,7 +259,7 @@ def second_floor():
     """
     Second Game Floor
     """
-    slow_print("""\nBefore arriving at the end of the stairs you reach a
+    slowp("""\nBefore arriving at the end of the stairs you reach a
     \rbalcony. Beneath you is a minesfiled of 3 doors and traps placed
     \rconsecutively. The doors seem to have strange markings on them. You
     \rapproach the first set of 3.\n""")
@@ -271,12 +271,12 @@ def second_floor():
         restart2()
 
     elif answer == 2:
-        slow_print("\nYou read the strange markings on the door.")
+        slowp("\nYou read the strange markings on the door.")
         handel_game(q_and_a1)
         user_validation()
 
         if answer == 1:
-            slow_print("\nYou read the strange markings on the door.")
+            slowp("\nYou read the strange markings on the door.")
             handel_game(q_and_a2)
             user_validation()
 
@@ -284,12 +284,12 @@ def second_floor():
                 restart2()
 
             elif answer == 3:
-                slow_print("\nYou read the strange markings on the door.")
+                slowp("\nYou read the strange markings on the door.")
                 handel_game(q_and_a3)
                 user_validation()
 
                 if answer == 1:
-                    slow_print("\nYou read the strange markings on the door.")
+                    slowp("\nYou read the strange markings on the door.")
                     handel_game(q_and_a4)
                     user_validation()
 
@@ -297,10 +297,10 @@ def second_floor():
                         restart2()
 
                     elif answer == 3:
-                        slow_print(
+                        slowp(
                             "\nYou read the strange markings on the door.")
                         handel_game(q_and_a5)
-                        slow_print(second_floorp["outro"])
+                        slowp(second_floorp["outro"])
                         continue_after_text()
                         game_transition()
 
@@ -316,7 +316,7 @@ def first_floor():
     Function that plays the
     final game floor
     """
-    slow_print("""\nYou reach the end of the stairs and are enthralled by what
+    slowp("""\nYou reach the end of the stairs and are enthralled by what
     \ryou see. A giant metallic, cybernated door with two glass screens on
     \reither side. Both have been smeared with some sort of black paint. You
     \ruse your flashlight to scrape off the matter blocking your view, looking
@@ -328,7 +328,7 @@ def first_floor():
     \rorder to exit. Although you are shaking with nerves you begin.\n""")
     random_number_generator()
     time.sleep(2)
-    slow_print("""\n🥳🥳🥳🥳🥳🥳 YOU’VE DONE IT!!! CONGRATULATIONS. YOU HAVE
+    slowp("""\n🥳🥳🥳🥳🥳🥳 YOU’VE DONE IT!!! CONGRATULATIONS. YOU HAVE
     \rSUCCESSFULLY ENTERED THE CORRECT NUMBER. THE COMPUTER TRIGGERS THE
     \rDOOR MECHANISM, OPENING IT. FREEDOM AT LAST. 🥳🥳🥳🥳🥳🥳\n
     \r🏚 Thank you for playing The Eerie Mansion.\n""")
@@ -340,7 +340,7 @@ def restart3(text):
     Takes user back to the begning of
     the third floor
     """
-    slow_print(f"\n⛔️⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} RESTARTING LEVEL ⛔️⛔️⛔️⛔️⛔️⛔️") # noqa
+    slowp(f"\n⛔️⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} RESTARTING LEVEL ⛔️⛔️⛔️⛔️⛔️⛔️")
     while True:
         choice = input(
             "\nWould you like to continue with the adventure?:"
@@ -351,13 +351,13 @@ def restart3(text):
             break
 
         elif choice == "no":
-            slow_print("\nThanks for playing, better luck next time.")
+            slowp("\nThanks for playing, better luck next time.")
             time.sleep(2)
             game_transition()
             quit()
 
         elif choice != "yes":
-            slow_print("\nIncorrect input, please select yes or no")
+            slowp("\nIncorrect input, please select yes or no")
 
 
 def restart2():
@@ -365,7 +365,7 @@ def restart2():
     Takes user back to the begning of
     the second floor
     """
-    slow_print(
+    slowp(
         "\n❌❌❌❌❌❌ INCORECT CHOICE: YOU FALL INTO A PIT OF TARANTULAS."
         + " ❌❌❌❌❌❌")
 
@@ -379,13 +379,13 @@ def restart2():
             break
 
         elif choice == "no":
-            slow_print("\nThanks for the fun, come back prepared")
+            slowp("\nThanks for the fun, come back prepared")
             time.sleep(2)
             game_transition()
             quit()
 
         elif choice != "yes":
-            slow_print("\nIncorrect input, please select yes or no")
+            slowp("\nIncorrect input, please select yes or no")
 
 
 def read_game_intro_files(intro_file, text):
@@ -399,7 +399,7 @@ def read_game_intro_files(intro_file, text):
         if rules_file_answer == "yes":
             with open(intro_file) as file:
                 choice_text = file.read()
-                slow_print(choice_text)
+                slowp(choice_text)
                 continue_after_text()
                 break
 
@@ -407,7 +407,7 @@ def read_game_intro_files(intro_file, text):
             break
 
         elif rules_file_answer != "yes":
-            slow_print("\nInvalid entery, please select yes or no")
+            slowp("\nInvalid entery, please select yes or no")
 
 
 def read_game_clue_files(clue_file, text):
@@ -422,7 +422,7 @@ def read_game_clue_files(clue_file, text):
         if clues == "yes":
             with open(clue_file) as file:
                 text = file.read()
-                slow_print(text)
+                slowp(text)
                 continue_after_text()
                 break
 
@@ -430,7 +430,7 @@ def read_game_clue_files(clue_file, text):
             break
 
         elif clues != "yes":
-            slow_print("\nInvalid entery, please select yes or no")
+            slowp("\nInvalid entery, please select yes or no")
 
 
 def continue_after_text():
@@ -459,6 +459,6 @@ def game_main():
     first_floor()
 
 
-slow_print("""\n☠️☠️☠️☠️☠️☠️ WELCOME TO THE EERIE MANSION, CHOOSE YOUR OWN \
+slowp("""\n☠️☠️☠️☠️☠️☠️ WELCOME TO THE EERIE MANSION, CHOOSE YOUR OWN \
 ADVENTURE ☠️☠️☠️☠️☠️☠️\n""")
 game_main()

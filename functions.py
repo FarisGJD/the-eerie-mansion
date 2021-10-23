@@ -84,9 +84,9 @@ def handel_game(questions):
     for que in questions:
         user_answer = input(que.cue).lower().strip()
         if user_answer == que.answers:
-            slow_print("\nCorrect!!!\n")
+            slowp("\nCorrect!!!\n")
         else:
-            slow_print("\nIncorrect answer\n")
+            slowp("\nIncorrect answer\n")
 
 
 # Level 1 Random Number Guessing Game
@@ -105,29 +105,29 @@ def random_number_generator():
             guess = int(guess)
 
         else:
-            slow_print("\nIncorrect input please follow the prompt\n")
+            slowp("\nIncorrect input please follow the prompt\n")
             continue
 
         if guess == random_num:
-            slow_print("\nCorrect!!!\n")
+            slowp("\nCorrect!!!\n")
             break
 
         elif guess > random_num:
-            slow_print("\nGuess too high, try a lower integer.\n")
+            slowp("\nGuess too high, try a lower integer.\n")
 
         elif guess < random_num:
-            slow_print("\nGuess too low, try a higher integer.\n")
+            slowp("\nGuess too low, try a higher integer.\n")
 
             if guess != random_num:
                 score -= 1
-                slow_print(f"\nYou have {score} lives remaining\n")
+                slowp(f"\nYou have {score} lives remaining\n")
 
                 if score == 0:
                     game_over("""YOU ARE OUT OF LIVES, THE COMPUTER EXPLODES,
                     \rLOCKING THE DOOR FOREVER TRAPPING YOU INSIDE.""")
 
 
-def slow_print(slow):
+def slowp(slow):
     """
     Function that uses the sys & time modules to
     print text slow in the terminal
@@ -143,7 +143,7 @@ def game_transition():
     Adds a "tranisitional" effect to the game within
     the terminal (strictly visual)
     """
-    slow_print("""\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.
+    slowp("""\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.
     \r\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
 
 
@@ -152,8 +152,8 @@ def game_over(text):
     Informs the user that they have lost the game,
     restarting the programme.
     """
-    slow_print(f"\n🕷🕷🕷🕷🕷🕷 {text} GAME OVER 🕷🕷🕷🕷🕷🕷")
+    slowp(f"\n🕷🕷🕷🕷🕷🕷 {text} GAME OVER 🕷🕷🕷🕷🕷🕷")
     game_transition()
-    slow_print("""\nThanks for playing, please come again.
+    slowp("""\nThanks for playing, please come again.
     \rmind.\n""")
     exit()
