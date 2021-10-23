@@ -27,24 +27,15 @@
         * [Imagery](#imagery)
         * [Features](#features)
 4. [Technologies Used](#technologies-used)
-5. [Search Engine Optimization](#search-engine-optimization)
 6. [Bugs & Issues](#bugs-&-issues)
-7. [Testing](#testing)
-    * [Device Testing](#device-testing)
-    * [Browser Testing](#browser-testing)
-    * [Peer Review Testing](#peer-review-testing)
-    * [User Stories Testing](#user-stories-testing)
-8. [Validation](#validation)
-    * [HTML Validator](#html-validator)
-    * [CSS Validator](#css-validator)
-    * [JavaScript Validator](#javascript-validator)
+7. [Libraries Imported ](#libraries-imported)
+8. [Testing](#testing)
+9. [Validation](#validation)
     * [Google Mobile-Freindly Test](#google-mobile-freindly-test)
     * [Lighthouse](#lighthouse)
-9. [Deployment](#deployment)
-    * [Repository Forking](#repository-forking)
-    * [Repository Cloning](#repository-cloning)
-10. [Credits](#credits)
-11. [Bibliography](#Bibliography)
+10. [Deployment](#deployment)
+11. [Credits](#credits)
+12. [Acknowledgements] (#acknowledgements)
 
 
 ***
@@ -53,8 +44,6 @@
 The Eerie Mansion is a text based; Choose Your Own Adventure game played directly in the Python terminal. The game is written from a second person perspective where the user assumes the role of the protagonist, making choices that determine their actions and the plots outcome. 
 
 The Eerie Mansion implores a horror theme just in time for deployment before Halloween. The game is played on three different levels with difficulty and stakes increasing with each. It is unique as it has been combined with a horror movie quiz and random number guessing game, differentiating it from competitors.  
-
-[Back To Top](#The-Eerie-Mansion)
 
 ***
 # User Experience 
@@ -86,8 +75,6 @@ The Eerie Mansion implores a horror theme just in time for deployment before Hal
 
 3.	As a Frequent User I want to have fun and be motivated to play the game over, encouraging others to join. 
 
-[Back To Top](#The-Eerie-Mansion)
-
 ***
 # Development Planes 
 ## Strategy
@@ -112,8 +99,6 @@ A trade-off analysis was conducted in order to prioritise opportunities continge
 
 As you can see all opportunities are important and manageable to implement. The only issue arises is with accessibility, since the game is text based and played in the terminal. Due to resource constraints, mainly experience this might prove slightly challenging. 
 
-[Back To Top](#The-Eerie-Mansion)
-
 ***
 # Scope
 The Eerie Mansions initial release is to deploy a Minimal Viable Product in terms of content, accessibility, gameplay and functionality. Therefore, an agile methodology was used to develop a scope which was rooted in the strategy. 
@@ -136,13 +121,9 @@ As there are certain restrictions within the development of the game such as met
 -	Site gives relevant feedback, validation and confirmation. 
 -	Accessible. 
 
-[Back To Top](#The-Eerie-Mansion)
-
 ***
 # Structure
 Due to the circumstances around deployment the game will be organised on a single page, with a terminal acting as the basis between user and application interaction. Consequently, the text-based content and visuals (emojis) will act as the main form of storytelling and design for the user. This will be discussed further down the readme document.  
-
-[Back To Top](#The-Eerie-Mansion)
 
 ***
 # Skeleton 
@@ -232,14 +213,101 @@ The next was the quiz which was used as a fun break up to the game. Again this f
 ![Quiz Image](assets/readme/quiz.png)
 
 
-Finally, the number guessing game which would decide whether the user won the overall game or not. Just like all other features the last game has user verification but in addition to a score system. If the user lost all 5 lives the game would start from the very beginingg. If not, the user would win. 
-
+Finally, the number guessing game which would decide whether the user won the overall game or not. Just like all other features the last game has user verification but in addition to a score system. If the user lost all 5 lives the game would start from the very beginning. If not, the user would win. 
 
 ![Random Number Guess Image](assets/readme/guess.png)
-
 
 ***
 # Technologies Used 
 - Python 
 - PEP8
 - Lighthouse 
+
+***
+# Bugs & Issues
+During the development of the game the standard syntactical bugs were encountered since Python was a new programming language. For example, the most prevalent issue was the line length. To overcome this string concatenation and back slashed were used. 
+
+The most notable bug was the use of nested if/else statement to dictate the game progression within the first level. The number of paths offered in the game created vast nests. Human error was bound to happen. A solution which was not implemented but could be in the future was to use functions as they are more dynamic. 
+
+# Libraries Imported 
+Built in libraries were used to enhance the functionality of the game. 
+
+## Random 
+Random was used to create the random number generator within the final level. The most notable feature was the randint which helped generate  the random number between two specified fields. 
+
+## Time & Sys
+The time and sys imports were used in conjunction to create a slow_print function that enabled the text to be printed slower and a specified rate. The time import was also used to add a time.sleep for visual effects throughout 
+
+***
+# Testing 
+Due to the circumstance of deployment and game functionality the main testing method implemented was manual. This was done throughout the entire game development and end by myself, friends and peers. Each new feature such as level restart, paths created and new levels were meticulously played over and over to ensure the game logic was sound. 
+
+## Validator Testing 
+The second testing method used was validator testing through the help of pep8online. Each page from the overall game document was tested. 
+
+### run.py 
+The first page which housed the main game functions run.py came back with line break before binary operator errors W503. Upon further research this error was made to be redundant and the line break should occur before the binary operator. 
+
+![Validator Testing1 Image](assets/readme/run-pyv.png)
+
+### function.py & path.py 
+The next two pages came back with no errors at all. 
+
+![Validator Testing2 Image](assets/readme/functions-pyv.png)
+![Validator Testing2 Image](assets/readme/path-pyv.png)
+
+***
+
+# Validation
+## Google Mobile-Freindly Test 
+Mobile testing came back with satisfactory results. 
+
+![Lighthouse Image](assets/readme/mobile.png)
+
+## Lighthouse 
+Lighthouse came back with good scores except for SEO. This could be beacuse a tempalte was used to generate the coding environment. 
+
+![Lighthouse Image](assets/readme/laptop.png)
+
+***
+# Deployment
+The project was created using the Code Institute Python template provided and was deployed through Heroku. 
+
+## Heroku Deployment 
+-	Login / Sing up to Heroku 
+-	Select “New” followed by “Create New App” from the main dashboard page
+-	Give the project a unique name (important) and select a region
+-	This will then create the app and then redirect you to the deploy tab. From the top submenu navigate to the settings tab.
+-	In this case since the Code Institute template was used a special config var needed to be set up in order for the app to function. You might not need this unless you have sensitive information you would not like to share.
+-	Once in the config var section select the reveal button. This will show the current config vars for the app (should be empty if it is new)
+-	Next within the KEY input field type PORT (use caps) and then in the VALUE field type 8000 and select the add button.
+-	The next step is to select add buildpack by selecting the button below config vars. 
+-	The order of the next steps is important. First select add Python in the pop-up window and then save. 
+-	Next repeat the steps but select node.js this time, remember the order is important so in the list you should see python first then node.js. 
+-	Next, using the submenu tab navigate to the deploy section. 
+-	Within the deployment method section choose GitHub followed by the connect to GitHub button and follow the steps prompted in order to do so. 
+-	Next select the correct account and enter the repository name that you want to deploy. Once the search is completed select connect.
+-	This will then connect both the chosen repository and Heroku. Below this will be the deploy method section where you can choose to automatically or manually deploy your project. 
+-	You must select the correct branch to do so. In the example main was selected then automatic deployment. 
+-	By doing this any commits from GitHub will automatically reflect onto the Heroku account. 
+-	Heroku will now create the app. Once this process is complete you will see a message “Your App Was Successfully Deployed” and a link to the live site. 
+
+***
+# Credits
+## Game Idea 
+- Tech With Tim (Youtube)
+
+## Slow Print Function 
+- gunton: slowprint.py (HitHub)
+
+## Code Help 
+- Love Sandwhiches 
+- W3S
+- Stack Overflow 
+
+***
+
+# Acknowledgements 
+A huge thank you to my mentor Victor Miclovich
+
+

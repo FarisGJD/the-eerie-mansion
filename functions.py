@@ -135,7 +135,7 @@ def slowp(slow):
     for slw in slow + '\n':
         sys.stdout.write(slw)
         sys.stdout.flush()
-        time.sleep(0.00000000000000000025/10)
+        time.sleep(0.25/10)
 
 
 def game_transition():
