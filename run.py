@@ -453,9 +453,9 @@ def game_main():
     """
     Implements the games principle functions
     """
-    # start_game()
-    # third_floor()
-    # second_floor()
+    start_game()
+    third_floor()
+    second_floor()
     first_floor()
 
 
