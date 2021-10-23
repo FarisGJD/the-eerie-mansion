@@ -96,11 +96,11 @@ def random_number_generator():
     Generates Random Number
     For First Floor
     """
-    random_num = random.randint(0, 10)
+    random_num = random.randint(0, 15)
     score = 5
 
     while True:
-        guess = input("The computer needs a number between 0 - 10\n")
+        guess = input("The computer needs a number between 0 - 15\n")
         if guess.isdigit():
             guess = int(guess)
 

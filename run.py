@@ -324,9 +324,15 @@ def first_floor():
     \rexit from the mansion. Freedom at last.\n
     \rAs you begin to inspect the door, trying to figure out how to operate it
     \ryou notice a computer screen to its side. Upon reading its content you
-    \rrealise you need to provide a single integer ranging from 0 – 10 in
+    \rrealise you need to provide a single integer ranging from 0 – 15 in
     \rorder to exit. Although you are shaking with nerves you begin.\n""")
     random_number_generator()
+    time.sleep(2)
+    slow_print("""\n🥳🥳🥳🥳🥳🥳 YOU’VE DONE IT!!! CONGRATULATIONS. YOU HAVE
+    \rSUCCESSFULLY ENTERED THE CORRECT NUMBER. THE COMPUTER TRIGGERS THE
+    \rDOOR MECHANISM, OPENING IT. FREEDOM AT LAST. 🥳🥳🥳🥳🥳🥳\n
+    \r🏚 Thank you for playing The Eerie Mansion.\n""")
+    game_transition()
 
 
 def restart3(text):
@@ -374,7 +380,7 @@ def restart2():
 
         elif choice == "no":
             slow_print("\nThanks for the fun, come back prepared")
-            # time.sleep(2)
+            time.sleep(2)
             game_transition()
             quit()
 
@@ -447,9 +453,9 @@ def game_main():
     """
     Implements the games principle functions
     """
-    start_game()
-    third_floor()
-    second_floor()
+    # start_game()
+    # third_floor()
+    # second_floor()
     first_floor()
 
 
