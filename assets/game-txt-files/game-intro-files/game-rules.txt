@@ -10,27 +10,27 @@ unscathed.
 
 Level 1️⃣ :
 
-The starting floor requires you to manoeuvre through the mansion by 
-choosing different doors. Be careful though, some paths are misleading 
-and will either case you to restart or die. In the event of restarting, 
-you will be redirected to the start of the level. If you die, a game over
-will initiate meaning you will start from the welcome screen. Note there 
+The starting floor requires you to manoeuvre through the mansion 
+by choosing different doors. Be careful though, some paths are 
+misleading and will cause you to be injured or trapped. In this 
+case, you will be redirected to the start of the level. Note there 
 are some clues to help you along your quest.
 
 Level 2️⃣ : 
 
-The second floor consist of more path choices but this time mixed 
-in with a horror quiz. Here, you will be introduced to your 10 health
-points. Each question you get wrong means a life will be deducted. In 
-the event of your life points reaching 0, the game over will initiate, 
-meaning you would need to start from the welcome screen. 
+The second floor consists of more path choices but this time mixed 
+in with a horror quiz. The quiz is purely for fun and to test your horror 
+knowledge. However, the path choices have the same rules as before. If 
+you choose the wrong door, you will be redirected to the start of the level, 
+initiating the quiz again.
 
 Level 3️⃣ :
 
-The final floor includes more path traversing but in addition to 
-random number guessing. This means you will need to guess the number 
-each door expects of you. Again, if you get an answer wrong and reach 0 
-lives, the game will start over from the very beginning. 
+The final floor is where you will be introduced to your 5 life points.
+Here you will meet your final obstacle which is a random number guessing. 
+This means you will need to guess the number the door expects of you. However, 
+if your life reaches 0, a game over will commence, meaning you will start 
+from the welcome screen.
 
 Good luck adventurer. Remember to follow the clues and underlying theme 
 of the game to succeed. Be careful and most importantly have fun. 

@@ -234,18 +234,18 @@ p3_losing_path = {
                 \rARE IMMEDIATELY INJECTED WITH CHEMICAL X."""
 }
 
-# Instant Death (Paths 1 & 3)
-game_over_p = {
-        "go": """YOU FALL INTO A PIT OF A CORROSIVE SUBSTANCE. IT SLOWLY
+# General Losing Path (Paths 1 & 3)
+losing_p = {
+        "lp": """YOU FALL INTO A PIT OF A CORROSIVE SUBSTANCE. IT SLOWLY
                 \rSTARTS EATING AWAY AT YOUR FLESH, BEFORE YOU DIE A NOTE
                 \rDRIFTS TOWARDS YOU TITLED “Chemical X”."""
 }
 
 # Second Floor
 second_floorp = {
-        "outro": """You successfully make it through the mind field of doors
-                \rand traps. As you exit the final door you find yourself in
-                \rfront of another flight of stairs. Exhausted you start to
-                \rbreakdown, worried if more obstacles await. You quickly snap
-                \rout of it, reminding yourself of how far you’ve come."""
+        "outro": """You successfully make it through the obstacles. As you
+                \rexit the final door you find yourself in front of another
+                \rflight of stairs. Exhausted you start to breakdown, worried
+                \rif more obstacles await. You quickly snap out of it,
+                \rreminding yourself of how far you’ve come."""
 }

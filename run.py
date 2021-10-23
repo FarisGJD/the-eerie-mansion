@@ -4,26 +4,12 @@ By: Faris Dhoot
 """
 
 # Document Imports
-import sys
-import time
 from path import p1_correct_path, p1_correct_path_additions, p1_losing_path, \
-    p2_losing_path, p3_game_path, p3_losing_path, game_over_p, second_floorp
+    p2_losing_path, p3_game_path, p3_losing_path, losing_p, second_floorp
 from functions import handel_game, q_and_a1, q_and_a2, q_and_a3, q_and_a4, \
-    q_and_a5
-
+    q_and_a5, random_number_generator, slow_print, game_transition, time
 
 answer = None
-
-
-def slow_print(slow):
-    """
-    Function that uses the sys & time modules to
-    print text slow in the terminal
-    """
-    for slw in slow + '\n':
-        sys.stdout.write(slw)
-        sys.stdout.flush()
-        time.sleep(0.000000000000000003/10)
 
 
 def start_game():
@@ -38,7 +24,7 @@ def start_game():
 
         if playing == "yes":
             slow_print("\nInitialising Game")
-            # time.sleep(2)
+            time.sleep(2)
             game_transition()
             read_game_intro_files(
                 "assets/game-txt-files/game-intro-files/"
@@ -69,8 +55,8 @@ def user_validation():
                 f""" Your answer should either be | 1 | 2 | 3 |
                 \ryou entered {answer}"""
             )
-    except ValueError as error:
-        print(f"\nInvalid input: {error} please follow the prompt!\n")
+    except ValueError:
+        print("\nInvalid input, please follow the prompt!\n")
 
         return user_validation()
 
@@ -177,26 +163,26 @@ def third_floor():
                                             game_transition()
 
                                         elif answer == 3:
-                                            game_over(game_over_p["go"])
+                                            restart3(losing_p["lp"])
 
                                     # Instant Losing Path
                                     elif answer == 2:
                                         restart3(p1_losing_path['p9'])
 
                                     elif answer == 3:
-                                        game_over(game_over_p["go"])
+                                        restart3(losing_p["lp"])
 
                             # Game Over Path
                             elif answer == 3:
-                                game_over(game_over_p["go"])
+                                restart3(losing_p["lp"])
 
                         # Game Over Path
                         elif answer == 3:
-                            game_over(game_over_p["go"])
+                            restart3(losing_p["lp"])
 
                 # Game Over Path
                 elif answer == 3:
-                    game_over(game_over_p["go"])
+                    restart3(losing_p["lp"])
 
             # Instant Losing Path
             elif answer == 2:
@@ -213,7 +199,7 @@ def third_floor():
 
         # Game Over Path
         elif answer == 3:
-            game_over(game_over_p["go"])
+            restart3(losing_p["lp"])
 
     # Primary Losing Path
     elif answer == 2:
@@ -263,10 +249,10 @@ def third_floor():
                     restart3(p3_losing_path["p4"])
 
                 elif answer == 3:
-                    game_over(game_over_p["go"])
+                    restart3(losing_p["lp"])
 
             elif answer == 3:
-                game_over(game_over_p["go"])
+                restart3(losing_p["lp"])
 
 
 def second_floor():
@@ -274,7 +260,7 @@ def second_floor():
     Second Game Floor
     """
     slow_print("""\nBefore arriving at the end of the stairs you reach a
-    \rbalcony. Beneath you is a mind filed of 3 doors and traps placed
+    \rbalcony. Beneath you is a minesfiled of 3 doors and traps placed
     \rconsecutively. The doors seem to have strange markings on them. You
     \rapproach the first set of 3.\n""")
     user_validation()
@@ -282,7 +268,7 @@ def second_floor():
     # Winning Path  (Sequence 2 | 1 | 3 | 1 | 3)
 
     if answer == 1 or answer == 3:
-        level_restart2()
+        restart2()
 
     elif answer == 2:
         slow_print("\nYou read the strange markings on the door.")
@@ -295,7 +281,7 @@ def second_floor():
             user_validation()
 
             if answer == 1 or answer == 2:
-                level_restart2()
+                restart2()
 
             elif answer == 3:
                 slow_print("\nYou read the strange markings on the door.")
@@ -308,20 +294,21 @@ def second_floor():
                     user_validation()
 
                     if answer == 1 or answer == 2:
-                        level_restart2()
+                        restart2()
 
                     elif answer == 3:
                         slow_print(
                             "\nYou read the strange markings on the door.")
                         handel_game(q_and_a5)
                         slow_print(second_floorp["outro"])
+                        continue_after_text()
                         game_transition()
 
                 elif answer == 2 or answer == 3:
-                    level_restart2()
+                    restart2()
 
         elif answer == 2 or answer == 3:
-            level_restart2()
+            restart2()
 
 
 def first_floor():
@@ -331,13 +318,15 @@ def first_floor():
     """
     slow_print("""\nYou reach the end of the stairs and are enthralled by what
     \ryou see. A giant metallic, cybernated door with two glass screens on
-    \reither side.  The screen seems to have been smeared with some type of
-    \rblack paint. You use your flashlight to scrape off the matter blocking
-    \ryour view and begin to holler. Behind the glass screen is the exit from
-    \rthe mansion. Freedom at last.\n
-    \rAs you begin to inspect the door, trying to figure how to operate it you
-    \rnotice a computer screen to its side. Upon reading what it says you
-    \rrealise you need to provide it a pass code.\n""")
+    \reither side. Both have been smeared with some sort of black paint. You
+    \ruse your flashlight to scrape off the matter blocking your view, looking
+    \rthrough. You being to holler with joy. Behind the glass screen is the
+    \rexit from the mansion. Freedom at last.\n
+    \rAs you begin to inspect the door, trying to figure out how to operate it
+    \ryou notice a computer screen to its side. Upon reading its content you
+    \rrealise you need to provide a single integer ranging from 0 – 10 in
+    \rorder to exit. Although you are shaking with nerves you begin.\n""")
+    random_number_generator()
 
 
 def restart3(text):
@@ -356,8 +345,8 @@ def restart3(text):
             break
 
         elif choice == "no":
-            slow_print("\nThanks for visiting, come back soon")
-            # time.sleep(2)
+            slow_print("\nThanks for playing, better luck next time.")
+            time.sleep(2)
             game_transition()
             quit()
 
@@ -365,14 +354,14 @@ def restart3(text):
             slow_print("\nIncorrect input, please select yes or no")
 
 
-def level_restart2():
+def restart2():
     """
     Takes user back to the begning of
     the second floor
     """
     slow_print(
         "\n❌❌❌❌❌❌ INCORECT CHOICE: YOU FALL INTO A PIT OF TARANTULAS."
-        + "THEY SLOWLY DEVOUR YOU ❌❌❌❌❌❌")
+        + " ❌❌❌❌❌❌")
 
     while True:
         choice = input(
@@ -384,26 +373,13 @@ def level_restart2():
             break
 
         elif choice == "no":
-            slow_print("\nThanks for visiting, come back soon")
+            slow_print("\nThanks for the fun, come back prepared")
             # time.sleep(2)
             game_transition()
             quit()
 
         elif choice != "yes":
             slow_print("\nIncorrect input, please select yes or no")
-
-
-def game_over(text):
-    """
-    Informs the user that they have lost the game,
-    restarting the programme.
-    """
-    slow_print(f"\n☠️☠️☠️☠️☠️☠️{text} GAME OVER☠️☠️☠️☠️☠️☠️")
-    game_transition()
-    slow_print("""\nThanks for playing, next time  keep the game over paths in
-    \rmind.\n""")
-
-    exit()
 
 
 def read_game_intro_files(intro_file, text):
@@ -465,15 +441,6 @@ def continue_after_text():
 
         elif progress != "c":
             print("Invalid entery, please select the 'c' key")
-
-
-def game_transition():
-    """
-    Adds a "tranisitional" effect to the game within
-    the terminal (strictly visual)
-    """
-    slow_print("""\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.
-    \r\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
 
 
 def game_main():

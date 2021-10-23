@@ -5,6 +5,8 @@ Level 2
 """
 
 import random
+import sys
+import time
 
 # Level 2 Questions Game
 
@@ -79,14 +81,12 @@ def handel_game(questions):
     Checks if they are right,
     decreases score if wrong.
     """
-    score = 5
     for que in questions:
-        user_answer = input(que.cue)
+        user_answer = input(que.cue).lower().strip()
         if user_answer == que.answers:
-            print("\nCorrect!!!\n")
+            slow_print("\nCorrect!!!\n")
         else:
-            score -= 1
-            print(f"\nIncorrect answer, you have {score} lives left\n")
+            slow_print("\nIncorrect answer\n")
 
 
 # Level 1 Random Number Guessing Game
@@ -100,29 +100,60 @@ def random_number_generator():
     score = 5
 
     while True:
-        guess = input("The computer needs a numbe between 0 - 10\n")
+        guess = input("The computer needs a number between 0 - 10\n")
         if guess.isdigit():
             guess = int(guess)
 
         else:
-            print("Input number")
+            slow_print("\nIncorrect input please follow the prompt\n")
             continue
 
         if guess == random_num:
-            print("Correct")
+            slow_print("\nCorrect!!!\n")
             break
 
         elif guess > random_num:
-            print("above")
+            slow_print("\nGuess too high, try a lower integer.\n")
 
         elif guess < random_num:
-            print("below")
+            slow_print("\nGuess too low, try a higher integer.\n")
 
-        elif guess != random_num:
-            score -= 1
-            print(f"You have {score} remaining")
-            if score == 0:
-                quit()
+            if guess != random_num:
+                score -= 1
+                slow_print(f"\nYou have {score} lives remaining\n")
+
+                if score == 0:
+                    game_over("""YOU ARE OUT OF LIVES, THE COMPUTER EXPLODES,
+                    \rLOCKING THE DOOR FOREVER TRAPPING YOU INSIDE.""")
 
 
-random_number_generator()
+def slow_print(slow):
+    """
+    Function that uses the sys & time modules to
+    print text slow in the terminal
+    """
+    for slw in slow + '\n':
+        sys.stdout.write(slw)
+        sys.stdout.flush()
+        time.sleep(0.00000000000000000025/10)
+
+
+def game_transition():
+    """
+    Adds a "tranisitional" effect to the game within
+    the terminal (strictly visual)
+    """
+    slow_print("""\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.
+    \r\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.""")
+
+
+def game_over(text):
+    """
+    Informs the user that they have lost the game,
+    restarting the programme.
+    """
+    slow_print(f"\n🕷🕷🕷🕷🕷🕷 {text} GAME OVER 🕷🕷🕷🕷🕷🕷")
+    game_transition()
+    slow_print("""\nThanks for playing, please come again.
+    \rmind.\n""")
+    exit()
