@@ -419,7 +419,7 @@ def read_game_clue_files(clue_file, text):
     while True:
         clues = input(
             f"Would you like to read the {text}?"
-            + "Choose: | yes | no |\n").lower().strip()
+            + " Choose: | yes | no |\n").lower().strip()
 
         if clues == "yes":
             with open(clue_file) as file:
@@ -443,7 +443,7 @@ def continue_after_text():
     while True:
         progress = input(
             "\nClick 'c' and enter on your kerboard"
-            + "to continue\n").lower().strip()
+            + " to continue\n").lower().strip()
 
         if progress == "c":
             break

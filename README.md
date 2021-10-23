@@ -177,6 +177,67 @@ The final level is a simple Random Number Generator Game. Therefore, the logic i
 # Surface
 The visual aspects of the game were text based and, in the terminal, meaning not a lot could be done out of those confines. The focal point used to convey the story was through text but some visual cues were implemented. 
 
+## Imagery 
+Most of the imagery used within the game were emojis in the "horror" or game related styles. This was done to break up the game visually as well as act as cues to the user of what has happened. In the first example the welcome screen uses skulls with the a message to start giving the user clues on what the game is about. 
+
+![Welcome Text Image](assets/readme/welcome.png)
+
+The second example uses trailing dots as a visual cue for in game state changes. 
+
+![Transition Image](assets/readme/transitions.png)
+
+## Features
+The game implements several features in order to function properly as well as develop an ambiance and theme to the overall gameplay. 
+
+The first two examples illustrate to the user that they have chosen the wrong path meaning the level will restart from its respective introduction (level3 & level2)
+
+![Restart Level3 Image](assets/readme/restart3.png)
+
+![Restart Level2 Image](assets/readme/restart2.png)
+
+The next two cues concerned the final level where the user either won ending the game, or loses ending the game as well but with two different outcomes. 
+
+![Win Image](assets/readme/win.png)
+
+![Game Over Image](assets/readme/gameo.png)
+
+The following two gave the user the option to view some background information about the game (e.g., overarching story) or game rules or plot. 
+
+![Clues Image](assets/readme/clues.png)
+
+![Intrduction Rules Image](assets/readme/intror.png)
+
+![Intrduction Plot Image](assets/readme/introp.png)
+
+The next feature allowed the user to completely skip the aforementioned two. This would be handy if an individual were playing multiple times making the game less repetitive. 
+
+![Continue Image](assets/readme/continue.png)
+
+
+The next feature was to throw a looping error whenever the user did not input the expected character. This was especially important for the game’s progression. Since this is a text-based game, if this was not implemented the game would essentially crash causing for a bad user experience. 
+
+![Error Image](assets/readme/error.png)
+
+Another important feature was the introductory input of asking the user whether they wanted to play or not. 
+
+![Play Image](assets/readme/play.png)
+
+
+The final three features are arguably the most important for gameplay and progression. The first was the path choices which asked the user to choose the door between 1 – 3. This choice in turn dictated the game state and whether the user would progress or restart. 
+
+![Path Choice Image](assets/readme/paths.png)
+
+The next was the quiz which was used as a fun break up to the game. Again this feature was left without much impact as this would have made the game too hard.  
+
+![Quiz Image](assets/readme/quiz.png)
+
+
+Finally, the number guessing game which would decide whether the user won the overall game or not. Just like all other features the last game has user verification but in addition to a score system. If the user lost all 5 lives the game would start from the very beginingg. If not, the user would win. 
+
+
+![Random Number Guess Image](assets/readme/guess.png)
+
+
 ***
 # Technologies Used 
 - Python 
