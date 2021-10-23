@@ -340,7 +340,7 @@ def restart3(text):
     Takes user back to the begning of
     the third floor
     """
-    slowp(f"\n⛔️⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} RESTARTING LEVEL ⛔️⛔️⛔️⛔️⛔️⛔️")
+    slowp(f"\n⛔️⛔️⛔️⛔️⛔️ INCORECT PATH: {text} RESTARTING LEVEL ⛔️⛔️⛔️⛔️⛔️")
     while True:
         choice = input(
             "\nWould you like to continue with the adventure?:"
@@ -393,8 +393,9 @@ def read_game_intro_files(intro_file, text):
     Reads game introductory files
     """
     while True:
-        rules_file_answer = input( \
-            f"\nWould you like to read the {text}? Choose: | yes | no |\n").lower().strip() # noqa
+        rules_file_answer = input(
+            f"\nWould you like to read the {text}?"
+            + "Choose: | yes | no |\n").lower().strip()
 
         if rules_file_answer == "yes":
             with open(intro_file) as file:
@@ -416,8 +417,9 @@ def read_game_clue_files(clue_file, text):
     files
     """
     while True:
-        clues = input( \
-            f"Would you like to read the {text}? Choose: | yes | no |\n").lower().strip() # noqa
+        clues = input(
+            f"Would you like to read the {text}?"
+            + "Choose: | yes | no |\n").lower().strip()
 
         if clues == "yes":
             with open(clue_file) as file:
@@ -439,8 +441,9 @@ def continue_after_text():
     then gives them the option to continue
     """
     while True:
-        progress = input(\
-            "\nClick 'c' and enter on your kerboard to continue\n").lower().strip() # noqa
+        progress = input(
+            "\nClick 'c' and enter on your kerboard"
+            + "to continue\n").lower().strip()
 
         if progress == "c":
             break
