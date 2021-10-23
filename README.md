@@ -18,9 +18,12 @@
         * [Functional Specifications](#functional-specifications)
     * [Structure](#structure)
     * [Skeleton](#skeleton)
+        * [Flow Logic](#flow-logic)
+        * [Game Introduction](#game-introduction)
+        * [Level One](#level-one)
+        * [Level Two](#level-two)
+        * [Level Three](#level-three)
     * [Surface](#surface)
-        * [Colour Scheme](#colour-scheme)
-        * [Typography](#typography)
         * [Imagery](#imagery)
         * [Features](#features)
 4. [Technologies Used](#technologies-used)
@@ -118,25 +121,64 @@ The Eerie Mansions initial release is to deploy a Minimal Viable Product in term
 As there are certain restrictions within the development of the game such as method of deployment and terminal confines this will be taken into account when defining the content requirements and functional specifications. 
 
 ## Content Requirements:
--	Clear 8-bit design indicative of Retrograming in terms of images and gameplay. 
--	Game that responds to user inputs and offers respective outputs. 
--	Must include: 
-- Sprite (astronaut).
-- Obstacles (e.g., asteroids) 
-- Increase in difficulty (which will invoke more obstacles like fiery asteroids, aliens, spaceships and planets. 
-- Mission control modal informing the user about the game and site story/mechanics.
-- Score counter. 
-
+-	Theme indicative of horror/thriller genre by using text-based story telling.
+-	Use imagery, making visuals more dynamic (terminal emojis).
+-	Game that is responsive to user input and provides respective outputs. 
+-	Contain visual ques for stylistic effect (e.g., transitions).
+-	Choose Your Own Adventure gameplay that makes the user the protagonist. 
+-	Horror Quiz.
+-	Random Number Guessing game. 
 
 ## Functional Specifications:
--	Quick loading of the site and its content. 
--	Intuitive navigation.
--	Fully functioning and interactive game including its controls, score counter and end game detection. 
--   Site offers respective feedback, conformation and validation. 
--	Cross-platform accessibility. 
--	Search Engine Optimisation. 
 
+-	Quick and seamless loading of the sites and its content. 
+-	Fully operative and interactive game in terms of controls, level restart, game-over and expected user input. 
+-	Site gives relevant feedback, validation and confirmation. 
+-	Accessible. 
+
+[Back To Top](#The-Eerie-Mansion)
+
+***
+# Structure
+Due to the circumstances around deployment the game will be organised on a single page, with a terminal acting as the basis between user and application interaction. Consequently, the text-based content and visuals (emojis) will act as the main form of storytelling and design for the user. This will be discussed further down the readme document.  
+
+[Back To Top](#The-Eerie-Mansion)
+
+***
+# Skeleton 
+Since this The Eerie Mansion is a text-based game played in the terminal, the skeleton plane primarily focuses on the logic behind the game rather than visual elements such as illustrated in balsamic. This is especially important for a Choose Your Own Adventure Game where the logic is integral to the progression of the game. Any mistakes within the code could cause the entire game to crash or loop, rendering it useless. Flowchart was used to create diagrams to exemplify this. 
+
+## Flow Logic 
+The games logic consists of 4 main states. The first is the game into, the second is level 1, the third is level 2 and the fourth is level 3. 
+
+### Game Introduction
+This stage greets the user with the title of the game followed by a prompt for whether they want to play or not. Depending on the user input the game will act accordingly. If the user inputs anything incorrect then they game will loop to the initial prompt. This is followed by two sub states for whether the user wants to read the game rules followed by the plot. The same logic as above applies. When the user has completed the game introduction they are immediately taken to the first level. 
+
+![Game Intro Image](assets/readme/game-intro-logic.png)
+
+### Level One 
+The first level is pure path choices with 30+ outcomes. The user is given three doors to choose from only of which 1 is the correct path. If the user chooses the wrong path, then they are looped back to the introduction of the level. If they choose the correct path they continue with the story and gameplay. This is where the bulk of the game story and theme is set, making the user comfortable with what is expected ahead.
+
+![Level One Image](assets/readme/level1.png)
+
+### Level Two 
+Level Two consist of the same path choice logic as previous except with the addition of a horror game quiz. To keep the game manageable and not too difficult the quiz is used for fun purposes meaning if they get a question wrong, they can still proceed to the next level. A game over was tried with the quiz but this proved to be too difficult to play. 
+
+![Level Two Image](assets/readme/level2.png)
+
+### Level Three 
+The final level is a simple Random Number Generator Game. Therefore, the logic is straight forward. The user is expected to guess one correct number. If so they win the overall game, if not a game over is initiated meaning they would need to start from the game introduction. 
+
+![Level Three Image](assets/readme/level3.png)
 
 [Back To Top](#spacescape)
 
 ***
+# Surface
+The visual aspects of the game were text based and, in the terminal, meaning not a lot could be done out of those confines. The focal point used to convey the story was through text but some visual cues were implemented. 
+
+***
+# Technologies Used 
+- Python 
+- PEP8
+- Lighthouse 
