@@ -4,10 +4,29 @@ By: Faris Dhoot
 """
 
 # Document Imports
-from path import p1_correct_path, p1_correct_path_additions, p1_losing_path, \
-    p2_losing_path, p3_game_path, p3_losing_path, losing_p, second_floorp
-from functions import handel_game, q_and_a1, q_and_a2, q_and_a3, q_and_a4, \
-    q_and_a5, random_number_generator, slowp, game_transition, time
+from path import (
+    p1_correct_path,
+    p1_correct_path_additions,
+    p1_losing_path,
+    p2_losing_path,
+    p3_game_path,
+    p3_losing_path,
+    losing_p,
+    second_floorp,
+)
+from functions import (
+    handel_game,
+    q_and_a1,
+    q_and_a2,
+    q_and_a3,
+    q_and_a4,
+    q_and_a5,
+    random_number_generator,
+    slowp,
+    game_transition,
+    time,
+)
+
 
 answer = None
 
